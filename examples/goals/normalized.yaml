@@ -1,0 +1,9 @@
+goal:
+  for_each:
+    kind: raster
+    select:
+      assets.$asset.data_state:spectral_sampling: multispectral
+    require:
+      all:
+      - path: assets.$asset.data_state:relative_radiometric_normalization
+        equals: true

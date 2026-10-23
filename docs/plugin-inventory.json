@@ -1,0 +1,1681 @@
+{
+  "before": [
+    {
+      "id": "align_grid",
+      "module": "align_grid",
+      "capabilities": {
+        "process": "align_grid"
+      }
+    },
+    {
+      "id": "apply_mask",
+      "module": "apply_mask",
+      "capabilities": {
+        "process": "apply_mask"
+      }
+    },
+    {
+      "id": "atmosphere",
+      "module": "atmosphere",
+      "capabilities": {
+        "metadata_in": "AtmosphereSource",
+        "data_in": "AtmosphereSource"
+      }
+    },
+    {
+      "id": "atmosphere-for-image",
+      "module": "atmosphere_for_image",
+      "capabilities": {
+        "checks": "atmosphere_for_image"
+      }
+    },
+    {
+      "id": "atmospheric_correction",
+      "module": "atmospheric_correction",
+      "capabilities": {
+        "process": "atmospheric_correction"
+      }
+    },
+    {
+      "id": "band_math",
+      "module": "band_math",
+      "capabilities": {
+        "process": "band_math"
+      }
+    },
+    {
+      "id": "buffered-transfer",
+      "module": "buffered_transfer",
+      "capabilities": {
+        "data_transfer": "BufferedTransfer"
+      }
+    },
+    {
+      "id": "clean_footprints",
+      "module": "clean_footprints",
+      "capabilities": {
+        "process": "clean_footprints"
+      }
+    },
+    {
+      "id": "cli",
+      "module": "cli",
+      "capabilities": {
+        "trigger": "direct"
+      }
+    },
+    {
+      "id": "cog",
+      "module": "cog",
+      "capabilities": {
+        "encode": "cog",
+        "metadata_out": "metadata"
+      }
+    },
+    {
+      "id": "combine",
+      "module": "combine",
+      "capabilities": {
+        "sequence": "combine"
+      }
+    },
+    {
+      "id": "common-crs",
+      "module": "common_crs",
+      "capabilities": {
+        "checks": "common_crs"
+      }
+    },
+    {
+      "id": "compatible-grids",
+      "module": "compatible_grids",
+      "capabilities": {
+        "checks": "compatible_grids"
+      }
+    },
+    {
+      "id": "compatible-optical",
+      "module": "compatible_optical",
+      "capabilities": {
+        "checks": "compatible_optical"
+      }
+    },
+    {
+      "id": "dask",
+      "module": "dask",
+      "capabilities": {
+        "services": "Dask"
+      }
+    },
+    {
+      "id": "dem",
+      "module": "dem",
+      "capabilities": {
+        "metadata_in": "DemSource",
+        "data_in": "DemSource"
+      }
+    },
+    {
+      "id": "detect_clouds",
+      "module": "detect_clouds",
+      "capabilities": {
+        "process": "detect_clouds"
+      }
+    },
+    {
+      "id": "eodag",
+      "module": "eodag",
+      "capabilities": {
+        "metadata_in": "EodagSource",
+        "data_in": "EodagSource"
+      }
+    },
+    {
+      "id": "eoreader",
+      "module": "eoreader",
+      "capabilities": {
+        "metadata_in": "EoreaderSource"
+      }
+    },
+    {
+      "id": "events",
+      "module": "events",
+      "capabilities": {
+        "services": "Events"
+      }
+    },
+    {
+      "id": "autostacgis.execution/v1",
+      "module": "execution",
+      "capabilities": {
+        "extensions": "ExecutionExtension"
+      }
+    },
+    {
+      "id": "executor",
+      "module": "executor",
+      "capabilities": {
+        "services": "executor"
+      }
+    },
+    {
+      "id": "explicit-groups",
+      "module": "explicit_groups",
+      "capabilities": {
+        "sequence": "explicit"
+      }
+    },
+    {
+      "id": "extract_footprints",
+      "module": "extract_footprints",
+      "capabilities": {
+        "process": "extract_footprints",
+        "sequence": "bind_inputs"
+      }
+    },
+    {
+      "id": "file-checkpoint",
+      "module": "file_checkpoint",
+      "capabilities": {
+        "checkpoint": "FileCheckpoint"
+      }
+    },
+    {
+      "id": "filesystem",
+      "module": "filesystem",
+      "capabilities": {
+        "data_out": "filesystem"
+      }
+    },
+    {
+      "id": "filter",
+      "module": "filter",
+      "capabilities": {
+        "sequence": "filtered",
+        "goal": "goal"
+      }
+    },
+    {
+      "id": "for-each",
+      "module": "for_each_goal",
+      "capabilities": {
+        "goal": "goal"
+      }
+    },
+    {
+      "id": "gather-all",
+      "module": "gather_all",
+      "capabilities": {
+        "sequence": "gather_all"
+      }
+    },
+    {
+      "id": "geotiff",
+      "module": "geotiff",
+      "capabilities": {
+        "encode": "geotiff",
+        "metadata_out": "metadata"
+      }
+    },
+    {
+      "id": "global_radiometric_match",
+      "module": "global_radiometric_match",
+      "capabilities": {
+        "process": "global_radiometric_match",
+        "sequence": "bind_inputs"
+      }
+    },
+    {
+      "id": "group-by",
+      "module": "group_by",
+      "capabilities": {
+        "sequence": "group_by"
+      }
+    },
+    {
+      "id": "harmonized-mosaic",
+      "module": "harmonized_mosaic",
+      "capabilities": {
+        "goal": "goal"
+      }
+    },
+    {
+      "id": "has-role",
+      "module": "has_role",
+      "capabilities": {
+        "checks": "has_role"
+      }
+    },
+    {
+      "id": "joint_coregistration",
+      "module": "joint_coregistration",
+      "capabilities": {
+        "process": "joint_coregistration",
+        "sequence": "bind_inputs"
+      }
+    },
+    {
+      "id": "local_radiometric_match",
+      "module": "local_radiometric_match",
+      "capabilities": {
+        "process": "local_radiometric_match",
+        "sequence": "bind_inputs"
+      }
+    },
+    {
+      "id": "markov_seamlines",
+      "module": "markov_seamlines",
+      "capabilities": {
+        "process": "markov_seamlines",
+        "sequence": "bind_inputs"
+      }
+    },
+    {
+      "id": "mask_by_polygons",
+      "module": "mask_by_polygons",
+      "capabilities": {
+        "process": "mask_by_polygons"
+      }
+    },
+    {
+      "id": "masked",
+      "module": "masked",
+      "capabilities": {
+        "goal": "goal"
+      }
+    },
+    {
+      "id": "merge_vectors",
+      "module": "merge_vectors",
+      "capabilities": {
+        "process": "merge_vectors"
+      }
+    },
+    {
+      "id": "metadata-matches",
+      "module": "metadata_matches",
+      "capabilities": {
+        "checks": "metadata_matches"
+      }
+    },
+    {
+      "id": "metadata-schema",
+      "module": "metadata_schema",
+      "capabilities": {
+        "checks": "metadata_schema"
+      }
+    },
+    {
+      "id": "mosaic",
+      "module": "mosaic",
+      "capabilities": {
+        "process": "mosaic",
+        "sequence": "bind_inputs",
+        "goal": "goal"
+      }
+    },
+    {
+      "id": "multiprocessing",
+      "module": "multiprocessing",
+      "capabilities": {
+        "services": "Processes"
+      }
+    },
+    {
+      "id": "normalized",
+      "module": "normalized",
+      "capabilities": {
+        "goal": "goal"
+      }
+    },
+    {
+      "id": "normalized-pansharpened",
+      "module": "normalized_pansharpened",
+      "capabilities": {
+        "goal": "goal"
+      }
+    },
+    {
+      "id": "opentelemetry",
+      "module": "opentelemetry",
+      "capabilities": {
+        "services": "OpenTelemetry"
+      }
+    },
+    {
+      "id": "orthorectify_rpc",
+      "module": "orthorectify_rpc",
+      "capabilities": {
+        "process": "orthorectify_rpc"
+      }
+    },
+    {
+      "id": "output",
+      "module": "output_goal",
+      "capabilities": {
+        "goal": "goal"
+      }
+    },
+    {
+      "id": "overlap",
+      "module": "overlap",
+      "capabilities": {
+        "sequence": "by_overlap"
+      }
+    },
+    {
+      "id": "pansharpen",
+      "module": "pansharpen",
+      "capabilities": {
+        "process": "pansharpen"
+      }
+    },
+    {
+      "id": "pansharpened",
+      "module": "pansharpened",
+      "capabilities": {
+        "goal": "goal"
+      }
+    },
+    {
+      "id": "parquet",
+      "module": "parquet",
+      "capabilities": {
+        "encode": "parquet"
+      }
+    },
+    {
+      "id": "polygonize",
+      "module": "polygonize",
+      "capabilities": {
+        "process": "polygonize"
+      }
+    },
+    {
+      "id": "python",
+      "module": "python",
+      "capabilities": {
+        "trigger": "direct"
+      }
+    },
+    {
+      "id": "rasterize_point_attribute",
+      "module": "rasterize_point_attribute",
+      "capabilities": {
+        "process": "rasterize_point_attribute"
+      }
+    },
+    {
+      "id": "register_to_reference",
+      "module": "register_to_reference",
+      "capabilities": {
+        "process": "register_to_reference"
+      }
+    },
+    {
+      "id": "registered",
+      "module": "registered",
+      "capabilities": {
+        "goal": "goal"
+      }
+    },
+    {
+      "id": "s3",
+      "module": "s3",
+      "capabilities": {
+        "data_out": "s3"
+      }
+    },
+    {
+      "id": "same-fields",
+      "module": "same_fields",
+      "capabilities": {
+        "checks": "same_fields"
+      }
+    },
+    {
+      "id": "sample_dem",
+      "module": "sample_dem",
+      "capabilities": {
+        "process": "sample_dem"
+      }
+    },
+    {
+      "id": "scheduler",
+      "module": "scheduler",
+      "capabilities": {
+        "trigger": "scheduler"
+      }
+    },
+    {
+      "id": "sequential",
+      "module": "sequential",
+      "capabilities": {
+        "services": "Sequential"
+      }
+    },
+    {
+      "id": "slurm",
+      "module": "slurm",
+      "capabilities": {
+        "trigger": "slurm"
+      }
+    },
+    {
+      "id": "source-member",
+      "module": "source_member",
+      "capabilities": {
+        "checks": "source_member"
+      }
+    },
+    {
+      "id": "split",
+      "module": "split",
+      "capabilities": {
+        "sequence": "split"
+      }
+    },
+    {
+      "id": "stac-api",
+      "module": "stac_api",
+      "capabilities": {
+        "metadata_out": "stac_api"
+      }
+    },
+    {
+      "id": "stac-item",
+      "module": "stac_item",
+      "capabilities": {
+        "metadata_out": "stac_item"
+      }
+    },
+    {
+      "id": "stac-json",
+      "module": "stac_json",
+      "capabilities": {
+        "metadata_out": "json_writer"
+      }
+    },
+    {
+      "id": "stac-resolver",
+      "module": "stac_resolver",
+      "capabilities": {
+        "metadata_in": "LocalStac"
+      }
+    },
+    {
+      "id": "stac-source",
+      "module": "stac_source",
+      "capabilities": {
+        "metadata_in": "StacSource",
+        "data_in": "StacSource"
+      }
+    },
+    {
+      "id": "staging",
+      "module": "staging",
+      "capabilities": {
+        "services": "Staging"
+      }
+    },
+    {
+      "id": "statistics",
+      "module": "statistics",
+      "capabilities": {
+        "process": "statistics"
+      }
+    },
+    {
+      "id": "storage",
+      "module": "storage",
+      "capabilities": {
+        "services": "Storage"
+      }
+    },
+    {
+      "id": "surface-reflectance",
+      "module": "surface_reflectance",
+      "capabilities": {
+        "goal": "goal"
+      }
+    },
+    {
+      "id": "table",
+      "module": "table",
+      "capabilities": {
+        "metadata_in": "TableSource"
+      }
+    },
+    {
+      "id": "threads",
+      "module": "threads",
+      "capabilities": {
+        "services": "Threads"
+      }
+    },
+    {
+      "id": "valid-data",
+      "module": "valid_data",
+      "capabilities": {
+        "checks": "valid_data"
+      }
+    },
+    {
+      "id": "voronoi_seamlines",
+      "module": "voronoi_seamlines",
+      "capabilities": {
+        "process": "voronoi_seamlines"
+      }
+    },
+    {
+      "id": "weighted_seamlines",
+      "module": "weighted_seamlines",
+      "capabilities": {
+        "process": "weighted_seamlines",
+        "sequence": "bind_inputs"
+      }
+    },
+    {
+      "id": "zarr",
+      "module": "zarr",
+      "capabilities": {
+        "encode": "zarr_writer",
+        "metadata_out": "metadata"
+      }
+    }
+  ],
+  "after": [
+    {
+      "id": "align_grid",
+      "module": "align_grid",
+      "capability": "process",
+      "previous": "align_grid"
+    },
+    {
+      "id": "apply_mask",
+      "module": "apply_mask",
+      "capability": "process",
+      "previous": "apply_mask"
+    },
+    {
+      "id": "atmosphere",
+      "module": "atmosphere",
+      "capability": "metadata_in",
+      "previous": "atmosphere"
+    },
+    {
+      "id": "atmosphere-download",
+      "module": "atmosphere_download",
+      "capability": "data_in",
+      "previous": "atmosphere"
+    },
+    {
+      "id": "atmosphere-for-image",
+      "module": "atmosphere_for_image",
+      "capability": "checks",
+      "previous": "atmosphere-for-image"
+    },
+    {
+      "id": "atmospheric_correction",
+      "module": "atmospheric_correction",
+      "capability": "process",
+      "previous": "atmospheric_correction"
+    },
+    {
+      "id": "autostacgis.execution/v1",
+      "module": "execution",
+      "capability": "extensions",
+      "previous": "autostacgis.execution/v1"
+    },
+    {
+      "id": "band_math",
+      "module": "band_math",
+      "capability": "process",
+      "previous": "band_math"
+    },
+    {
+      "id": "buffered-transfer",
+      "module": "buffered_transfer",
+      "capability": "data_transfer",
+      "previous": "buffered-transfer"
+    },
+    {
+      "id": "clean_footprints",
+      "module": "clean_footprints",
+      "capability": "process",
+      "previous": "clean_footprints"
+    },
+    {
+      "id": "cli",
+      "module": "cli",
+      "capability": "trigger",
+      "previous": "cli"
+    },
+    {
+      "id": "cog",
+      "module": "cog",
+      "capability": "encode",
+      "previous": "cog"
+    },
+    {
+      "id": "cog-metadata",
+      "module": "cog_metadata",
+      "capability": "metadata_out",
+      "previous": "cog"
+    },
+    {
+      "id": "combine",
+      "module": "combine",
+      "capability": "sequence",
+      "previous": "combine"
+    },
+    {
+      "id": "common-crs",
+      "module": "common_crs",
+      "capability": "checks",
+      "previous": "common-crs"
+    },
+    {
+      "id": "compatible-grids",
+      "module": "compatible_grids",
+      "capability": "checks",
+      "previous": "compatible-grids"
+    },
+    {
+      "id": "compatible-optical",
+      "module": "compatible_optical",
+      "capability": "checks",
+      "previous": "compatible-optical"
+    },
+    {
+      "id": "dask",
+      "module": "dask",
+      "capability": "services",
+      "previous": "dask"
+    },
+    {
+      "id": "dem",
+      "module": "dem",
+      "capability": "metadata_in",
+      "previous": "dem"
+    },
+    {
+      "id": "dem-download",
+      "module": "dem_download",
+      "capability": "data_in",
+      "previous": "dem"
+    },
+    {
+      "id": "detect_clouds",
+      "module": "detect_clouds",
+      "capability": "process",
+      "previous": "detect_clouds"
+    },
+    {
+      "id": "eodag",
+      "module": "eodag",
+      "capability": "metadata_in",
+      "previous": "eodag"
+    },
+    {
+      "id": "eodag-download",
+      "module": "eodag_download",
+      "capability": "data_in",
+      "previous": "eodag"
+    },
+    {
+      "id": "eoreader",
+      "module": "eoreader",
+      "capability": "metadata_in",
+      "previous": "eoreader"
+    },
+    {
+      "id": "events",
+      "module": "events",
+      "capability": "services",
+      "previous": "events"
+    },
+    {
+      "id": "executor",
+      "module": "executor",
+      "capability": "services",
+      "previous": "executor"
+    },
+    {
+      "id": "explicit-groups",
+      "module": "explicit_groups",
+      "capability": "sequence",
+      "previous": "explicit-groups"
+    },
+    {
+      "id": "extract_footprints",
+      "module": "extract_footprints",
+      "capability": "process",
+      "previous": "extract_footprints"
+    },
+    {
+      "id": "file-checkpoint",
+      "module": "file_checkpoint",
+      "capability": "checkpoint",
+      "previous": "file-checkpoint"
+    },
+    {
+      "id": "filesystem",
+      "module": "filesystem",
+      "capability": "data_out",
+      "previous": "filesystem"
+    },
+    {
+      "id": "filter",
+      "module": "filter",
+      "capability": "sequence",
+      "previous": "filter"
+    },
+    {
+      "id": "gather-all",
+      "module": "gather_all",
+      "capability": "sequence",
+      "previous": "gather-all"
+    },
+    {
+      "id": "geotiff",
+      "module": "geotiff",
+      "capability": "encode",
+      "previous": "geotiff"
+    },
+    {
+      "id": "geotiff-metadata",
+      "module": "geotiff_metadata",
+      "capability": "metadata_out",
+      "previous": "geotiff"
+    },
+    {
+      "id": "global_radiometric_match",
+      "module": "global_radiometric_match",
+      "capability": "process",
+      "previous": "global_radiometric_match"
+    },
+    {
+      "id": "group-by",
+      "module": "group_by",
+      "capability": "sequence",
+      "previous": "group-by"
+    },
+    {
+      "id": "has-role",
+      "module": "has_role",
+      "capability": "checks",
+      "previous": "has-role"
+    },
+    {
+      "id": "joint_coregistration",
+      "module": "joint_coregistration",
+      "capability": "process",
+      "previous": "joint_coregistration"
+    },
+    {
+      "id": "local_radiometric_match",
+      "module": "local_radiometric_match",
+      "capability": "process",
+      "previous": "local_radiometric_match"
+    },
+    {
+      "id": "markov_seamlines",
+      "module": "markov_seamlines",
+      "capability": "process",
+      "previous": "markov_seamlines"
+    },
+    {
+      "id": "mask_by_polygons",
+      "module": "mask_by_polygons",
+      "capability": "process",
+      "previous": "mask_by_polygons"
+    },
+    {
+      "id": "merge_vectors",
+      "module": "merge_vectors",
+      "capability": "process",
+      "previous": "merge_vectors"
+    },
+    {
+      "id": "metadata-matches",
+      "module": "metadata_matches",
+      "capability": "checks",
+      "previous": "metadata-matches"
+    },
+    {
+      "id": "metadata-schema",
+      "module": "metadata_schema",
+      "capability": "checks",
+      "previous": "metadata-schema"
+    },
+    {
+      "id": "backward_chain",
+      "module": "backward_chain",
+      "capability": "solver",
+      "previous": null
+    },
+    {
+      "id": "metadata-value",
+      "module": "metadata_value",
+      "capability": "goal",
+      "previous": null
+    },
+    {
+      "id": "mosaic",
+      "module": "mosaic",
+      "capability": "process",
+      "previous": "mosaic"
+    },
+    {
+      "id": "multiprocessing",
+      "module": "multiprocessing",
+      "capability": "services",
+      "previous": "multiprocessing"
+    },
+    {
+      "id": "opentelemetry",
+      "module": "opentelemetry",
+      "capability": "services",
+      "previous": "opentelemetry"
+    },
+    {
+      "id": "orthorectify_rpc",
+      "module": "orthorectify_rpc",
+      "capability": "process",
+      "previous": "orthorectify_rpc"
+    },
+    {
+      "id": "overlap",
+      "module": "overlap",
+      "capability": "sequence",
+      "previous": "overlap"
+    },
+    {
+      "id": "pansharpen",
+      "module": "pansharpen",
+      "capability": "process",
+      "previous": "pansharpen"
+    },
+    {
+      "id": "parquet",
+      "module": "parquet",
+      "capability": "encode",
+      "previous": "parquet"
+    },
+    {
+      "id": "polygonize",
+      "module": "polygonize",
+      "capability": "process",
+      "previous": "polygonize"
+    },
+    {
+      "id": "python",
+      "module": "python",
+      "capability": "trigger",
+      "previous": "python"
+    },
+    {
+      "id": "rasterize_point_attribute",
+      "module": "rasterize_point_attribute",
+      "capability": "process",
+      "previous": "rasterize_point_attribute"
+    },
+    {
+      "id": "register_to_reference",
+      "module": "register_to_reference",
+      "capability": "process",
+      "previous": "register_to_reference"
+    },
+    {
+      "id": "s3",
+      "module": "s3",
+      "capability": "data_out",
+      "previous": "s3"
+    },
+    {
+      "id": "same-fields",
+      "module": "same_fields",
+      "capability": "checks",
+      "previous": "same-fields"
+    },
+    {
+      "id": "sample_dem",
+      "module": "sample_dem",
+      "capability": "process",
+      "previous": "sample_dem"
+    },
+    {
+      "id": "scheduler",
+      "module": "scheduler",
+      "capability": "trigger",
+      "previous": "scheduler"
+    },
+    {
+      "id": "sequential",
+      "module": "sequential",
+      "capability": "services",
+      "previous": "sequential"
+    },
+    {
+      "id": "slurm",
+      "module": "slurm",
+      "capability": "trigger",
+      "previous": "slurm"
+    },
+    {
+      "id": "source-member",
+      "module": "source_member",
+      "capability": "checks",
+      "previous": "source-member"
+    },
+    {
+      "id": "split",
+      "module": "split",
+      "capability": "sequence",
+      "previous": "split"
+    },
+    {
+      "id": "stac-api",
+      "module": "stac_api",
+      "capability": "metadata_out",
+      "previous": "stac-api"
+    },
+    {
+      "id": "stac-item",
+      "module": "stac_item",
+      "capability": "metadata_out",
+      "previous": "stac-item"
+    },
+    {
+      "id": "stac-json",
+      "module": "stac_json",
+      "capability": "metadata_out",
+      "previous": "stac-json"
+    },
+    {
+      "id": "stac-resolver",
+      "module": "stac_resolver",
+      "capability": "metadata_in",
+      "previous": "stac-resolver"
+    },
+    {
+      "id": "stac-source",
+      "module": "stac_source",
+      "capability": "metadata_in",
+      "previous": "stac-source"
+    },
+    {
+      "id": "stac-source-download",
+      "module": "stac_source_download",
+      "capability": "data_in",
+      "previous": "stac-source"
+    },
+    {
+      "id": "staging",
+      "module": "staging",
+      "capability": "services",
+      "previous": "staging"
+    },
+    {
+      "id": "statistics",
+      "module": "statistics",
+      "capability": "process",
+      "previous": "statistics"
+    },
+    {
+      "id": "storage",
+      "module": "storage",
+      "capability": "services",
+      "previous": "storage"
+    },
+    {
+      "id": "table",
+      "module": "table",
+      "capability": "metadata_in",
+      "previous": "table"
+    },
+    {
+      "id": "threads",
+      "module": "threads",
+      "capability": "services",
+      "previous": "threads"
+    },
+    {
+      "id": "valid-data",
+      "module": "valid_data",
+      "capability": "checks",
+      "previous": "valid-data"
+    },
+    {
+      "id": "voronoi_seamlines",
+      "module": "voronoi_seamlines",
+      "capability": "process",
+      "previous": "voronoi_seamlines"
+    },
+    {
+      "id": "weighted_seamlines",
+      "module": "weighted_seamlines",
+      "capability": "process",
+      "previous": "weighted_seamlines"
+    },
+    {
+      "id": "zarr",
+      "module": "zarr",
+      "capability": "encode",
+      "previous": "zarr"
+    },
+    {
+      "id": "zarr-metadata",
+      "module": "zarr_metadata",
+      "capability": "metadata_out",
+      "previous": "zarr"
+    }
+  ],
+  "after_split": [
+    {
+      "id": "align_grid",
+      "module": "align_grid",
+      "capability": "process",
+      "previous": "align_grid"
+    },
+    {
+      "id": "apply_mask",
+      "module": "apply_mask",
+      "capability": "process",
+      "previous": "apply_mask"
+    },
+    {
+      "id": "atmosphere",
+      "module": "atmosphere",
+      "capability": "metadata_in",
+      "previous": "atmosphere"
+    },
+    {
+      "id": "atmosphere-download",
+      "module": "atmosphere_download",
+      "capability": "data_in",
+      "previous": "atmosphere"
+    },
+    {
+      "id": "atmosphere-for-image",
+      "module": "atmosphere_for_image",
+      "capability": "checks",
+      "previous": "atmosphere-for-image"
+    },
+    {
+      "id": "atmospheric_correction",
+      "module": "atmospheric_correction",
+      "capability": "process",
+      "previous": "atmospheric_correction"
+    },
+    {
+      "id": "autostacgis.execution/v1",
+      "module": "execution",
+      "capability": "extensions",
+      "previous": "autostacgis.execution/v1"
+    },
+    {
+      "id": "band_math",
+      "module": "band_math",
+      "capability": "process",
+      "previous": "band_math"
+    },
+    {
+      "id": "buffered-transfer",
+      "module": "buffered_transfer",
+      "capability": "data_transfer",
+      "previous": "buffered-transfer"
+    },
+    {
+      "id": "clean_footprints",
+      "module": "clean_footprints",
+      "capability": "process",
+      "previous": "clean_footprints"
+    },
+    {
+      "id": "cli",
+      "module": "cli",
+      "capability": "trigger",
+      "previous": "cli"
+    },
+    {
+      "id": "cog",
+      "module": "cog",
+      "capability": "encode",
+      "previous": "cog"
+    },
+    {
+      "id": "cog-metadata",
+      "module": "cog_metadata",
+      "capability": "metadata_out",
+      "previous": "cog"
+    },
+    {
+      "id": "combine",
+      "module": "combine",
+      "capability": "sequence",
+      "previous": "combine"
+    },
+    {
+      "id": "common-crs",
+      "module": "common_crs",
+      "capability": "checks",
+      "previous": "common-crs"
+    },
+    {
+      "id": "compatible-grids",
+      "module": "compatible_grids",
+      "capability": "checks",
+      "previous": "compatible-grids"
+    },
+    {
+      "id": "compatible-optical",
+      "module": "compatible_optical",
+      "capability": "checks",
+      "previous": "compatible-optical"
+    },
+    {
+      "id": "dask",
+      "module": "dask",
+      "capability": "services",
+      "previous": "dask"
+    },
+    {
+      "id": "dem",
+      "module": "dem",
+      "capability": "metadata_in",
+      "previous": "dem"
+    },
+    {
+      "id": "dem-download",
+      "module": "dem_download",
+      "capability": "data_in",
+      "previous": "dem"
+    },
+    {
+      "id": "detect_clouds",
+      "module": "detect_clouds",
+      "capability": "process",
+      "previous": "detect_clouds"
+    },
+    {
+      "id": "eodag",
+      "module": "eodag",
+      "capability": "metadata_in",
+      "previous": "eodag"
+    },
+    {
+      "id": "eodag-download",
+      "module": "eodag_download",
+      "capability": "data_in",
+      "previous": "eodag"
+    },
+    {
+      "id": "eoreader",
+      "module": "eoreader",
+      "capability": "metadata_in",
+      "previous": "eoreader"
+    },
+    {
+      "id": "events",
+      "module": "events",
+      "capability": "services",
+      "previous": "events"
+    },
+    {
+      "id": "executor",
+      "module": "executor",
+      "capability": "services",
+      "previous": "executor"
+    },
+    {
+      "id": "explicit-groups",
+      "module": "explicit_groups",
+      "capability": "sequence",
+      "previous": "explicit-groups"
+    },
+    {
+      "id": "extract_footprints",
+      "module": "extract_footprints",
+      "capability": "process",
+      "previous": "extract_footprints"
+    },
+    {
+      "id": "extract_footprints-sequence",
+      "module": "extract_footprints_sequence",
+      "capability": "sequence",
+      "previous": "extract_footprints"
+    },
+    {
+      "id": "file-checkpoint",
+      "module": "file_checkpoint",
+      "capability": "checkpoint",
+      "previous": "file-checkpoint"
+    },
+    {
+      "id": "filesystem",
+      "module": "filesystem",
+      "capability": "data_out",
+      "previous": "filesystem"
+    },
+    {
+      "id": "filter",
+      "module": "filter",
+      "capability": "sequence",
+      "previous": "filter"
+    },
+    {
+      "id": "filter-goal",
+      "module": "filter_goal",
+      "capability": "goal",
+      "previous": "filter"
+    },
+    {
+      "id": "for-each",
+      "module": "for_each_goal",
+      "capability": "goal",
+      "previous": "for-each"
+    },
+    {
+      "id": "gather-all",
+      "module": "gather_all",
+      "capability": "sequence",
+      "previous": "gather-all"
+    },
+    {
+      "id": "geotiff",
+      "module": "geotiff",
+      "capability": "encode",
+      "previous": "geotiff"
+    },
+    {
+      "id": "geotiff-metadata",
+      "module": "geotiff_metadata",
+      "capability": "metadata_out",
+      "previous": "geotiff"
+    },
+    {
+      "id": "global_radiometric_match",
+      "module": "global_radiometric_match",
+      "capability": "process",
+      "previous": "global_radiometric_match"
+    },
+    {
+      "id": "global_radiometric_match-sequence",
+      "module": "global_radiometric_match_sequence",
+      "capability": "sequence",
+      "previous": "global_radiometric_match"
+    },
+    {
+      "id": "group-by",
+      "module": "group_by",
+      "capability": "sequence",
+      "previous": "group-by"
+    },
+    {
+      "id": "harmonized-mosaic",
+      "module": "harmonized_mosaic",
+      "capability": "goal",
+      "previous": "harmonized-mosaic"
+    },
+    {
+      "id": "has-role",
+      "module": "has_role",
+      "capability": "checks",
+      "previous": "has-role"
+    },
+    {
+      "id": "joint_coregistration",
+      "module": "joint_coregistration",
+      "capability": "process",
+      "previous": "joint_coregistration"
+    },
+    {
+      "id": "joint_coregistration-sequence",
+      "module": "joint_coregistration_sequence",
+      "capability": "sequence",
+      "previous": "joint_coregistration"
+    },
+    {
+      "id": "local_radiometric_match",
+      "module": "local_radiometric_match",
+      "capability": "process",
+      "previous": "local_radiometric_match"
+    },
+    {
+      "id": "local_radiometric_match-sequence",
+      "module": "local_radiometric_match_sequence",
+      "capability": "sequence",
+      "previous": "local_radiometric_match"
+    },
+    {
+      "id": "markov_seamlines",
+      "module": "markov_seamlines",
+      "capability": "process",
+      "previous": "markov_seamlines"
+    },
+    {
+      "id": "markov_seamlines-sequence",
+      "module": "markov_seamlines_sequence",
+      "capability": "sequence",
+      "previous": "markov_seamlines"
+    },
+    {
+      "id": "mask_by_polygons",
+      "module": "mask_by_polygons",
+      "capability": "process",
+      "previous": "mask_by_polygons"
+    },
+    {
+      "id": "masked",
+      "module": "masked",
+      "capability": "goal",
+      "previous": "masked"
+    },
+    {
+      "id": "merge_vectors",
+      "module": "merge_vectors",
+      "capability": "process",
+      "previous": "merge_vectors"
+    },
+    {
+      "id": "metadata-matches",
+      "module": "metadata_matches",
+      "capability": "checks",
+      "previous": "metadata-matches"
+    },
+    {
+      "id": "metadata-schema",
+      "module": "metadata_schema",
+      "capability": "checks",
+      "previous": "metadata-schema"
+    },
+    {
+      "id": "mosaic",
+      "module": "mosaic",
+      "capability": "process",
+      "previous": "mosaic"
+    },
+    {
+      "id": "mosaic-goal",
+      "module": "mosaic_goal",
+      "capability": "goal",
+      "previous": "mosaic"
+    },
+    {
+      "id": "mosaic-sequence",
+      "module": "mosaic_sequence",
+      "capability": "sequence",
+      "previous": "mosaic"
+    },
+    {
+      "id": "multiprocessing",
+      "module": "multiprocessing",
+      "capability": "services",
+      "previous": "multiprocessing"
+    },
+    {
+      "id": "normalized",
+      "module": "normalized",
+      "capability": "goal",
+      "previous": "normalized"
+    },
+    {
+      "id": "normalized-pansharpened",
+      "module": "normalized_pansharpened",
+      "capability": "goal",
+      "previous": "normalized-pansharpened"
+    },
+    {
+      "id": "opentelemetry",
+      "module": "opentelemetry",
+      "capability": "services",
+      "previous": "opentelemetry"
+    },
+    {
+      "id": "orthorectify_rpc",
+      "module": "orthorectify_rpc",
+      "capability": "process",
+      "previous": "orthorectify_rpc"
+    },
+    {
+      "id": "output",
+      "module": "output_goal",
+      "capability": "goal",
+      "previous": "output"
+    },
+    {
+      "id": "overlap",
+      "module": "overlap",
+      "capability": "sequence",
+      "previous": "overlap"
+    },
+    {
+      "id": "pansharpen",
+      "module": "pansharpen",
+      "capability": "process",
+      "previous": "pansharpen"
+    },
+    {
+      "id": "pansharpened",
+      "module": "pansharpened",
+      "capability": "goal",
+      "previous": "pansharpened"
+    },
+    {
+      "id": "parquet",
+      "module": "parquet",
+      "capability": "encode",
+      "previous": "parquet"
+    },
+    {
+      "id": "polygonize",
+      "module": "polygonize",
+      "capability": "process",
+      "previous": "polygonize"
+    },
+    {
+      "id": "python",
+      "module": "python",
+      "capability": "trigger",
+      "previous": "python"
+    },
+    {
+      "id": "rasterize_point_attribute",
+      "module": "rasterize_point_attribute",
+      "capability": "process",
+      "previous": "rasterize_point_attribute"
+    },
+    {
+      "id": "register_to_reference",
+      "module": "register_to_reference",
+      "capability": "process",
+      "previous": "register_to_reference"
+    },
+    {
+      "id": "registered",
+      "module": "registered",
+      "capability": "goal",
+      "previous": "registered"
+    },
+    {
+      "id": "s3",
+      "module": "s3",
+      "capability": "data_out",
+      "previous": "s3"
+    },
+    {
+      "id": "same-fields",
+      "module": "same_fields",
+      "capability": "checks",
+      "previous": "same-fields"
+    },
+    {
+      "id": "sample_dem",
+      "module": "sample_dem",
+      "capability": "process",
+      "previous": "sample_dem"
+    },
+    {
+      "id": "scheduler",
+      "module": "scheduler",
+      "capability": "trigger",
+      "previous": "scheduler"
+    },
+    {
+      "id": "sequential",
+      "module": "sequential",
+      "capability": "services",
+      "previous": "sequential"
+    },
+    {
+      "id": "slurm",
+      "module": "slurm",
+      "capability": "trigger",
+      "previous": "slurm"
+    },
+    {
+      "id": "source-member",
+      "module": "source_member",
+      "capability": "checks",
+      "previous": "source-member"
+    },
+    {
+      "id": "split",
+      "module": "split",
+      "capability": "sequence",
+      "previous": "split"
+    },
+    {
+      "id": "stac-api",
+      "module": "stac_api",
+      "capability": "metadata_out",
+      "previous": "stac-api"
+    },
+    {
+      "id": "stac-item",
+      "module": "stac_item",
+      "capability": "metadata_out",
+      "previous": "stac-item"
+    },
+    {
+      "id": "stac-json",
+      "module": "stac_json",
+      "capability": "metadata_out",
+      "previous": "stac-json"
+    },
+    {
+      "id": "stac-resolver",
+      "module": "stac_resolver",
+      "capability": "metadata_in",
+      "previous": "stac-resolver"
+    },
+    {
+      "id": "stac-source",
+      "module": "stac_source",
+      "capability": "metadata_in",
+      "previous": "stac-source"
+    },
+    {
+      "id": "stac-source-download",
+      "module": "stac_source_download",
+      "capability": "data_in",
+      "previous": "stac-source"
+    },
+    {
+      "id": "staging",
+      "module": "staging",
+      "capability": "services",
+      "previous": "staging"
+    },
+    {
+      "id": "statistics",
+      "module": "statistics",
+      "capability": "process",
+      "previous": "statistics"
+    },
+    {
+      "id": "storage",
+      "module": "storage",
+      "capability": "services",
+      "previous": "storage"
+    },
+    {
+      "id": "surface-reflectance",
+      "module": "surface_reflectance",
+      "capability": "goal",
+      "previous": "surface-reflectance"
+    },
+    {
+      "id": "table",
+      "module": "table",
+      "capability": "metadata_in",
+      "previous": "table"
+    },
+    {
+      "id": "threads",
+      "module": "threads",
+      "capability": "services",
+      "previous": "threads"
+    },
+    {
+      "id": "valid-data",
+      "module": "valid_data",
+      "capability": "checks",
+      "previous": "valid-data"
+    },
+    {
+      "id": "voronoi_seamlines",
+      "module": "voronoi_seamlines",
+      "capability": "process",
+      "previous": "voronoi_seamlines"
+    },
+    {
+      "id": "weighted_seamlines",
+      "module": "weighted_seamlines",
+      "capability": "process",
+      "previous": "weighted_seamlines"
+    },
+    {
+      "id": "weighted_seamlines-sequence",
+      "module": "weighted_seamlines_sequence",
+      "capability": "sequence",
+      "previous": "weighted_seamlines"
+    },
+    {
+      "id": "zarr",
+      "module": "zarr",
+      "capability": "encode",
+      "previous": "zarr"
+    },
+    {
+      "id": "zarr-metadata",
+      "module": "zarr_metadata",
+      "capability": "metadata_out",
+      "previous": "zarr"
+    }
+  ],
+  "removed_goal_presets": [
+    "filter-goal",
+    "for-each",
+    "harmonized-mosaic",
+    "masked",
+    "mosaic-goal",
+    "normalized",
+    "normalized-pansharpened",
+    "output",
+    "pansharpened",
+    "registered",
+    "surface-reflectance"
+  ],
+  "removed_sequence_wrappers": {
+    "extract_footprints-sequence": "gather-all",
+    "global_radiometric_match-sequence": "gather-all",
+    "joint_coregistration-sequence": "gather-all",
+    "local_radiometric_match-sequence": "gather-all",
+    "markov_seamlines-sequence": "gather-all",
+    "mosaic-sequence": "gather-all",
+    "weighted_seamlines-sequence": "gather-all"
+  }
+}

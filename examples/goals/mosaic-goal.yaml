@@ -1,0 +1,7 @@
+goal:
+  output:
+    require:
+      all:
+      - assets.$asset.data_state:mosaic: true
+      - {}
+    kind: raster

@@ -1,0 +1,24 @@
+goal:
+  output:
+    kind: raster
+    select:
+      assets.$asset.data_state:spectral_sampling: multispectral
+    require:
+      all:
+      - assets.$asset.cf:standard_name: surface_bidirectional_reflectance
+        assets.$asset.unit: '1'
+        assets.$asset.data_state:orthorectified: true
+        assets.$asset.data_state:pansharpened: true
+        assets.$asset.data_state:relative_radiometric_normalization: true
+        assets.$asset.data_state:local_radiometric_adjustment: true
+        assets.$asset.data_state:masked.cloud: true
+        assets.$asset.data_state:masked.cloud_shadow: true
+        assets.$asset.data_state:masked.mosaic_seamline: true
+        assets.$asset.data_state:mosaic: true
+      - path: assets.$asset.data_state:registration
+        entry:
+          kind: reference
+      - path: assets.$asset.data_state:registration
+        entry:
+          kind: joint
+      - {}

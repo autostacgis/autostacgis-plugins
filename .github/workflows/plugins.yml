@@ -1,0 +1,24 @@
+name: plugins
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: autostacgis/autostacgis-python
+          path: core
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -e 'core[dev]' -e '.[dev,scheduler,distributed,pointcloud]'
+      - run: ruff check plugins examples tests && ruff format --check plugins examples tests
+      - run: pytest tests core/tests
+      - run: python -m build

@@ -1,0 +1,122 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "autostacgis-plugins"
+version = "1.0.0"
+description = "Single-capability geospatial plugins for AutoSTACGIS"
+requires-python = ">=3.12"
+readme = "README.md"
+license = "GPL-3.0-only"
+dependencies = ["autostacgis==1.0.0"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["plugins/autostacgis_plugins"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/plugins", "/examples", "/docs", "/tests", "/README.md", "/LICENSE", "/pyproject.toml"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[project.optional-dependencies]
+atmosphere = ["Py6S>=1.9,<2"]
+spectralmatch = ["spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d"]
+registration = ["coregix>=0.3,<0.4", "opencv-python-headless>=4.10,<5"]
+cloud = ["omnicloudmask>=1,<2"]
+pointcloud = ["laspy[lazrs]>=2,<3"]
+distributed = ["dask[distributed]>=2025"]
+scheduler = ["APScheduler>=3.11,<4"]
+s3 = ["boto3>=1.35,<2"]
+telemetry = ["opentelemetry-sdk>=1,<2"]
+dev = ["pytest>=8,<10", "ruff>=0.12", "build>=1,<2"]
+
+[project.entry-points."autostacgis.plugins"]
+"align_grid" = "autostacgis_plugins.align_grid"
+"apply_mask" = "autostacgis_plugins.apply_mask"
+"atmosphere" = "autostacgis_plugins.atmosphere"
+"atmosphere-download" = "autostacgis_plugins.atmosphere_download"
+"atmosphere-for-image" = "autostacgis_plugins.atmosphere_for_image"
+"atmospheric_correction" = "autostacgis_plugins.atmospheric_correction"
+"autostacgis.execution/v1" = "autostacgis_plugins.execution"
+"band_math" = "autostacgis_plugins.band_math"
+"buffered-transfer" = "autostacgis_plugins.buffered_transfer"
+"clean_footprints" = "autostacgis_plugins.clean_footprints"
+"cli" = "autostacgis_plugins.cli"
+"cog" = "autostacgis_plugins.cog"
+"cog-metadata" = "autostacgis_plugins.cog_metadata"
+"combine" = "autostacgis_plugins.combine"
+"common-crs" = "autostacgis_plugins.common_crs"
+"compatible-grids" = "autostacgis_plugins.compatible_grids"
+"compatible-optical" = "autostacgis_plugins.compatible_optical"
+"dask" = "autostacgis_plugins.dask"
+"dem" = "autostacgis_plugins.dem"
+"dem-download" = "autostacgis_plugins.dem_download"
+"detect_clouds" = "autostacgis_plugins.detect_clouds"
+"eodag" = "autostacgis_plugins.eodag"
+"eodag-download" = "autostacgis_plugins.eodag_download"
+"eoreader" = "autostacgis_plugins.eoreader"
+"events" = "autostacgis_plugins.events"
+"executor" = "autostacgis_plugins.executor"
+"explicit-groups" = "autostacgis_plugins.explicit_groups"
+"extract_footprints" = "autostacgis_plugins.extract_footprints"
+"file-checkpoint" = "autostacgis_plugins.file_checkpoint"
+"filesystem" = "autostacgis_plugins.filesystem"
+"filter" = "autostacgis_plugins.filter"
+"gather-all" = "autostacgis_plugins.gather_all"
+"geotiff" = "autostacgis_plugins.geotiff"
+"geotiff-metadata" = "autostacgis_plugins.geotiff_metadata"
+"global_radiometric_match" = "autostacgis_plugins.global_radiometric_match"
+"group-by" = "autostacgis_plugins.group_by"
+"has-role" = "autostacgis_plugins.has_role"
+"joint_coregistration" = "autostacgis_plugins.joint_coregistration"
+"local_radiometric_match" = "autostacgis_plugins.local_radiometric_match"
+"markov_seamlines" = "autostacgis_plugins.markov_seamlines"
+"mask_by_polygons" = "autostacgis_plugins.mask_by_polygons"
+"merge_vectors" = "autostacgis_plugins.merge_vectors"
+"metadata-matches" = "autostacgis_plugins.metadata_matches"
+"metadata-schema" = "autostacgis_plugins.metadata_schema"
+"mosaic" = "autostacgis_plugins.mosaic"
+"multiprocessing" = "autostacgis_plugins.multiprocessing"
+"opentelemetry" = "autostacgis_plugins.opentelemetry"
+"orthorectify_rpc" = "autostacgis_plugins.orthorectify_rpc"
+"overlap" = "autostacgis_plugins.overlap"
+"pansharpen" = "autostacgis_plugins.pansharpen"
+"parquet" = "autostacgis_plugins.parquet"
+"polygonize" = "autostacgis_plugins.polygonize"
+"python" = "autostacgis_plugins.python"
+"rasterize_point_attribute" = "autostacgis_plugins.rasterize_point_attribute"
+"register_to_reference" = "autostacgis_plugins.register_to_reference"
+"s3" = "autostacgis_plugins.s3"
+"same-fields" = "autostacgis_plugins.same_fields"
+"sample_dem" = "autostacgis_plugins.sample_dem"
+"scheduler" = "autostacgis_plugins.scheduler"
+"sequential" = "autostacgis_plugins.sequential"
+"slurm" = "autostacgis_plugins.slurm"
+"source-member" = "autostacgis_plugins.source_member"
+"split" = "autostacgis_plugins.split"
+"stac-api" = "autostacgis_plugins.stac_api"
+"stac-item" = "autostacgis_plugins.stac_item"
+"stac-json" = "autostacgis_plugins.stac_json"
+"stac-resolver" = "autostacgis_plugins.stac_resolver"
+"stac-source" = "autostacgis_plugins.stac_source"
+"stac-source-download" = "autostacgis_plugins.stac_source_download"
+"staging" = "autostacgis_plugins.staging"
+"statistics" = "autostacgis_plugins.statistics"
+"storage" = "autostacgis_plugins.storage"
+"table" = "autostacgis_plugins.table"
+"threads" = "autostacgis_plugins.threads"
+"valid-data" = "autostacgis_plugins.valid_data"
+"voronoi_seamlines" = "autostacgis_plugins.voronoi_seamlines"
+"weighted_seamlines" = "autostacgis_plugins.weighted_seamlines"
+"zarr" = "autostacgis_plugins.zarr"
+"zarr-metadata" = "autostacgis_plugins.zarr_metadata"
+"backward_chain" = "autostacgis_plugins.backward_chain"
+"metadata-value" = "autostacgis_plugins.metadata_value"
