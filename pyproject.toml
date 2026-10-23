@@ -33,7 +33,7 @@ registration = ["coregix>=0.3,<0.4", "opencv-python-headless>=4.10,<5"]
 cloud = ["omnicloudmask>=1,<2"]
 pointcloud = ["laspy[lazrs]>=2,<3"]
 distributed = ["dask[distributed]>=2025"]
-scheduler = ["APScheduler>=3.11,<4"]
+triggers = ["APScheduler>=3.11,<4", "watchdog>=6,<7"]
 s3 = ["boto3>=1.35,<2"]
 telemetry = ["opentelemetry-sdk>=1,<2"]
 dev = ["pytest>=8,<10", "ruff>=0.12", "build>=1,<2"]
@@ -97,7 +97,8 @@ dev = ["pytest>=8,<10", "ruff>=0.12", "build>=1,<2"]
 "s3" = "autostacgis_plugins.s3"
 "same-fields" = "autostacgis_plugins.same_fields"
 "sample_dem" = "autostacgis_plugins.sample_dem"
-"scheduler" = "autostacgis_plugins.scheduler"
+"apscheduler" = "autostacgis_plugins.apscheduler"
+"watchdog" = "autostacgis_plugins.watchdog"
 "sequential" = "autostacgis_plugins.sequential"
 "slurm" = "autostacgis_plugins.slurm"
 "source-member" = "autostacgis_plugins.source_member"

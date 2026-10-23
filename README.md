@@ -8,7 +8,7 @@ Install alongside the sibling implementation checkout:
 python -m pip install -e ../autostacgis-python -e '.[dev]'
 ```
 
-Optional integrations are extras of this distribution, for example `.[atmosphere,spectralmatch,registration,cloud,pointcloud,distributed,scheduler,s3,telemetry]`. The pinned EODAG and EOReader library forks remain under `autostacgis-python/external`; install those libraries when using their adapters.
+Optional integrations are extras of this distribution, for example `.[atmosphere,spectralmatch,registration,cloud,pointcloud,distributed,triggers,s3,telemetry]`. The pinned EODAG and EOReader library forks remain under `autostacgis-python/external`; install those libraries when using their adapters.
 
 A plugin declaration is explicit:
 

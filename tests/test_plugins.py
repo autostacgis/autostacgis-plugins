@@ -35,7 +35,7 @@ def test_all_previous_capabilities_have_a_registered_replacement():
         assert replacement in providers[previous].REQUIRES
         actual[previous, "sequence"] += 1
     assert actual == expected
-    assert len(providers) == 81
+    assert len(providers) == 82
     assert not set(inventory["removed_goal_presets"]) & set(providers)
     assert set(providers) == {row["id"] for row in inventory["after"]}
     for row in inventory["after"]:

@@ -598,6 +598,12 @@
       "previous": "apply_mask"
     },
     {
+      "id": "apscheduler",
+      "module": "apscheduler",
+      "capability": "trigger",
+      "previous": "scheduler"
+    },
+    {
       "id": "atmosphere",
       "module": "atmosphere",
       "capability": "metadata_in",
@@ -626,6 +632,12 @@
       "module": "execution",
       "capability": "extensions",
       "previous": "autostacgis.execution/v1"
+    },
+    {
+      "id": "backward_chain",
+      "module": "backward_chain",
+      "capability": "solver",
+      "previous": null
     },
     {
       "id": "band_math",
@@ -850,12 +862,6 @@
       "previous": "metadata-schema"
     },
     {
-      "id": "backward_chain",
-      "module": "backward_chain",
-      "capability": "solver",
-      "previous": null
-    },
-    {
       "id": "metadata-value",
       "module": "metadata_value",
       "capability": "goal",
@@ -944,12 +950,6 @@
       "module": "sample_dem",
       "capability": "process",
       "previous": "sample_dem"
-    },
-    {
-      "id": "scheduler",
-      "module": "scheduler",
-      "capability": "trigger",
-      "previous": "scheduler"
     },
     {
       "id": "sequential",
@@ -1052,6 +1052,12 @@
       "module": "voronoi_seamlines",
       "capability": "process",
       "previous": "voronoi_seamlines"
+    },
+    {
+      "id": "watchdog",
+      "module": "watchdog",
+      "capability": "trigger",
+      "previous": null
     },
     {
       "id": "weighted_seamlines",

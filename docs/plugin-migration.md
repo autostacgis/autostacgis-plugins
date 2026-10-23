@@ -1,9 +1,9 @@
 # Plugin migration inventory
 
 Before: **81 plugins** in `autostacgis-python/autostacgis/plugins`.
-After: **81 plugins**, each with one capability, in `autostacgis-plugins/plugins/autostacgis_plugins`.
+After: **82 plugins**, each with one capability, in `autostacgis-plugins/plugins/autostacgis_plugins`.
 
-The initial split produced 97 registrations. Removing 11 goal presets and seven redundant sequence wrappers, then adding `backward_chain` and `metadata-value`, gives 81 installed registrations. Product goals are configuration, and collection processors depend directly on reusable `gather-all`. The default catalog selects 80 implementations; select `metadata-value` explicitly when using that generic goal adapter. The machine-readable `after_split` list is historical; `after` lists the current catalog.
+The initial split produced 97 registrations. Removing 11 goal presets and seven redundant sequence wrappers, then adding `backward_chain` and `metadata-value`, gives 81 installed registrations before replacing `scheduler` with `apscheduler` and adding `watchdog`, for 82 current registrations. Product goals are configuration, and collection processors depend directly on reusable `gather-all`. The default catalog selects 81 implementations; select `metadata-value` explicitly when using that generic goal adapter. The machine-readable `after_split` list is historical; `after` lists the current catalog.
 
 ## Before
 
@@ -93,15 +93,17 @@ The initial split produced 97 registrations. Removing 11 goal presets and seven 
 
 ## After
 
-| Plugin | Capability | Python module |
+| Plugin | Capability | Module |
 | --- | --- | --- |
 | `align_grid` | `process` | `autostacgis_plugins.align_grid` |
 | `apply_mask` | `process` | `autostacgis_plugins.apply_mask` |
+| `apscheduler` | `trigger` | `autostacgis_plugins.apscheduler` |
 | `atmosphere` | `metadata_in` | `autostacgis_plugins.atmosphere` |
 | `atmosphere-download` | `data_in` | `autostacgis_plugins.atmosphere_download` |
 | `atmosphere-for-image` | `checks` | `autostacgis_plugins.atmosphere_for_image` |
 | `atmospheric_correction` | `process` | `autostacgis_plugins.atmospheric_correction` |
 | `autostacgis.execution/v1` | `extensions` | `autostacgis_plugins.execution` |
+| `backward_chain` | `solver` | `autostacgis_plugins.backward_chain` |
 | `band_math` | `process` | `autostacgis_plugins.band_math` |
 | `buffered-transfer` | `data_transfer` | `autostacgis_plugins.buffered_transfer` |
 | `clean_footprints` | `process` | `autostacgis_plugins.clean_footprints` |
@@ -139,7 +141,6 @@ The initial split produced 97 registrations. Removing 11 goal presets and seven 
 | `merge_vectors` | `process` | `autostacgis_plugins.merge_vectors` |
 | `metadata-matches` | `checks` | `autostacgis_plugins.metadata_matches` |
 | `metadata-schema` | `checks` | `autostacgis_plugins.metadata_schema` |
-| `backward_chain` | `solver` | `autostacgis_plugins.backward_chain` |
 | `metadata-value` | `goal` | `autostacgis_plugins.metadata_value` |
 | `mosaic` | `process` | `autostacgis_plugins.mosaic` |
 | `multiprocessing` | `services` | `autostacgis_plugins.multiprocessing` |
@@ -155,7 +156,6 @@ The initial split produced 97 registrations. Removing 11 goal presets and seven 
 | `s3` | `data_out` | `autostacgis_plugins.s3` |
 | `same-fields` | `checks` | `autostacgis_plugins.same_fields` |
 | `sample_dem` | `process` | `autostacgis_plugins.sample_dem` |
-| `scheduler` | `trigger` | `autostacgis_plugins.scheduler` |
 | `sequential` | `services` | `autostacgis_plugins.sequential` |
 | `slurm` | `trigger` | `autostacgis_plugins.slurm` |
 | `source-member` | `checks` | `autostacgis_plugins.source_member` |
@@ -173,6 +173,7 @@ The initial split produced 97 registrations. Removing 11 goal presets and seven 
 | `threads` | `services` | `autostacgis_plugins.threads` |
 | `valid-data` | `checks` | `autostacgis_plugins.valid_data` |
 | `voronoi_seamlines` | `process` | `autostacgis_plugins.voronoi_seamlines` |
+| `watchdog` | `trigger` | `autostacgis_plugins.watchdog` |
 | `weighted_seamlines` | `process` | `autostacgis_plugins.weighted_seamlines` |
 | `zarr` | `encode` | `autostacgis_plugins.zarr` |
 | `zarr-metadata` | `metadata_out` | `autostacgis_plugins.zarr_metadata` |
@@ -234,3 +235,7 @@ All dependencies use `REQUIRES = ("unique-plugin-id", ...)`. The same names are 
 Encoders load their `*-metadata` writers as dependencies; discovery loads its `*-download` acquirer. Configure acquisition settings on the download registration. Discovery explicitly routes records through `data_in`; EODAG shares its search session through scoped `context.acquirer()` access.
 
 The entry-point group remains `autostacgis.plugins`; Python imports use `autostacgis_plugins.<module>`. The custom example is `examples/scale_plugin.py`. See [solver and goal contracts](solvers.md).
+
+## Timed and file triggers
+
+The former `scheduler` registration is replaced by `apscheduler`. Time-based jobs use APScheduler trigger aliases and raw scheduler, trigger, job, and start options. `watchdog` handles file events with native or polling observers. Both implementations live in the Python library; see [trigger configuration](https://github.com/autostacgis/autostacgis-python/blob/main/docs/triggers.md).
