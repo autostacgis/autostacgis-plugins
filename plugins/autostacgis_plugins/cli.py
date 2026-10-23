@@ -7,3 +7,6 @@ REQUIRES = ()
 
 CAPABILITY = "trigger"
 IMPLEMENTATION = direct
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

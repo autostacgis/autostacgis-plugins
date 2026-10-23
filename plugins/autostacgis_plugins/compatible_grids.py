@@ -39,3 +39,6 @@ REQUIRES = ()
 
 CAPABILITY = "checks"
 IMPLEMENTATION = compatible_grids
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

@@ -21,3 +21,6 @@ REQUIRES = ()
 
 CAPABILITY = "encode"
 IMPLEMENTATION = parquet
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

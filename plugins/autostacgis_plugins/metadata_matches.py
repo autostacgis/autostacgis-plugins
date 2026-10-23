@@ -12,3 +12,6 @@ REQUIRES = ()
 
 CAPABILITY = "checks"
 IMPLEMENTATION = metadata_matches
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

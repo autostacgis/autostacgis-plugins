@@ -220,7 +220,9 @@ def test_duplicate_names_and_entry_point_aliases_are_rejected(monkeypatch):
         registry.register("unique", "checks", lambda: None)
     import autostacgis.registry as registry_module
 
-    provider = SimpleNamespace(ID="canonical", CAPABILITY="checks", IMPLEMENTATION=lambda: None, REQUIRES=())
+    provider = SimpleNamespace(
+        ID="canonical", VERSION="1.0.0", CAPABILITY="checks", IMPLEMENTATION=lambda: None, REQUIRES=()
+    )
     monkeypatch.setattr(
         registry_module,
         "entry_points",

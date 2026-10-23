@@ -17,3 +17,6 @@ DEFAULTS = {"size": 1}
 
 CAPABILITY = "sequence"
 IMPLEMENTATION = split
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

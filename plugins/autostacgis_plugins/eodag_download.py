@@ -38,3 +38,8 @@ ID = "eodag-download"
 CAPABILITY = "data_in"
 IMPLEMENTATION = EodagDownload
 REQUIRES = ()
+
+VERSION = "1.0.0"
+DEPENDENCIES = [
+    "eodag @ git+https://github.com/autostacgis/eodag.git@016be9ce5196d0f7e607d9f1bb9d56296e2d233f"
+]

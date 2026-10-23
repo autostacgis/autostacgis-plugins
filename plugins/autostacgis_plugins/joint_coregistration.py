@@ -303,3 +303,6 @@ joint_coregistration.contract["argument_requirements"]["images"]["data_types"] =
 
 CAPABILITY = "process"
 IMPLEMENTATION = joint_coregistration
+
+VERSION = "1.0.0"
+DEPENDENCIES = ["opencv-python-headless>=4.10,<5"]

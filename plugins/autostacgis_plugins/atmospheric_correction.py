@@ -272,3 +272,6 @@ atmospheric_correction.contract["argument_requirements"]["elevation"]["data_type
 
 CAPABILITY = "process"
 IMPLEMENTATION = atmospheric_correction
+
+VERSION = "1.0.0"
+DEPENDENCIES = ["Py6S>=1.9,<2"]

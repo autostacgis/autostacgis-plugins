@@ -31,3 +31,6 @@ REQUIRES = ("executor", "storage")
 
 CAPABILITY = "extensions"
 IMPLEMENTATION = ExecutionExtension
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

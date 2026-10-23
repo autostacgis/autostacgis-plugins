@@ -28,3 +28,6 @@ RUNTIME_DEFAULT = True
 
 CAPABILITY = "services"
 IMPLEMENTATION = executor
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

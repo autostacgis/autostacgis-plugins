@@ -15,3 +15,6 @@ REQUIRES = ()
 
 CAPABILITY = "checks"
 IMPLEMENTATION = metadata_schema
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

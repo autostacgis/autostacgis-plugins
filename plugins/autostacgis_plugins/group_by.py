@@ -21,3 +21,6 @@ REQUIRES = ()
 
 CAPABILITY = "sequence"
 IMPLEMENTATION = group_by
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

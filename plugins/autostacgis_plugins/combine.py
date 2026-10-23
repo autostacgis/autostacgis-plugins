@@ -14,3 +14,6 @@ REQUIRES = ()
 
 CAPABILITY = "sequence"
 IMPLEMENTATION = combine
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

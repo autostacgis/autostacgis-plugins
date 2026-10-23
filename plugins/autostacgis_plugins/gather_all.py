@@ -10,3 +10,6 @@ REQUIRES = ()
 
 CAPABILITY = "sequence"
 IMPLEMENTATION = gather_all
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

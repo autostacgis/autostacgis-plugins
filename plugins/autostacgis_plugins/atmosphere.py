@@ -47,3 +47,6 @@ AtmosphereSource.data_in = "atmosphere-download"
 
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = AtmosphereSource
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

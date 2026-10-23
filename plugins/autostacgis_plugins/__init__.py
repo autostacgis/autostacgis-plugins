@@ -1,13 +1,37 @@
 """Discover self-contained plugin modules."""
 
 from copy import deepcopy
+from hashlib import sha256
 from importlib import import_module
-from pkgutil import iter_modules
+from pathlib import Path
+from pkgutil import extend_path, iter_modules
+
+__path__ = extend_path(__path__, __name__)
+# Spawned pool workers must be able to import active plugin classes before
+# unpickling a task, without relying on their parent's in-memory import state.
+import json
+import os
+
+_store = Path(os.environ.get("AUTOSTACGIS_PLUGIN_DIR", Path.home() / ".autostacgis/plugins"))
+_index = _store / "installed.json"
+if _index.exists():
+    for _row in json.loads(_index.read_text()).values():
+        _folder = (_store / _row["path"]).resolve().parent
+        if not _folder.is_relative_to(_store.resolve()):
+            raise ValueError("Invalid installed plugin namespace path")
+        if sha256((_store / _row["path"]).read_bytes()).hexdigest() != _row["sha256"]:
+            raise ValueError("Installed plugin integrity check failed")
+        if str(_folder) not in __path__:
+            __path__.insert(0, str(_folder))
 
 
 def modules():
     return sorted(
-        (import_module(f"{__name__}.{e.name}") for e in iter_modules(__path__) if not e.name.startswith("_")),
+        (
+            import_module(f"{__name__}.{e.name}")
+            for e in iter_modules([str(Path(__file__).parent)])
+            if not e.name.startswith("_")
+        ),
         key=lambda m: m.ID,
     )
 

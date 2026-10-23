@@ -21,3 +21,6 @@ REQUIRES = ("geotiff-metadata",)
 
 CAPABILITY = "encode"
 IMPLEMENTATION = geotiff
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

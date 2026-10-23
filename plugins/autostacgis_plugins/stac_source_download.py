@@ -30,3 +30,6 @@ ID = "stac-source-download"
 CAPABILITY = "data_in"
 IMPLEMENTATION = StacDownload
 REQUIRES = ()
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

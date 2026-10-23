@@ -29,3 +29,6 @@ REQUIRES = ()
 
 CAPABILITY = "sequence"
 IMPLEMENTATION = explicit
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

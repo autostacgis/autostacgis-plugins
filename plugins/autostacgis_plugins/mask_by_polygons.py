@@ -131,3 +131,6 @@ mask_by_polygons.contract["argument_requirements"]["mask"]["data_types"] = ["bat
 
 CAPABILITY = "process"
 IMPLEMENTATION = mask_by_polygons
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

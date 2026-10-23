@@ -92,3 +92,6 @@ DEFAULTS = {"memory_bytes": 536870912, "tile_size": 512}
 
 CAPABILITY = "services"
 IMPLEMENTATION = Storage
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

@@ -153,7 +153,7 @@ def predict_mosaic(inputs, settings, index, item):
 
 mosaic.contract["outputs"]["result"]["predict"] = predict_mosaic
 
-REQUIRES = (*REQUIRES, "same-fields")
+REQUIRES = ("common-crs", "storage", "gather-all", "same-fields")
 mosaic.contract["input_requirements"].append(
     {
         "plugin": "same-fields",
@@ -170,3 +170,6 @@ mosaic.contract["argument_requirements"]["images"]["data_types"] = ["raster"]
 
 CAPABILITY = "process"
 IMPLEMENTATION = mosaic
+
+VERSION = "1.0.0"
+DEPENDENCIES = ["GDAL>=3.11,<4"]

@@ -11,3 +11,6 @@ ID = "watchdog"
 CAPABILITY = "trigger"
 IMPLEMENTATION = watchdog
 REQUIRES = ()
+
+VERSION = "1.0.0"
+DEPENDENCIES = ["watchdog>=6,<7"]

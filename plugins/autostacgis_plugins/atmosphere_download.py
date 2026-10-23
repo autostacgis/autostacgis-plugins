@@ -62,3 +62,6 @@ ID = "atmosphere-download"
 CAPABILITY = "data_in"
 IMPLEMENTATION = AtmosphereDownload
 REQUIRES = ()
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

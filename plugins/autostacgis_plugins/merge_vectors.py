@@ -55,3 +55,6 @@ merge_vectors.contract["argument_requirements"]["vectors"]["data_types"] = ["bat
 
 CAPABILITY = "process"
 IMPLEMENTATION = merge_vectors
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

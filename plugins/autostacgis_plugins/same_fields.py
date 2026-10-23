@@ -20,3 +20,6 @@ REQUIRES = ()
 
 CAPABILITY = "checks"
 IMPLEMENTATION = same_fields
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

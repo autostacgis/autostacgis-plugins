@@ -112,3 +112,6 @@ align_grid.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 
 CAPABILITY = "process"
 IMPLEMENTATION = align_grid
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

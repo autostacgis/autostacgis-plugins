@@ -40,3 +40,6 @@ REQUIRES = ()
 
 CAPABILITY = "checks"
 IMPLEMENTATION = common_crs
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

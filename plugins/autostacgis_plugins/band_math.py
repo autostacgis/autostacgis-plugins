@@ -116,3 +116,6 @@ band_math.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 
 CAPABILITY = "process"
 IMPLEMENTATION = band_math
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

@@ -172,3 +172,6 @@ extract_footprints.contract["argument_requirements"]["images"]["data_types"] = [
 
 CAPABILITY = "process"
 IMPLEMENTATION = extract_footprints
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

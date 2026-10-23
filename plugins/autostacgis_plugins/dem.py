@@ -16,3 +16,6 @@ DemSource.data_in = "dem-download"
 
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = DemSource
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

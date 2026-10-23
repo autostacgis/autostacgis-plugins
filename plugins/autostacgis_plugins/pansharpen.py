@@ -182,3 +182,6 @@ pansharpen.contract["argument_requirements"]["panchromatic"]["data_types"] = ["r
 
 CAPABILITY = "process"
 IMPLEMENTATION = pansharpen
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

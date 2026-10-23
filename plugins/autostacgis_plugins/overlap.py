@@ -28,3 +28,6 @@ REQUIRES = ()
 
 CAPABILITY = "sequence"
 IMPLEMENTATION = by_overlap
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

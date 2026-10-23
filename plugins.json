@@ -1,0 +1,1475 @@
+{
+  "format_version": 1,
+  "namespace": "autostacgis_plugins",
+  "plugins": [
+    {
+      "id": "align_grid",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.align_grid",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/align_grid.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/align_grid.py",
+        "sha256": "968c4d8276741380fff15409c277ea7095fde704087a0bb38d830af9a4666f30"
+      }
+    },
+    {
+      "id": "apply_mask",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.apply_mask",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/apply_mask.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/apply_mask.py",
+        "sha256": "7379ae2922bc1e08132f876c9ec9bd91437c6136c0c6ddcbfbc9cf1e64b76d72"
+      }
+    },
+    {
+      "id": "apscheduler",
+      "version": "1.0.0",
+      "capability": "trigger",
+      "requires": [],
+      "dependencies": [
+        "APScheduler>=3.11,<4"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.apscheduler",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/apscheduler.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/apscheduler.py",
+        "sha256": "df89c589a5a9be4db2b818737f643cde3e16fd2e1fdf6e49b33641b61f9c0f96"
+      }
+    },
+    {
+      "id": "atmosphere",
+      "version": "1.0.0",
+      "capability": "metadata_in",
+      "requires": [
+        "atmosphere-download"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.atmosphere",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/atmosphere.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/atmosphere.py",
+        "sha256": "ab442b1d20f4778ffca4911a193c5d448181975ee677d2533b7bd01e8e42a881"
+      }
+    },
+    {
+      "id": "atmosphere-download",
+      "version": "1.0.0",
+      "capability": "data_in",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.atmosphere_download",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/atmosphere_download.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/atmosphere_download.py",
+        "sha256": "e968d7f82c26680e4ebe1a7e37473f41d2408f5c148e55253cbde1a3604b173e"
+      }
+    },
+    {
+      "id": "atmosphere-for-image",
+      "version": "1.0.0",
+      "capability": "checks",
+      "requires": [],
+      "dependencies": [],
+      "description": "Match an atmosphere observation to an image's acquisition day and footprint.",
+      "module": "autostacgis_plugins.atmosphere_for_image",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/atmosphere_for_image.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/atmosphere_for_image.py",
+        "sha256": "16c4013138709d7bfb124dcdb9dab0bd152a758d5a53430e5a7af40ae98fc121"
+      }
+    },
+    {
+      "id": "atmospheric_correction",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "atmosphere-for-image"
+      ],
+      "dependencies": [
+        "Py6S>=1.9,<2"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.atmospheric_correction",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/atmospheric_correction.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/atmospheric_correction.py",
+        "sha256": "29ee42f9a269085d01d97c16224fdd8d0eeeeb7de637b4ea11ff8c1c120142c5"
+      }
+    },
+    {
+      "id": "autostacgis.execution/v1",
+      "version": "1.0.0",
+      "capability": "extensions",
+      "requires": [
+        "executor",
+        "storage"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.execution",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/execution.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/execution.py",
+        "sha256": "f75bd83e6c20a50d8a61c91e924e1809a835c66e73fc3b2193b4e654dd6f9af1"
+      }
+    },
+    {
+      "id": "backward_chain",
+      "version": "1.0.0",
+      "capability": "solver",
+      "requires": [],
+      "dependencies": [],
+      "description": "Backward chaining with explicit goal and search-parameter contracts.",
+      "module": "autostacgis_plugins.backward_chain",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/backward_chain.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/backward_chain.py",
+        "sha256": "26461a8949aa7b6cb3540fed46b4580a0f0920c1ede8ec0802fd2ff5f669a2e7"
+      }
+    },
+    {
+      "id": "band_math",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.band_math",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/band_math.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/band_math.py",
+        "sha256": "31a8be802cd034a6f4aab357c6c6b0d48244d2f31690183d6cd33002e1b246cb"
+      }
+    },
+    {
+      "id": "buffered-transfer",
+      "version": "1.0.0",
+      "capability": "data_transfer",
+      "requires": [],
+      "dependencies": [],
+      "description": "Bounded transfer for native windows, Arrow batches, bytes, paths, and JSON.",
+      "module": "autostacgis_plugins.buffered_transfer",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/buffered_transfer.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/buffered_transfer.py",
+        "sha256": "1fe84411ec8f72bcf719ae3b05f4c56911f2891191796758ed220579bcfdc8d8"
+      }
+    },
+    {
+      "id": "clean_footprints",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "executor",
+        "common-crs"
+      ],
+      "dependencies": [
+        "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d",
+        "geopandas>=1,<2"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.clean_footprints",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/clean_footprints.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/clean_footprints.py",
+        "sha256": "d0eb0e42b327caaf5bf96b9fd5440a784c2099fba2206c504d3d15f7116ec270"
+      }
+    },
+    {
+      "id": "cli",
+      "version": "1.0.0",
+      "capability": "trigger",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.cli",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/cli.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/cli.py",
+        "sha256": "9ced91cebbe58ee4d05417e04d1737ce781d754f6ea377ec67e722f7d3d56a47"
+      }
+    },
+    {
+      "id": "cog",
+      "version": "1.0.0",
+      "capability": "encode",
+      "requires": [
+        "cog-metadata"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.cog",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/cog.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/cog.py",
+        "sha256": "75369b555e1ba0093985d6d7587a28a86b52865f2c5907656c562acd83b88db7"
+      }
+    },
+    {
+      "id": "cog-metadata",
+      "version": "1.0.0",
+      "capability": "metadata_out",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.cog_metadata",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/cog_metadata.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/cog_metadata.py",
+        "sha256": "a201b35f6ec58223eb79d4f807065e784c21c50460bcebb56ec5accb21e7fd34"
+      }
+    },
+    {
+      "id": "combine",
+      "version": "1.0.0",
+      "capability": "sequence",
+      "requires": [],
+      "dependencies": [],
+      "description": "Combine routed groups into a single collection without merging their pixels.",
+      "module": "autostacgis_plugins.combine",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/combine.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/combine.py",
+        "sha256": "b032e116f268fdbe454a927fc8cfb0e56d16e9ed1b19f2c9db4061a68c9e6025"
+      }
+    },
+    {
+      "id": "common-crs",
+      "version": "1.0.0",
+      "capability": "checks",
+      "requires": [],
+      "dependencies": [],
+      "description": "Shared-CRS check for operations that combine coordinates directly.",
+      "module": "autostacgis_plugins.common_crs",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/common_crs.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/common_crs.py",
+        "sha256": "66d9fb39e348c822caa9e164cbf9d06695b6e1c800198c52f270447a82a56bc2"
+      }
+    },
+    {
+      "id": "compatible-grids",
+      "version": "1.0.0",
+      "capability": "checks",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.compatible_grids",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/compatible_grids.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/compatible_grids.py",
+        "sha256": "84512941a8d796814e293af7ee8d87283fe8e6dd8d58c4172f05968f2c94e225"
+      }
+    },
+    {
+      "id": "compatible-optical",
+      "version": "1.0.0",
+      "capability": "checks",
+      "requires": [
+        "same-fields"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.compatible_optical",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/compatible_optical.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/compatible_optical.py",
+        "sha256": "c53c3d674008f9111d41b744fe6a041cfa613499f0dc3af88a19b9d85dcc8da9"
+      }
+    },
+    {
+      "id": "dask",
+      "version": "1.0.0",
+      "capability": "services",
+      "requires": [
+        "sequential"
+      ],
+      "dependencies": [
+        "dask[distributed]>=2025"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.dask",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/dask.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/dask.py",
+        "sha256": "147c099cf824eace665d6fc7dbc43e4170d6ad78b532a55598d337ecffe47067"
+      }
+    },
+    {
+      "id": "dem",
+      "version": "1.0.0",
+      "capability": "metadata_in",
+      "requires": [
+        "dem-download"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.dem",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/dem.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/dem.py",
+        "sha256": "38d7e6d262489917a238e7dd191f3875eabd9ef90016e69174a2e717f8710612"
+      }
+    },
+    {
+      "id": "dem-download",
+      "version": "1.0.0",
+      "capability": "data_in",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.dem_download",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/dem_download.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/dem_download.py",
+        "sha256": "d7b958907d2006834a604444348f6d047aa9ff00dc5ba037c8ab2689eb6c6480"
+      }
+    },
+    {
+      "id": "detect_clouds",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage",
+        "align_grid"
+      ],
+      "dependencies": [
+        "omnicloudmask>=1,<2"
+      ],
+      "description": "Lazy OmniCloudMask inference on fixed tiles with context halos.",
+      "module": "autostacgis_plugins.detect_clouds",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/detect_clouds.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/detect_clouds.py",
+        "sha256": "7a188f707a00c515f4e5cc572e7684539af58d1a29577ccf2d1681b28319f3e2"
+      }
+    },
+    {
+      "id": "eodag",
+      "version": "1.0.0",
+      "capability": "metadata_in",
+      "requires": [
+        "eodag-download"
+      ],
+      "dependencies": [
+        "eodag @ git+https://github.com/autostacgis/eodag.git@016be9ce5196d0f7e607d9f1bb9d56296e2d233f"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.eodag",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/eodag.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/eodag.py",
+        "sha256": "a52d3ce19ecf2312b64f137dab62c0458673ce075f3d335f8196151b338da260"
+      }
+    },
+    {
+      "id": "eodag-download",
+      "version": "1.0.0",
+      "capability": "data_in",
+      "requires": [],
+      "dependencies": [
+        "eodag @ git+https://github.com/autostacgis/eodag.git@016be9ce5196d0f7e607d9f1bb9d56296e2d233f"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.eodag_download",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/eodag_download.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/eodag_download.py",
+        "sha256": "2ee7f46246573a8068325af1563b932675570ba1a9dca8ce8dcf452d385f0aff"
+      }
+    },
+    {
+      "id": "eoreader",
+      "version": "1.0.0",
+      "capability": "metadata_in",
+      "requires": [],
+      "dependencies": [
+        "eoreader @ git+https://github.com/autostacgis/eoreader.git@d73407d5128fee4058dffbd9d05b2ea96e803221"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.eoreader",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/eoreader.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/eoreader.py",
+        "sha256": "1b143e04ef5c2b0d67b95ccdbfeac36785a7b3feeebf424e07368ebc4ace2e8c"
+      }
+    },
+    {
+      "id": "events",
+      "version": "1.0.0",
+      "capability": "services",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.events",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/events.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/events.py",
+        "sha256": "5659d2c2ba342cb9769f285cf7bfb2e064bcd9ba048f23898c01df192f7d63f8"
+      }
+    },
+    {
+      "id": "executor",
+      "version": "1.0.0",
+      "capability": "services",
+      "requires": [
+        "threads",
+        "multiprocessing",
+        "sequential",
+        "dask"
+      ],
+      "dependencies": [],
+      "description": "Select the shared execution backend without creating another worker pool.",
+      "module": "autostacgis_plugins.executor",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/executor.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/executor.py",
+        "sha256": "be887b23cd26ff67debdc5dc48a99029b8c1161bf74b86d8aa164d96c1b215fa"
+      }
+    },
+    {
+      "id": "explicit-groups",
+      "version": "1.0.0",
+      "capability": "sequence",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.explicit_groups",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/explicit_groups.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/explicit_groups.py",
+        "sha256": "29bb1540accb08a97b375f2ec22d898a9a76a21c549c1e94549d6e49a7b74713"
+      }
+    },
+    {
+      "id": "extract_footprints",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "common-crs",
+        "storage",
+        "gather-all"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.extract_footprints",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/extract_footprints.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/extract_footprints.py",
+        "sha256": "ca6693405c2c457dceb9204bb6283f53184a9578f3e0bcd1279f68b01feab175"
+      }
+    },
+    {
+      "id": "file-checkpoint",
+      "version": "1.0.0",
+      "capability": "checkpoint",
+      "requires": [
+        "filesystem",
+        "geotiff",
+        "parquet",
+        "valid-data"
+      ],
+      "dependencies": [],
+      "description": "Durable checkpoint manifests with pluggable encoding, storage and validation.",
+      "module": "autostacgis_plugins.file_checkpoint",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/file_checkpoint.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/file_checkpoint.py",
+        "sha256": "b7ae30f9e23d1a5b7b66141402cc4a1f7924a29b73e1e2b4daf8848275ff01cc"
+      }
+    },
+    {
+      "id": "filesystem",
+      "version": "1.0.0",
+      "capability": "data_out",
+      "requires": [],
+      "dependencies": [],
+      "description": "A destination for typed bytes, replayable byte streams, and file/directory paths.",
+      "module": "autostacgis_plugins.filesystem",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/filesystem.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/filesystem.py",
+        "sha256": "27a28369872a8b00de79f1ae7d8e2bcb9929b09f8174b22169d016484e0113be"
+      }
+    },
+    {
+      "id": "filter",
+      "version": "1.0.0",
+      "capability": "sequence",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.filter",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/filter.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/filter.py",
+        "sha256": "3f0ead8b7e350f42917ee2883ac7febd275f63f3b6827ebe089b1591d1a6b8dc"
+      }
+    },
+    {
+      "id": "gather-all",
+      "version": "1.0.0",
+      "capability": "sequence",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.gather_all",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/gather_all.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/gather_all.py",
+        "sha256": "cfb7da52da3826147fe0388d921054e7350021e432252ff46cf891d0697d424d"
+      }
+    },
+    {
+      "id": "geotiff",
+      "version": "1.0.0",
+      "capability": "encode",
+      "requires": [
+        "geotiff-metadata"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.geotiff",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/geotiff.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/geotiff.py",
+        "sha256": "3b8afb059812def4c9d2f64aafb832fb95092ec488b624eb42ccddb051f59a56"
+      }
+    },
+    {
+      "id": "geotiff-metadata",
+      "version": "1.0.0",
+      "capability": "metadata_out",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.geotiff_metadata",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/geotiff_metadata.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/geotiff_metadata.py",
+        "sha256": "60f36322dae52ab80e65f1485c9b9c8a2b582324595a37cf56acd9d7f4bcb65a"
+      }
+    },
+    {
+      "id": "global_radiometric_match",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "common-crs",
+        "storage",
+        "executor",
+        "gather-all"
+      ],
+      "dependencies": [
+        "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.global_radiometric_match",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/global_radiometric_match.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/global_radiometric_match.py",
+        "sha256": "68f440509268af1096a47f1d1330424bd3c9802c12e0ef0b5ce2e9bfa7d03c8b"
+      }
+    },
+    {
+      "id": "group-by",
+      "version": "1.0.0",
+      "capability": "sequence",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.group_by",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/group_by.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/group_by.py",
+        "sha256": "b2a290ac65e13b568b09854b0a70588bdf09915d69eb95707d52acebc5e1ac92"
+      }
+    },
+    {
+      "id": "has-role",
+      "version": "1.0.0",
+      "capability": "checks",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.has_role",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/has_role.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/has_role.py",
+        "sha256": "3c9ed2b9949cdf93d128766313bcc4e69f786c08654e83fd24c71a877760ab3c"
+      }
+    },
+    {
+      "id": "joint_coregistration",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage",
+        "executor",
+        "gather-all",
+        "common-crs",
+        "register_to_reference"
+      ],
+      "dependencies": [
+        "opencv-python-headless>=4.10,<5"
+      ],
+      "description": "SpectralMatch joint solve, with the fitted models retained in STAC history.\n\nUses the solver API of the pinned SpectralMatch revision: the public file-only\nentry point discards these models. No solver code is copied into AutoSTACGIS.",
+      "module": "autostacgis_plugins.joint_coregistration",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/joint_coregistration.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/joint_coregistration.py",
+        "sha256": "093f57fd173e25a567385235fd156a0ff6fbcdf3b0582befefaa5464a69de2ea"
+      }
+    },
+    {
+      "id": "local_radiometric_match",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "common-crs",
+        "storage",
+        "executor",
+        "gather-all"
+      ],
+      "dependencies": [
+        "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.local_radiometric_match",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/local_radiometric_match.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/local_radiometric_match.py",
+        "sha256": "b571faaffe1de94317f3ad65913cba5859fa9f1f749bf7d23be0ae8d24dda358"
+      }
+    },
+    {
+      "id": "markov_seamlines",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "gather-all",
+        "common-crs",
+        "storage",
+        "executor"
+      ],
+      "dependencies": [
+        "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d",
+        "geopandas>=1,<2",
+        "GDAL>=3.11,<4"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.markov_seamlines",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/markov_seamlines.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/markov_seamlines.py",
+        "sha256": "4ff723ecec0cb53a84b596dcf4e435e98a088e1191b57ddea881d6f67e939ece"
+      }
+    },
+    {
+      "id": "mask_by_polygons",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "apply_mask",
+        "source-member"
+      ],
+      "dependencies": [],
+      "description": "Rasterize only the seamline polygons assigned to this image, window by window.",
+      "module": "autostacgis_plugins.mask_by_polygons",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/mask_by_polygons.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/mask_by_polygons.py",
+        "sha256": "96a2b5f336f90013394db82624a3c6c6cf485bc801bd74391455ac0acf408ebd"
+      }
+    },
+    {
+      "id": "merge_vectors",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "gather-all"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.merge_vectors",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/merge_vectors.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/merge_vectors.py",
+        "sha256": "b9fe583966e042ee5ea31a7acd2d57e7ed6969d0ab338b378286ffc41e39d20f"
+      }
+    },
+    {
+      "id": "metadata-matches",
+      "version": "1.0.0",
+      "capability": "checks",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.metadata_matches",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/metadata_matches.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/metadata_matches.py",
+        "sha256": "93866fdcd55adcf72ca5a85e93c2f7d18dffb5b08c4407630bad48aa75eea8db"
+      }
+    },
+    {
+      "id": "metadata-schema",
+      "version": "1.0.0",
+      "capability": "checks",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.metadata_schema",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/metadata_schema.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/metadata_schema.py",
+        "sha256": "a87bb20e96c3dc973b6ba94e393ca3d8afe3ea3ecc27e43897144591f655b93d"
+      }
+    },
+    {
+      "id": "metadata-value",
+      "version": "1.0.0",
+      "capability": "goal",
+      "requires": [
+        "backward_chain"
+      ],
+      "dependencies": [],
+      "description": "Build JSONata or direct-path metadata goals for backward chaining.",
+      "module": "autostacgis_plugins.metadata_value",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/metadata_value.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/metadata_value.py",
+        "sha256": "7abf5753f3a24bb7167bf4a81a809c9fb77dbd98607865d4b6421aaaa3615788"
+      }
+    },
+    {
+      "id": "mosaic",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "common-crs",
+        "storage",
+        "gather-all",
+        "same-fields"
+      ],
+      "dependencies": [
+        "GDAL>=3.11,<4"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.mosaic",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/mosaic.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/mosaic.py",
+        "sha256": "1546fc8d78b7e8459a7f857c69f30271dd7c7a7289cf20db35b2ef96748a727b"
+      }
+    },
+    {
+      "id": "multiprocessing",
+      "version": "1.0.0",
+      "capability": "services",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.multiprocessing",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/multiprocessing.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/multiprocessing.py",
+        "sha256": "ad33a4a69b4e612ada4b58dfb3faa8ea077a39213a573bf9151757285bd086c8"
+      }
+    },
+    {
+      "id": "opentelemetry",
+      "version": "1.0.0",
+      "capability": "services",
+      "requires": [
+        "events"
+      ],
+      "dependencies": [
+        "opentelemetry-sdk>=1,<2"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.opentelemetry",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/opentelemetry.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/opentelemetry.py",
+        "sha256": "5d90daf33606bb46308ff3078f43f8baca7d8254dbad88f629990d00add5ad38"
+      }
+    },
+    {
+      "id": "orthorectify_rpc",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage"
+      ],
+      "dependencies": [
+        "GDAL>=3.11,<4"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.orthorectify_rpc",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/orthorectify_rpc.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/orthorectify_rpc.py",
+        "sha256": "1fdc7fe202a5a76f6e84d746454cfc5b4b9b8e2b133dcb75031758af21031d00"
+      }
+    },
+    {
+      "id": "overlap",
+      "version": "1.0.0",
+      "capability": "sequence",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.overlap",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/overlap.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/overlap.py",
+        "sha256": "eca1b33e408db1ddc50d0c1219caa58fc619a05eb312e7210fbad6cef778ed57"
+      }
+    },
+    {
+      "id": "pansharpen",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage",
+        "common-crs",
+        "compatible-optical"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.pansharpen",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/pansharpen.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/pansharpen.py",
+        "sha256": "ffab31b11770770df2be7722434048098682c748b5465e5ea6c8d4bb78d86264"
+      }
+    },
+    {
+      "id": "parquet",
+      "version": "1.0.0",
+      "capability": "encode",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.parquet",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/parquet.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/parquet.py",
+        "sha256": "04171e84424834c63ca7cc53f473e83c3eae2bb6b0a834aa944d253f7de97225"
+      }
+    },
+    {
+      "id": "polygonize",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.polygonize",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/polygonize.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/polygonize.py",
+        "sha256": "5f63f427fb23525024ffd6986d150afd29ff4ad3d3bac981ecf78c6860e40db2"
+      }
+    },
+    {
+      "id": "python",
+      "version": "1.0.0",
+      "capability": "trigger",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.python",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/python.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/python.py",
+        "sha256": "6f0de2992ad1e9b2c29544986fdf77e04e01bcc61ceb562bfd5e11f86ebf890a"
+      }
+    },
+    {
+      "id": "rasterize_point_attribute",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage"
+      ],
+      "dependencies": [
+        "laspy[lazrs]>=2,<3"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.rasterize_point_attribute",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/rasterize_point_attribute.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/rasterize_point_attribute.py",
+        "sha256": "7909fe07925232010dbd72ca5fa54d7a7dc2ebd6536637ac17ee0ba2411b7de3"
+      }
+    },
+    {
+      "id": "register_to_reference",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage"
+      ],
+      "dependencies": [
+        "coregix>=0.3,<0.4"
+      ],
+      "description": "Coregix registration with shared-budget scheduling and fitted-model provenance.",
+      "module": "autostacgis_plugins.register_to_reference",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/register_to_reference.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/register_to_reference.py",
+        "sha256": "9d73b587b85324b474f792cad996fea39a0d54d1efe2ddf5e93aee99925b5fe7"
+      }
+    },
+    {
+      "id": "s3",
+      "version": "1.0.0",
+      "capability": "data_out",
+      "requires": [],
+      "dependencies": [
+        "boto3>=1.35,<2"
+      ],
+      "description": "S3 destination accepting the same typed artifacts as filesystem.",
+      "module": "autostacgis_plugins.s3",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/s3.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/s3.py",
+        "sha256": "556d3f64d16bdff57b0cb72a35f83246676128557eba693a2ce45e42e363f12c"
+      }
+    },
+    {
+      "id": "same-fields",
+      "version": "1.0.0",
+      "capability": "checks",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.same_fields",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/same_fields.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/same_fields.py",
+        "sha256": "f2c2b7db651dda370566da7e5cf985dcaa27450cc7cea5d59a359aa625195904"
+      }
+    },
+    {
+      "id": "sample_dem",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage"
+      ],
+      "dependencies": [],
+      "description": "Windowed mean elevation inside an image's WGS84 footprint.",
+      "module": "autostacgis_plugins.sample_dem",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/sample_dem.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/sample_dem.py",
+        "sha256": "27a5d8c66259c9ab7762394e083dce4932508b0a35c65735c6bc4e4cfbb81001"
+      }
+    },
+    {
+      "id": "sequential",
+      "version": "1.0.0",
+      "capability": "services",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.sequential",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/sequential.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/sequential.py",
+        "sha256": "ed0b1a1b93cfc29c60b9d9e5abbfddf0571c29ebbbf43c56a6b59221c5c48c38"
+      }
+    },
+    {
+      "id": "slurm",
+      "version": "1.0.0",
+      "capability": "trigger",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.slurm",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/slurm.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/slurm.py",
+        "sha256": "85ed3194aa940cd5e32fc532a2aec69c88cc63c299622e6f7a7ec1bf9b09d73d"
+      }
+    },
+    {
+      "id": "source-member",
+      "version": "1.0.0",
+      "capability": "checks",
+      "requires": [],
+      "dependencies": [],
+      "description": "Check that an image belongs to a collection's immutable source lineage.",
+      "module": "autostacgis_plugins.source_member",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/source_member.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/source_member.py",
+        "sha256": "cf731814a262eec9337cfdb54d6f53922eb3fce0fedebe758b367946fcc9b57b"
+      }
+    },
+    {
+      "id": "split",
+      "version": "1.0.0",
+      "capability": "sequence",
+      "requires": [],
+      "dependencies": [],
+      "description": "Partition a collection into independently bound processing groups.",
+      "module": "autostacgis_plugins.split",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/split.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/split.py",
+        "sha256": "c928c70812aa62aabfc03779a1e49e5b705aea44be99f7b13166d3095eb64fc3"
+      }
+    },
+    {
+      "id": "stac-api",
+      "version": "1.0.0",
+      "capability": "metadata_out",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.stac_api",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/stac_api.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/stac_api.py",
+        "sha256": "19e3ca47f530bbd280697789094d4140a1368dc9271d2fb81af171c8070f5044"
+      }
+    },
+    {
+      "id": "stac-item",
+      "version": "1.0.0",
+      "capability": "metadata_out",
+      "requires": [],
+      "dependencies": [],
+      "description": "Return an updated in-memory Item without choosing a metadata file location.",
+      "module": "autostacgis_plugins.stac_item",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/stac_item.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/stac_item.py",
+        "sha256": "c62b8c8c5da7ff5286ddba9b40a10f2bc9f3adf9fc00825315f84dc023b6399d"
+      }
+    },
+    {
+      "id": "stac-json",
+      "version": "1.0.0",
+      "capability": "metadata_out",
+      "requires": [
+        "filesystem"
+      ],
+      "dependencies": [],
+      "description": "Save a whole Item or selected STAC value, retaining the destination's actual reference.",
+      "module": "autostacgis_plugins.stac_json",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/stac_json.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/stac_json.py",
+        "sha256": "0cebdf2f410f7f95d4d57babe64f6b951443a5ed6b04903ba3a310d38ca28cde"
+      }
+    },
+    {
+      "id": "stac-resolver",
+      "version": "1.0.0",
+      "capability": "metadata_in",
+      "requires": [],
+      "dependencies": [],
+      "description": "Discover ordinary local files and their sidecars as complete planning records.",
+      "module": "autostacgis_plugins.stac_resolver",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/stac_resolver.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/stac_resolver.py",
+        "sha256": "079ee7b41da67fda5c28b6032a7d9db48021d4f858141b911361618d43039880"
+      }
+    },
+    {
+      "id": "stac-source",
+      "version": "1.0.0",
+      "capability": "metadata_in",
+      "requires": [
+        "stac-source-download"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.stac_source",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/stac_source.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/stac_source.py",
+        "sha256": "dcb0c4cc43fb237563b382be8b5b63376215e47b431f477ec7fc969a7d6438cf"
+      }
+    },
+    {
+      "id": "stac-source-download",
+      "version": "1.0.0",
+      "capability": "data_in",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.stac_source_download",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/stac_source_download.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/stac_source_download.py",
+        "sha256": "adbcaebd546fc8b0dd704fa603f23464753c314685b9aac91a70ca078ba00986"
+      }
+    },
+    {
+      "id": "staging",
+      "version": "1.0.0",
+      "capability": "services",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.staging",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/staging.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/staging.py",
+        "sha256": "5727312c74d1615c60638dd998f5e7940983fa7ed73c085657ca66a0624404d4"
+      }
+    },
+    {
+      "id": "statistics",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.statistics",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/statistics.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/statistics.py",
+        "sha256": "7f095e12a51a771ec4423aee4f38f1751b0a2804c7ecdbf16af2583b07812274"
+      }
+    },
+    {
+      "id": "storage",
+      "version": "1.0.0",
+      "capability": "services",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.storage",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/storage.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/storage.py",
+        "sha256": "1b323edb8af0a2f3baf014cf14a61fef0ccfaaca29cd49b3423caa988600fe25"
+      }
+    },
+    {
+      "id": "table",
+      "version": "1.0.0",
+      "capability": "metadata_in",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.table",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/table.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/table.py",
+        "sha256": "8f785b7d876d491d76f6d1535281772204d64971d30aeb500b9f7515aba5f05e"
+      }
+    },
+    {
+      "id": "threads",
+      "version": "1.0.0",
+      "capability": "services",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.threads",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/threads.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/threads.py",
+        "sha256": "aa67331809e806ac7cd1239816b3a05769712860917d0a58f2886ff633eb8fa0"
+      }
+    },
+    {
+      "id": "valid-data",
+      "version": "1.0.0",
+      "capability": "checks",
+      "requires": [],
+      "dependencies": [],
+      "description": "Validate actual saved payloads, including reading every raster block or Arrow batch.",
+      "module": "autostacgis_plugins.valid_data",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/valid_data.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/valid_data.py",
+        "sha256": "755412daf49ce83ea34307b0166532bc7b1a97d482b2357652c1c1eef773c550"
+      }
+    },
+    {
+      "id": "voronoi_seamlines",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "storage",
+        "executor"
+      ],
+      "dependencies": [
+        "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d",
+        "geopandas>=1,<2",
+        "GDAL>=3.11,<4"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.voronoi_seamlines",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/voronoi_seamlines.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/voronoi_seamlines.py",
+        "sha256": "446bbd9fcc249c9c2e2fbd19af6d83f666d7fe0b77df56d2658e4e54fc954298"
+      }
+    },
+    {
+      "id": "watchdog",
+      "version": "1.0.0",
+      "capability": "trigger",
+      "requires": [],
+      "dependencies": [
+        "watchdog>=6,<7"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.watchdog",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/watchdog.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/watchdog.py",
+        "sha256": "82d64e370557bcea69082abd96c10ea15aa1ccd9bee3ba3824e229e2854c2d19"
+      }
+    },
+    {
+      "id": "weighted_seamlines",
+      "version": "1.0.0",
+      "capability": "process",
+      "requires": [
+        "gather-all",
+        "common-crs",
+        "storage",
+        "executor"
+      ],
+      "dependencies": [
+        "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d",
+        "geopandas>=1,<2",
+        "GDAL>=3.11,<4"
+      ],
+      "description": "",
+      "module": "autostacgis_plugins.weighted_seamlines",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/weighted_seamlines.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/weighted_seamlines.py",
+        "sha256": "7a045ce073a2c84b264918dab539ed47eaf23296c939a2ec396c9e4ca668e531"
+      }
+    },
+    {
+      "id": "zarr",
+      "version": "1.0.0",
+      "capability": "encode",
+      "requires": [
+        "zarr-metadata"
+      ],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.zarr",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/zarr.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/zarr.py",
+        "sha256": "f2ecb3227bc1e6a0755db41b91a920e2c8e1dde812ddc1fd00f3978e45595aaf"
+      }
+    },
+    {
+      "id": "zarr-metadata",
+      "version": "1.0.0",
+      "capability": "metadata_out",
+      "requires": [],
+      "dependencies": [],
+      "description": "",
+      "module": "autostacgis_plugins.zarr_metadata",
+      "source": {
+        "repository": "https://github.com/autostacgis/autostacgis-plugins",
+        "ref": "main",
+        "path": "plugins/autostacgis_plugins/zarr_metadata.py",
+        "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/zarr_metadata.py",
+        "sha256": "e98a510766d10c3d9c6937283257859cfd6b53b0c83fb2024f7caaa0bc1bfda6"
+      }
+    }
+  ]
+}

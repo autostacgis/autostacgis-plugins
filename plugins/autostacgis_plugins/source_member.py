@@ -28,3 +28,6 @@ REQUIRES = ()
 
 CAPABILITY = "checks"
 IMPLEMENTATION = source_member
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

@@ -90,3 +90,6 @@ polygonize.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 
 CAPABILITY = "process"
 IMPLEMENTATION = polygonize
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

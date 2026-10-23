@@ -182,3 +182,10 @@ markov_seamlines.contract["argument_requirements"]["images"]["data_types"] = ["r
 
 CAPABILITY = "process"
 IMPLEMENTATION = markov_seamlines
+
+VERSION = "1.0.0"
+DEPENDENCIES = [
+    "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d",
+    "geopandas>=1,<2",
+    "GDAL>=3.11,<4",
+]

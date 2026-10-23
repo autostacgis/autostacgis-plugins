@@ -102,3 +102,6 @@ apply_mask.contract["argument_requirements"]["mask"]["data_types"] = ["raster"]
 
 CAPABILITY = "process"
 IMPLEMENTATION = apply_mask
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

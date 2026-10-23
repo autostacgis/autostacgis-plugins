@@ -40,3 +40,7 @@ Collection-processing plugins depend directly on reusable sequence plugins such 
 Run `pytest tests ../autostacgis-python/tests`, `ruff check plugins examples tests`, and `ruff format --check plugins examples tests`. Build with `python -m build`.
 
 Product goals are declarative configuration. The generic `metadata-value` goal adapter requires `backward_chain` and solves for direct-path or JSONata values. JSONata spatial predicates select or require coverage from bbox, polygon, or custom geometry metadata. Only one solver can be active. Solver settings and accepted goals are explicit JSON Schema contracts. See [solver documentation and AOI examples](docs/solvers.md).
+
+Plugin publication and file installation: [CONTRIBUTING.md](CONTRIBUTING.md). The versioned online catalog is published by `.github/workflows/registry.yml`.
+
+Each published module declares a semantic `VERSION` and optional `DEPENDENCIES` (PEP 508 Python library requirements). `REQUIRES` continues to name other plugins. The package version and each plugin version are independent.

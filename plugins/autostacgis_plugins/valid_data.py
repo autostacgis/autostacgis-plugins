@@ -28,3 +28,6 @@ REQUIRES = ()
 
 CAPABILITY = "checks"
 IMPLEMENTATION = valid_data
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

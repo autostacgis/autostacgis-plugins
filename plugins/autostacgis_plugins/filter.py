@@ -13,3 +13,6 @@ REQUIRES = ()
 
 CAPABILITY = "sequence"
 IMPLEMENTATION = filtered
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

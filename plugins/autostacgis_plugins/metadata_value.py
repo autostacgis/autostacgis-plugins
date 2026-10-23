@@ -101,3 +101,6 @@ ID = "metadata-value"
 CAPABILITY = "goal"
 IMPLEMENTATION = metadata_value
 REQUIRES = ("backward_chain",)
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

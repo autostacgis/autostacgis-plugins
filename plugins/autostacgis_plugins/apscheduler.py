@@ -11,3 +11,6 @@ ID = "apscheduler"
 CAPABILITY = "trigger"
 IMPLEMENTATION = apscheduler
 REQUIRES = ()
+
+VERSION = "1.0.0"
+DEPENDENCIES = ["APScheduler>=3.11,<4"]

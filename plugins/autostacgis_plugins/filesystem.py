@@ -75,3 +75,6 @@ REQUIRES = ()
 
 CAPABILITY = "data_out"
 IMPLEMENTATION = filesystem
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

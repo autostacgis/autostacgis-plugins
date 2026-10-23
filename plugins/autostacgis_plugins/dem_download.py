@@ -53,3 +53,6 @@ ID = "dem-download"
 CAPABILITY = "data_in"
 IMPLEMENTATION = DemDownload
 REQUIRES = ()
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

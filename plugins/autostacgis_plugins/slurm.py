@@ -39,3 +39,6 @@ REQUIRES = ()
 
 CAPABILITY = "trigger"
 IMPLEMENTATION = slurm
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

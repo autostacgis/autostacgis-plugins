@@ -17,3 +17,6 @@ REQUIRES = ()
 
 CAPABILITY = "services"
 IMPLEMENTATION = Threads
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

@@ -24,3 +24,6 @@ REQUIRES = ()
 
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = TableSource
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

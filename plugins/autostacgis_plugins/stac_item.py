@@ -18,3 +18,6 @@ REQUIRES = ()
 
 CAPABILITY = "metadata_out"
 IMPLEMENTATION = stac_item
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

@@ -40,3 +40,6 @@ REQUIRES = ("same-fields",)
 
 CAPABILITY = "checks"
 IMPLEMENTATION = compatible_optical
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

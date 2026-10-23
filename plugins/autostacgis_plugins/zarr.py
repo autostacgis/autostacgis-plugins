@@ -21,3 +21,6 @@ REQUIRES = ("zarr-metadata",)
 
 CAPABILITY = "encode"
 IMPLEMENTATION = zarr_writer
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

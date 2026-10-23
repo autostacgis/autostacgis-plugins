@@ -79,3 +79,6 @@ statistics.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 
 CAPABILITY = "process"
 IMPLEMENTATION = statistics
+
+VERSION = "1.0.0"
+DEPENDENCIES = []

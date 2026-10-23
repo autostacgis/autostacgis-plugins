@@ -147,3 +147,8 @@ local_radiometric_match.contract["argument_requirements"]["images"]["data_types"
 
 CAPABILITY = "process"
 IMPLEMENTATION = local_radiometric_match
+
+VERSION = "1.0.0"
+DEPENDENCIES = [
+    "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d"
+]

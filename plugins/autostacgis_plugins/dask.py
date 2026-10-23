@@ -48,3 +48,6 @@ REQUIRES = ("sequential",)
 
 CAPABILITY = "services"
 IMPLEMENTATION = Dask
+
+VERSION = "1.0.0"
+DEPENDENCIES = ["dask[distributed]>=2025"]

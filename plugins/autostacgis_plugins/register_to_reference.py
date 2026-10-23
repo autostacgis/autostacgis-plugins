@@ -289,3 +289,6 @@ register_to_reference.contract["argument_requirements"]["reference"]["data_types
 
 CAPABILITY = "process"
 IMPLEMENTATION = register_to_reference
+
+VERSION = "1.0.0"
+DEPENDENCIES = ["coregix>=0.3,<0.4"]

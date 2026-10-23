@@ -33,3 +33,6 @@ CAPABILITY = "solver"
 IMPLEMENTATION = BackwardChainSolver
 REQUIRES = ()
 DEFAULTS = BackwardChainSolver.contract["settings"]
+
+VERSION = "1.0.0"
+DEPENDENCIES = []
