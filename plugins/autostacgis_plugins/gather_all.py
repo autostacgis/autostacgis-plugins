@@ -1,3 +1,5 @@
+"""Gather all available records into one processing group."""
+
 from autostacgis.sequence import Group
 
 
@@ -11,5 +13,5 @@ REQUIRES = ()
 CAPABILITY = "sequence"
 IMPLEMENTATION = gather_all
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

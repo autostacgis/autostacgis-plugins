@@ -1,3 +1,5 @@
+"""Read tabular assets into the common exchange representation."""
+
 from autostacgis.ancillary import descriptor
 from autostacgis.data import Batches
 
@@ -25,5 +27,5 @@ REQUIRES = ()
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = TableSource
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

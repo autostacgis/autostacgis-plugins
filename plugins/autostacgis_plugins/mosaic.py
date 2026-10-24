@@ -1,3 +1,5 @@
+"""Combine raster images using configured mosaic options."""
+
 from autostacgis.data import FileRaster, physical_raster
 from autostacgis.data.metadata import finish, resampling_history
 from autostacgis.errors import AutoSTACGISError
@@ -171,5 +173,5 @@ mosaic.contract["argument_requirements"]["images"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = mosaic
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = ["GDAL>=3.11,<4"]

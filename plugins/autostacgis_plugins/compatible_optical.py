@@ -1,3 +1,5 @@
+"""Check optical band compatibility between images."""
+
 def compatible_optical(inputs, settings, context):
     """Bind bands from the same acquisition; processing may change their radiometry."""
     from autostacgis.contracts import value
@@ -41,5 +43,5 @@ REQUIRES = ("same-fields",)
 CAPABILITY = "checks"
 IMPLEMENTATION = compatible_optical
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

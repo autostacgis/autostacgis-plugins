@@ -1,3 +1,5 @@
+"""Compute raster statistics and record them in STAC metadata."""
+
 import numpy as np
 from autostacgis.data.metadata import finish
 
@@ -80,5 +82,5 @@ statistics.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = statistics
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

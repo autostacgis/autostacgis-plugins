@@ -1,3 +1,5 @@
+"""Publish result metadata to a STAC API."""
+
 from copy import deepcopy
 from urllib.parse import quote
 
@@ -33,5 +35,5 @@ REQUIRES = ()
 CAPABILITY = "metadata_out"
 IMPLEMENTATION = stac_api
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

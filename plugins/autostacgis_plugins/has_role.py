@@ -1,3 +1,5 @@
+"""Check whether a STAC asset declares a required role."""
+
 from autostacgis.checks import combine
 from autostacgis.metadata import MISSING, get
 
@@ -19,5 +21,5 @@ REQUIRES = ()
 CAPABILITY = "checks"
 IMPLEMENTATION = has_role
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

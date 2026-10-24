@@ -1,3 +1,5 @@
+"""Apply vector or raster masks to raster pixels."""
+
 from dataclasses import replace
 
 import numpy as np
@@ -103,5 +105,5 @@ apply_mask.contract["argument_requirements"]["mask"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = apply_mask
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

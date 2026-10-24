@@ -41,5 +41,5 @@ REQUIRES = ()
 CAPABILITY = "checks"
 IMPLEMENTATION = common_crs
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

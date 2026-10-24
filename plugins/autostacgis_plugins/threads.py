@@ -1,3 +1,5 @@
+"""Execute plugin work in the shared thread pool."""
+
 from autostacgis.runtime.executors import Pool
 
 
@@ -18,5 +20,5 @@ REQUIRES = ()
 CAPABILITY = "services"
 IMPLEMENTATION = Threads
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

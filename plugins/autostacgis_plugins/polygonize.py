@@ -1,3 +1,5 @@
+"""Convert raster regions into vector polygons."""
+
 import numpy as np
 from autostacgis.data import vectors
 from autostacgis.data.metadata import finish
@@ -91,5 +93,5 @@ polygonize.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = polygonize
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

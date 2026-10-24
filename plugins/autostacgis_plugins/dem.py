@@ -1,3 +1,5 @@
+"""Discover elevation datasets for terrain-aware image processing."""
+
 from autostacgis.ancillary import descriptor
 
 
@@ -17,5 +19,5 @@ DemSource.data_in = "dem-download"
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = DemSource
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

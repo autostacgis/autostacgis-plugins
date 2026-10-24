@@ -1,3 +1,5 @@
+"""Convert optical imagery to surface reflectance using atmospheric correction."""
+
 import shutil
 from dataclasses import replace
 
@@ -273,5 +275,5 @@ atmospheric_correction.contract["argument_requirements"]["elevation"]["data_type
 CAPABILITY = "process"
 IMPLEMENTATION = atmospheric_correction
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = ["Py6S>=1.9,<2"]

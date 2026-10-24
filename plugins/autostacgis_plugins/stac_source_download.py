@@ -1,3 +1,5 @@
+"""Acquire assets referenced by discovered STAC items."""
+
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -31,5 +33,5 @@ CAPABILITY = "data_in"
 IMPLEMENTATION = StacDownload
 REQUIRES = ()
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

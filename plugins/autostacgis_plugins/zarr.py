@@ -1,3 +1,5 @@
+"""Encode raster results in chunked Zarr storage."""
+
 from autostacgis.encoding import encode, restore
 
 
@@ -22,5 +24,5 @@ REQUIRES = ("zarr-metadata",)
 CAPABILITY = "encode"
 IMPLEMENTATION = zarr_writer
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

@@ -1,3 +1,5 @@
+"""Encode table and vector results as Parquet assets."""
+
 from autostacgis.encoding import encode, restore
 
 
@@ -22,5 +24,5 @@ REQUIRES = ()
 CAPABILITY = "encode"
 IMPLEMENTATION = parquet
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

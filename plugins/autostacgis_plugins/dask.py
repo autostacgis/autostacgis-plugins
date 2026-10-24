@@ -1,3 +1,5 @@
+"""Execute work through a shared Dask distributed client."""
+
 from autostacgis.runtime.executors import ScopedExecutor, _depth, _invoke
 
 
@@ -49,5 +51,5 @@ REQUIRES = ("sequential",)
 CAPABILITY = "services"
 IMPLEMENTATION = Dask
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = ["dask[distributed]>=2025"]

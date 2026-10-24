@@ -114,5 +114,5 @@ sample_dem.contract["outputs"]["result"]["data_types"] = ["batches"]
 CAPABILITY = "process"
 IMPLEMENTATION = sample_dem
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

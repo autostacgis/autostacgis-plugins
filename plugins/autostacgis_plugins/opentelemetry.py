@@ -1,3 +1,5 @@
+"""Export workflow traces through OpenTelemetry."""
+
 from .events import Events
 
 
@@ -35,5 +37,5 @@ REQUIRES = ("events",)
 CAPABILITY = "services"
 IMPLEMENTATION = OpenTelemetry
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = ["opentelemetry-sdk>=1,<2"]

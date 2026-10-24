@@ -211,5 +211,5 @@ DEFAULTS = {"memory_bytes": 536870912}
 CAPABILITY = "data_transfer"
 IMPLEMENTATION = BufferedTransfer
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

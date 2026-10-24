@@ -1,3 +1,5 @@
+"""Group records using explicit configured membership."""
+
 from autostacgis.errors import AutoSTACGISError
 from autostacgis.sequence import Group
 
@@ -30,5 +32,5 @@ REQUIRES = ()
 CAPABILITY = "sequence"
 IMPLEMENTATION = explicit
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

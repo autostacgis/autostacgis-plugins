@@ -1,3 +1,5 @@
+"""Enrich imagery metadata and bands using EOReader."""
+
 from copy import deepcopy
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -141,7 +143,7 @@ REQUIRES = ()
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = EoreaderSource
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = [
     "eoreader @ git+https://github.com/autostacgis/eoreader.git@d73407d5128fee4058dffbd9d05b2ea96e803221"
 ]

@@ -1,3 +1,5 @@
+"""Calculate raster bands using configured mathematical expressions."""
+
 import ast
 from dataclasses import replace
 
@@ -117,5 +119,5 @@ band_math.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = band_math
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

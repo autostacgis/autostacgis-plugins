@@ -1,3 +1,5 @@
+"""Group records by configured metadata fields."""
+
 from collections import defaultdict
 
 from autostacgis.errors import AutoSTACGISError
@@ -22,5 +24,5 @@ REQUIRES = ()
 CAPABILITY = "sequence"
 IMPLEMENTATION = group_by
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

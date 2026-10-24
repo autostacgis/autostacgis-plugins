@@ -1,3 +1,5 @@
+"""Publish workflow lifecycle and progress events."""
+
 import json
 import logging
 from pathlib import Path
@@ -49,5 +51,5 @@ RUNTIME_DEFAULT = True
 CAPABILITY = "services"
 IMPLEMENTATION = Events
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

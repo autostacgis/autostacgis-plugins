@@ -102,5 +102,7 @@ CAPABILITY = "goal"
 IMPLEMENTATION = metadata_value
 REQUIRES = ("backward_chain",)
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []
+
+DEFAULT_CONFIG = {"solver": {"backward_chain": {}}}

@@ -1,3 +1,5 @@
+"""Manage temporary staging locations for workflow data."""
+
 import shutil
 from pathlib import Path
 from uuid import uuid4
@@ -30,5 +32,5 @@ REQUIRES = ()
 CAPABILITY = "services"
 IMPLEMENTATION = Staging
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

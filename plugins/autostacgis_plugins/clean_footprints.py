@@ -1,3 +1,5 @@
+"""Clean polygon footprints while preserving their attributes."""
+
 from autostacgis.data import vectors
 from autostacgis.data.metadata import finish
 
@@ -114,7 +116,7 @@ clean_footprints.contract["argument_requirements"]["vector"]["data_types"] = ["b
 CAPABILITY = "process"
 IMPLEMENTATION = clean_footprints
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = [
     "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d",
     "geopandas>=1,<2",

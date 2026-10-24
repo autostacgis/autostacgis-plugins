@@ -1,3 +1,5 @@
+"""Execute plugin work in the shared Python multiprocessing pool."""
+
 from autostacgis.runtime.executors import Pool
 
 
@@ -23,5 +25,5 @@ REQUIRES = ()
 CAPABILITY = "services"
 IMPLEMENTATION = Processes
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

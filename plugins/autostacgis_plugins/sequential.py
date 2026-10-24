@@ -1,3 +1,5 @@
+"""Execute submitted work sequentially in the application process."""
+
 from autostacgis.runtime.executors import Pool
 
 
@@ -11,5 +13,5 @@ REQUIRES = ()
 CAPABILITY = "services"
 IMPLEMENTATION = Sequential
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

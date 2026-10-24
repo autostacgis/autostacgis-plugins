@@ -1,3 +1,5 @@
+"""Submit workflow execution to a configured Slurm cluster."""
+
 def slurm(app, settings, request):
     """Submit an AutoSTACGIS invocation to an existing Slurm installation."""
     import json
@@ -40,5 +42,5 @@ REQUIRES = ()
 CAPABILITY = "trigger"
 IMPLEMENTATION = slurm
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

@@ -1,3 +1,5 @@
+"""Extract valid-data footprints from raster imagery."""
+
 import numpy as np
 from autostacgis.data import vectors
 from autostacgis.data.metadata import finish
@@ -173,5 +175,5 @@ extract_footprints.contract["argument_requirements"]["images"]["data_types"] = [
 CAPABILITY = "process"
 IMPLEMENTATION = extract_footprints
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

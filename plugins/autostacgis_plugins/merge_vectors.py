@@ -1,3 +1,5 @@
+"""Merge vector features into a single output dataset."""
+
 from autostacgis.data.metadata import finish
 from autostacgis.errors import AutoSTACGISError
 
@@ -56,5 +58,5 @@ merge_vectors.contract["argument_requirements"]["vectors"]["data_types"] = ["bat
 CAPABILITY = "process"
 IMPLEMENTATION = merge_vectors
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

@@ -1,3 +1,5 @@
+"""Rasterize a point attribute onto a configured grid."""
+
 import numpy as np
 from autostacgis.data import ArrayRaster, Grid
 from autostacgis.data.metadata import finish
@@ -149,5 +151,5 @@ rasterize_point_attribute.contract["argument_requirements"]["points"]["data_type
 CAPABILITY = "process"
 IMPLEMENTATION = rasterize_point_attribute
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = ["laspy[lazrs]>=2,<3"]

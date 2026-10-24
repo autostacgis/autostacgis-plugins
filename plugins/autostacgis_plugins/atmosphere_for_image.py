@@ -30,5 +30,5 @@ REQUIRES = ()
 CAPABILITY = "checks"
 IMPLEMENTATION = atmosphere_for_image
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

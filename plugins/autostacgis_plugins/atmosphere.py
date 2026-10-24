@@ -1,3 +1,5 @@
+"""Discover atmospheric auxiliary data for radiometric correction."""
+
 from datetime import datetime
 
 from autostacgis.ancillary import descriptor
@@ -48,5 +50,5 @@ AtmosphereSource.data_in = "atmosphere-download"
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = AtmosphereSource
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

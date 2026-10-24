@@ -1,3 +1,5 @@
+"""Manage shared in-memory and filesystem storage resources."""
+
 import shutil
 from multiprocessing import shared_memory
 from pathlib import Path
@@ -93,5 +95,5 @@ DEFAULTS = {"memory_bytes": 536870912, "tile_size": 512}
 CAPABILITY = "services"
 IMPLEMENTATION = Storage
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

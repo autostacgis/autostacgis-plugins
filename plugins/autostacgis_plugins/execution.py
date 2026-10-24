@@ -1,3 +1,5 @@
+"""Configure execution policies shared by processing plugins."""
+
 from contextlib import contextmanager
 
 from autostacgis.runtime.execution import StorageScope
@@ -32,5 +34,5 @@ REQUIRES = ("executor", "storage")
 CAPABILITY = "extensions"
 IMPLEMENTATION = ExecutionExtension
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

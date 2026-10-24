@@ -219,5 +219,5 @@ detect_clouds.contract["argument_requirements"]["image"]["data_types"] = ["raste
 CAPABILITY = "process"
 IMPLEMENTATION = detect_clouds
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = ["omnicloudmask>=1,<2"]

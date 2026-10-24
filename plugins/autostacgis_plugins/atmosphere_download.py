@@ -1,3 +1,5 @@
+"""Acquire atmospheric auxiliary datasets selected during discovery."""
+
 from datetime import datetime
 
 import httpx
@@ -63,5 +65,5 @@ CAPABILITY = "data_in"
 IMPLEMENTATION = AtmosphereDownload
 REQUIRES = ()
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

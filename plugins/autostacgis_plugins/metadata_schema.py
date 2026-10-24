@@ -1,3 +1,5 @@
+"""Validate STAC metadata against a configured JSON Schema."""
+
 def metadata_schema(inputs, settings, context):
     from jsonschema import ValidationError
 
@@ -16,5 +18,5 @@ REQUIRES = ()
 CAPABILITY = "checks"
 IMPLEMENTATION = metadata_schema
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

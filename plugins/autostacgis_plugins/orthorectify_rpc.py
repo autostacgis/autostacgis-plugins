@@ -1,3 +1,5 @@
+"""Orthorectify imagery using rational polynomial camera models."""
+
 from autostacgis.data import FileRaster
 from autostacgis.data.metadata import finish, resampling_history
 from autostacgis.errors import AutoSTACGISError
@@ -120,5 +122,5 @@ orthorectify_rpc.contract["argument_requirements"]["dem"]["data_types"] = ["rast
 CAPABILITY = "process"
 IMPLEMENTATION = orthorectify_rpc
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = ["GDAL>=3.11,<4"]

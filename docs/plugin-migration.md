@@ -150,7 +150,7 @@ The initial split produced 97 registrations. Removing 11 goal presets and seven 
 | `pansharpen` | `process` | `autostacgis_plugins.pansharpen` |
 | `parquet` | `encode` | `autostacgis_plugins.parquet` |
 | `polygonize` | `process` | `autostacgis_plugins.polygonize` |
-| `python` | `trigger` | `autostacgis_plugins.python` |
+| `now` | `trigger` | `autostacgis_plugins.now` |
 | `rasterize_point_attribute` | `process` | `autostacgis_plugins.rasterize_point_attribute` |
 | `register_to_reference` | `process` | `autostacgis_plugins.register_to_reference` |
 | `s3` | `data_out` | `autostacgis_plugins.s3` |
@@ -239,3 +239,5 @@ The entry-point group remains `autostacgis.plugins`; Python imports use `autosta
 ## Timed and file triggers
 
 The former `scheduler` registration is replaced by `apscheduler`. Time-based jobs use APScheduler trigger aliases and raw scheduler, trigger, job, and start options. `watchdog` handles file events with native or polling observers. Both implementations live in the Python library; see [trigger configuration](https://github.com/autostacgis/autostacgis-python/blob/main/docs/triggers.md).
+
+The immediate Python trigger is named `now` in the current catalog. It replaces the former `python` registration; omitted triggers also run immediately.

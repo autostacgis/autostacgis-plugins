@@ -1,3 +1,5 @@
+"""Evaluate metadata predicates against STAC records."""
+
 from autostacgis.checks import combine
 from autostacgis.metadata import matches
 
@@ -13,5 +15,5 @@ REQUIRES = ()
 CAPABILITY = "checks"
 IMPLEMENTATION = metadata_matches
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

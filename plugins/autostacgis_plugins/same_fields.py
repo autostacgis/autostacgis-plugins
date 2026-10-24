@@ -1,3 +1,5 @@
+"""Check that records share the required metadata field values."""
+
 from autostacgis.checks import combine
 from autostacgis.contracts import value
 from autostacgis.metadata import MISSING
@@ -21,5 +23,5 @@ REQUIRES = ()
 CAPABILITY = "checks"
 IMPLEMENTATION = same_fields
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

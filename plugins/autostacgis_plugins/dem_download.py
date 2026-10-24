@@ -1,3 +1,5 @@
+"""Acquire elevation datasets selected during discovery."""
+
 import os
 
 import httpx
@@ -54,5 +56,5 @@ CAPABILITY = "data_in"
 IMPLEMENTATION = DemDownload
 REQUIRES = ()
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

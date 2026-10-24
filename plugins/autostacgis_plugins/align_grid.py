@@ -1,3 +1,5 @@
+"""Resample rasters onto a shared pixel grid and coordinate reference system."""
+
 from dataclasses import replace
 
 from autostacgis.data import WarpedRaster
@@ -113,5 +115,5 @@ align_grid.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = align_grid
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

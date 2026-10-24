@@ -1,3 +1,5 @@
+"""Check spatial overlap between record geometries."""
+
 from autostacgis.errors import AutoSTACGISError
 from autostacgis.sequence import Group
 
@@ -29,5 +31,5 @@ REQUIRES = ()
 CAPABILITY = "sequence"
 IMPLEMENTATION = by_overlap
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

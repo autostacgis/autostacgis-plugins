@@ -916,8 +916,8 @@
       "previous": "polygonize"
     },
     {
-      "id": "python",
-      "module": "python",
+      "id": "now",
+      "module": "now",
       "capability": "trigger",
       "previous": "python"
     },

@@ -32,6 +32,8 @@ def build(ref):
     for path in sorted((ROOT / "plugins/autostacgis_plugins").glob("*.py")):
         if path.name.startswith("_"):
             continue
+        docstring = ast.get_docstring(ast.parse(path.read_text()))
+        assert docstring and docstring.strip(), f"{path}: descriptive module docstring required"
         declarations = {}
         for node in ast.parse(path.read_text()).body:
             if isinstance(node, ast.Assign):
@@ -46,7 +48,7 @@ def build(ref):
                         "CAPABILITY",
                         "REQUIRES",
                         "DEPENDENCIES",
-                        "DESCRIPTION",
+                        "DEFAULT_CONFIG",
                     ):
                         declarations[target.id] = ast.literal_eval(node.value)
         assert declarations["CAPABILITY"] in CAPABILITIES, f"{path}: one CAPABILITY required"
@@ -54,16 +56,18 @@ def build(ref):
             f"{path}: semantic VERSION required"
         )
         assert isinstance(declarations["REQUIRES"], (list, tuple)), f"{path}: literal REQUIRES required"
+        fragment = declarations.get("DEFAULT_CONFIG", {})
+        assert isinstance(fragment, dict) and set(fragment) <= CAPABILITIES, f"{path}: invalid DEFAULT_CONFIG"
+        requirements = list(dict.fromkeys([*declarations["REQUIRES"], *(name for group in fragment.values() for name in group)]))
         rows.append(
             {
                 "id": declarations["ID"],
                 "version": declarations["VERSION"],
                 "capability": declarations["CAPABILITY"],
-                "requires": list(declarations["REQUIRES"]),
+                "requires": requirements,
+                "default_config": fragment,
                 "dependencies": list(declarations.get("DEPENDENCIES", [])),
-                "description": declarations.get(
-                    "DESCRIPTION", ast.get_docstring(ast.parse(path.read_text())) or ""
-                ),
+                "description": docstring,
                 "module": f"autostacgis_plugins.{path.stem}",
                 "source": {
                     "repository": "https://github.com/autostacgis/autostacgis-plugins",

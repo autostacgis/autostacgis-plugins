@@ -1,3 +1,5 @@
+"""Encode raster results as GeoTIFF assets."""
+
 from autostacgis.encoding import encode, restore
 
 
@@ -22,5 +24,5 @@ REQUIRES = ("geotiff-metadata",)
 CAPABILITY = "encode"
 IMPLEMENTATION = geotiff
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

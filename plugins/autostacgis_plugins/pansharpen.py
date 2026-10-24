@@ -1,3 +1,5 @@
+"""Combine multispectral and panchromatic imagery at higher resolution."""
+
 from dataclasses import replace
 
 import numpy as np
@@ -183,5 +185,5 @@ pansharpen.contract["argument_requirements"]["panchromatic"]["data_types"] = ["r
 CAPABILITY = "process"
 IMPLEMENTATION = pansharpen
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

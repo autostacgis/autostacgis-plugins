@@ -1,3 +1,5 @@
+"""Run workflows in response to watchdog filesystem events."""
+
 from autostacgis.triggers import file_trigger
 
 
@@ -12,5 +14,5 @@ CAPABILITY = "trigger"
 IMPLEMENTATION = watchdog
 REQUIRES = ()
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = ["watchdog>=6,<7"]

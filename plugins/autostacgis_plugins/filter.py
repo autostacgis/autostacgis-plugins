@@ -1,3 +1,5 @@
+"""Select records using a configured metadata predicate."""
+
 from autostacgis.metadata import matches
 from autostacgis.sequence import Group
 
@@ -14,5 +16,5 @@ REQUIRES = ()
 CAPABILITY = "sequence"
 IMPLEMENTATION = filtered
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

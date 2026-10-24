@@ -1,3 +1,5 @@
+"""Discover imagery through configured EODAG providers."""
+
 from itertools import chain
 
 from autostacgis.errors import AutoSTACGISError
@@ -49,7 +51,7 @@ EodagSource.data_in = "eodag-download"
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = EodagSource
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = [
     "eodag @ git+https://github.com/autostacgis/eodag.git@016be9ce5196d0f7e607d9f1bb9d56296e2d233f"
 ]

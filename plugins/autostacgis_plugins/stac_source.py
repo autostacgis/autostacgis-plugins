@@ -1,3 +1,5 @@
+"""Discover STAC items from local documents or an API search."""
+
 from urllib.parse import urljoin, urlsplit
 
 import httpx
@@ -49,5 +51,5 @@ StacSource.data_in = "stac-source-download"
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = StacSource
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = []

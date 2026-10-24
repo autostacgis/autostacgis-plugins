@@ -1,3 +1,5 @@
+"""Run workflows on APScheduler date, interval, or cron triggers."""
+
 from autostacgis.triggers import timed_trigger
 
 
@@ -12,5 +14,5 @@ CAPABILITY = "trigger"
 IMPLEMENTATION = apscheduler
 REQUIRES = ()
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 DEPENDENCIES = ["APScheduler>=3.11,<4"]
