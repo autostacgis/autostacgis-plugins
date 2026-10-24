@@ -17,16 +17,14 @@ def filesystem(value, settings, context):
     )
     if destination.startswith("path:"):
         destination = destination[5:]
-    from urllib.parse import urlsplit
+    from autostacgis.io import is_local, local
 
-    from autostacgis.io import local
-
-    if urlsplit(destination).scheme not in ("", "file"):
+    if not is_local(destination):
         raise AutoSTACGISError("filesystem output requires a local path")
     target = context.path(local(destination))
     target.parent.mkdir(parents=True, exist_ok=True)
     source = local(str(value.value)).resolve() if value.type == "path" else None
-    if value.type == "path" and urlsplit(str(value.value)).scheme not in ("", "file"):
+    if value.type == "path" and not is_local(value.value):
         raise AutoSTACGISError("filesystem input paths must be local; acquire remote assets first")
     if source == target:
         return Artifact("path", target, value.media_type)
@@ -76,5 +74,5 @@ REQUIRES = ()
 CAPABILITY = "data_out"
 IMPLEMENTATION = filesystem
 
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 DEPENDENCIES = []

@@ -2,10 +2,10 @@
 
 import json
 from copy import deepcopy
-from urllib.parse import urlsplit
 
 from autostacgis.artifacts import Artifact
 from autostacgis.errors import AutoSTACGISError
+from autostacgis.io import file_reference, is_local
 from autostacgis.metadata import MISSING, assign, get
 from autostacgis.model import digest
 
@@ -37,10 +37,15 @@ def json_writer(record, settings, context):
 
     saved = context.call(destination["plugin"], "data_out", encode(), options)
     if settings.get("href_field"):
-        assign(item, settings["href_field"], str(saved.value))
+        reference = (
+            file_reference(saved.value)
+            if saved.type == "path" and is_local(saved.value)
+            else str(saved.value)
+        )
+        assign(item, settings["href_field"], reference)
         # Local JSON can retain its own reference. For remote sinks the returned Item
         # carries the actual saved reference, without inventing a destination URL.
-        if saved.type == "path" and urlsplit(str(saved.value)).scheme in ("", "file"):
+        if saved.type == "path" and is_local(saved.value):
             context.call(
                 destination["plugin"],
                 "data_out",
@@ -57,5 +62,5 @@ DEFAULTS = {"directory": "output/stac"}
 CAPABILITY = "metadata_out"
 IMPLEMENTATION = json_writer
 
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 DEPENDENCIES = []

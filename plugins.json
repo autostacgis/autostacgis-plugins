@@ -471,7 +471,7 @@
     },
     {
       "id": "eoreader",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "capability": "metadata_in",
       "requires": [],
       "default_config": {},
@@ -485,7 +485,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/eoreader.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/eoreader.py",
-        "sha256": "1d7c8c1c1fe793d495707e478b68e30506eb6f35265f8530436a6c1d5d3e2914"
+        "sha256": "8fa17fe50a72806f8284d5923c85caec0cb93cf803aa350e3628538a73a840b8"
       }
     },
     {
@@ -567,7 +567,7 @@
     },
     {
       "id": "file-checkpoint",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "capability": "checkpoint",
       "requires": [
         "filesystem",
@@ -584,12 +584,12 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/file_checkpoint.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/file_checkpoint.py",
-        "sha256": "aca95fba01dd6437ce46fec268ce667bb0b4f51a7b2585c7736010cce8e912be"
+        "sha256": "2ea68b6f1809d63539bfe5e86bb87582db2921e27e4a94e729825b69f3daa91e"
       }
     },
     {
       "id": "filesystem",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "capability": "data_out",
       "requires": [],
       "default_config": {},
@@ -601,7 +601,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/filesystem.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/filesystem.py",
-        "sha256": "cc5b2f8b83fa78786312a0b53994d23d7c31c943fa5846cab96d98a52c4a5458"
+        "sha256": "01d1d18e4065ef95976013618b0ff357937a8ee94346d54ac30a640c3a8f7f06"
       }
     },
     {
@@ -1282,7 +1282,7 @@
     },
     {
       "id": "stac-json",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "capability": "metadata_out",
       "requires": [
         "filesystem"
@@ -1296,7 +1296,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/stac_json.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/stac_json.py",
-        "sha256": "cf9c5b701a4dbc04313acc2b803a634cf52d5fc98309f95c23ddcdc29acbd32b"
+        "sha256": "21e6e76dc52235fac9ffe827aea098c804a86200e4252a1f5cf7efaef3eee368"
       }
     },
     {

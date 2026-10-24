@@ -59,12 +59,10 @@ class FileCheckpoint:
             }
             if len(roots) != 1 or next(iter(roots)) in (MISSING, None):
                 raise AutoSTACGISError("Checkpoint item location must be one shared, known local directory")
-            from urllib.parse import urlsplit
-
-            from autostacgis.io import local
+            from autostacgis.io import is_local, local
 
             location = str(next(iter(roots)))
-            if urlsplit(location).scheme not in ("", "file"):
+            if not is_local(location):
                 raise AutoSTACGISError("file-checkpoint needs a local item directory")
             root = self.context.path(local(location))
         else:
@@ -250,5 +248,5 @@ DEFAULTS = {
 CAPABILITY = "checkpoint"
 IMPLEMENTATION = FileCheckpoint
 
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 DEPENDENCIES = []

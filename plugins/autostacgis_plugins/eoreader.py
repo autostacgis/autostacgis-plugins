@@ -2,10 +2,9 @@
 
 from copy import deepcopy
 from pathlib import Path
-from urllib.parse import urlsplit
 
 from autostacgis.errors import AutoSTACGISError
-from autostacgis.io import local, merge_verified
+from autostacgis.io import is_local, local, merge_verified
 
 
 def eoreader_metadata(record, settings, app):
@@ -51,7 +50,7 @@ def eoreader_metadata(record, settings, app):
     local_assets = record.runtime.setdefault("local_assets", {})
 
     def same_location(left, right):
-        if all(urlsplit(str(value)).scheme in ("", "file") for value in (left, right)):
+        if all(is_local(value) for value in (left, right)):
             return local(str(left)).resolve() == local(str(right)).resolve()
         return str(left) == str(right)
 
@@ -143,7 +142,7 @@ REQUIRES = ()
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = EoreaderSource
 
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 DEPENDENCIES = [
     "eoreader @ git+https://github.com/autostacgis/eoreader.git@d73407d5128fee4058dffbd9d05b2ea96e803221"
 ]
