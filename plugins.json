@@ -229,7 +229,7 @@
     },
     {
       "id": "cli",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "capability": "trigger",
       "requires": [],
       "default_config": {},
@@ -241,7 +241,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/cli.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/cli.py",
-        "sha256": "70484391d75ddf4ada7a358f9202a300fba7cfecdc5ded0ee0ca7dfe35c7c295"
+        "sha256": "74acdbfb50c1493b65e7810a3ffeadab859c3771d514a8bfd652ce7ea0487612"
       }
     },
     {
@@ -316,7 +316,7 @@
     },
     {
       "id": "compatible-grids",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "capability": "checks",
       "requires": [],
       "default_config": {},
@@ -328,12 +328,12 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/compatible_grids.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/compatible_grids.py",
-        "sha256": "9d30507220e0291489a378d0e64d0b0d750d3271ab5238f33e5a7b0fad4c0020"
+        "sha256": "c613b43bdba5e87bf61cfd6a15feb3afffd4d579d3c8dad9c2e1c367b7746da3"
       }
     },
     {
       "id": "compatible-optical",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "capability": "checks",
       "requires": [
         "same-fields"
@@ -347,7 +347,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/compatible_optical.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/compatible_optical.py",
-        "sha256": "e0b0cd684eed6946d514e573eb88a2579e65b237b670001abde41742c35cd3f2"
+        "sha256": "d3626f5e4dadc98092a96eb43f3f6efeb3ef5a2597b9a792c9960e0582b12c21"
       }
     },
     {
@@ -869,7 +869,7 @@
     },
     {
       "id": "metadata-schema",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "capability": "checks",
       "requires": [],
       "default_config": {},
@@ -881,7 +881,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/metadata_schema.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/metadata_schema.py",
-        "sha256": "e6c71f12dcbb2ef20b299c4f7b1edea56ff7d5fa01c18fd7468aff2e76b21701"
+        "sha256": "54d8f7307f6c30519599373ca10caf57bb26c73637de53cdfcdf60298676a058"
       }
     },
     {
@@ -950,7 +950,7 @@
     },
     {
       "id": "now",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "capability": "trigger",
       "requires": [],
       "default_config": {},
@@ -962,7 +962,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/now.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/now.py",
-        "sha256": "63fd671b65be0107ccf50553bc5059ab1a056fe93e5b6c59957affe14c6a76ac"
+        "sha256": "f158fcf77d432b55b1f944460dcd490e2fd5a9cda43fa84a749cbe92e859534f"
       }
     },
     {
@@ -1197,7 +1197,7 @@
     },
     {
       "id": "slurm",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "capability": "trigger",
       "requires": [],
       "default_config": {},
@@ -1209,7 +1209,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/slurm.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/slurm.py",
-        "sha256": "4ee34e525232df7b46831023f7313c1a7f5894fa32d1ff10b34a6315a74b2312"
+        "sha256": "06fabeab1ff8efa0c9268652164c6035c580a29dd6e4c8730e2f59e437152de1"
       }
     },
     {

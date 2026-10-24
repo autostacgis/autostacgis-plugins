@@ -41,7 +41,7 @@ def test_all_previous_capabilities_have_a_registered_replacement():
     for row in inventory["after"]:
         provider = providers[row["id"]]
         assert provider.CAPABILITY == row["capability"]
-        assert provider.VERSION == "1.1.0"
+        assert provider.VERSION in ("1.1.0", "1.1.1")
         assert provider.__doc__ and provider.__doc__.strip()
         assert callable(provider.IMPLEMENTATION)
         assert not hasattr(provider, "IMPLEMENTATIONS")

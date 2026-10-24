@@ -1,5 +1,6 @@
 """Check whether raster pixel grids are compatible."""
 
+
 def compatible_grids(inputs, settings, context):
     grids = []
     for records in inputs.values():
@@ -42,5 +43,5 @@ REQUIRES = ()
 CAPABILITY = "checks"
 IMPLEMENTATION = compatible_grids
 
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 DEPENDENCIES = []

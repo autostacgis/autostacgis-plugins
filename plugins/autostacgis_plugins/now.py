@@ -1,5 +1,6 @@
 """Run the workflow immediately in the current application."""
 
+
 def direct(app, settings, request):
     return app.run(request or app.request())
 
@@ -10,5 +11,5 @@ REQUIRES = ()
 CAPABILITY = "trigger"
 IMPLEMENTATION = direct
 
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 DEPENDENCIES = []

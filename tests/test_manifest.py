@@ -1,4 +1,5 @@
 """The published catalog must describe the exact reviewed source bytes."""
+
 import json
 import runpy
 from pathlib import Path
