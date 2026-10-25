@@ -4,7 +4,7 @@ A catalog selects exactly one solver plugin. Installed and registered solvers ma
 
 ```yaml
 catalog:
-  version: 1.0.0
+  version: 0.0.1
   plugins:
     - use: metadata-value
     - use: atmospheric_correction
@@ -44,7 +44,7 @@ goal:
       assets.$asset.unit: '1'
 ```
 
-`backward_chain` constructs workflows backward from required outputs, memoizes subproblems, and regresses metadata predicates through declared processing effects. Metadata goals are inputs to this algorithm. It supports `output`, `for_each`, `all_of`, and `any_of`, including named outputs, source selection, counts, metadata predicates, publication, and spatial coverage. This syntax is declared in its `goal_schema`. The general configuration schema accepts a goal object; the selected solver validates its dialect. Other goal adapters can target this solver, and other solvers can declare their own goal dialects.
+`backward_chain` constructs workflows backward from required outputs, memoizes subproblems, and regresses metadata predicates through declared processing effects. Metadata goals are inputs to this algorithm. It supports `output`, `for_each`, `all_of`, and `any_of`, including named outputs, source selection, counts, metadata predicates and spatial coverage. This syntax is declared in its `goal_schema`. The general configuration schema accepts a goal object; the selected solver validates its dialect. Other goal adapters can target this solver, and other solvers can declare their own goal dialects.
 
 ## JSONata metadata values and areas of interest
 
@@ -85,7 +85,7 @@ Both operands must use the same coordinate system; STAC geometry and bbox use WG
 
 Selection filters the discovered inventory. Use the source provider's query settings to restrict remote discovery as well. `for_each: true` requests a separate result for each selected image. An `output` goal with source selection requires ancestry from every selected image, allowing a suitable aggregation. A [JSONata coverage goal](../examples/goals/jsonata-coverage.yaml) can request an output covering the AOI and synthesize an aggregation when a selected processing plugin declares the combined geometry.
 
-Direct `path` equality remains available. Optional settings are `name`, `kind`, `select`, `for_each`, `parameters`, `observes`, `count`, `coverage`, and `publish`. `observes` requires `jsonata`; `count` is only available when `for_each` is false. Native `coverage` accepts `geometry` as GeoJSON or a four-number bbox and mode `footprint` (Item geometry), `bbox`, or `metadata`/`valid_data` with a metadata `path`. Coverage of an extent does not establish valid or cloud-free pixels. Publication and coverage are also supported for each selected member.
+Direct `path` equality remains available. Optional settings are `name`, `kind`, `select`, `for_each`, `parameters`, `observes`, `count` and `coverage`. `observes` requires `jsonata`; `count` is only available when `for_each` is false. Native `coverage` accepts `geometry` as GeoJSON or a four-number bbox and mode `footprint` (Item geometry), `bbox`, or `metadata`/`valid_data` with a metadata `path`. Coverage of an extent does not establish valid or cloud-free pixels. Coverage is also supported for each selected member. Saving is configured independently on the producing plugin’s named result.
 
 ## Explicit contracts
 
@@ -137,6 +137,6 @@ A solver factory receives `(application, prepared_request, settings)` and return
 
 Goal factories receive `(settings, initial_records, context)` and return JSON parameters in their required solver's dialect. The core expands adapters, detects dependency cycles, checks solver compatibility, and validates the expanded parameters against `goal_schema`.
 
-A Plan carries named steps, initial and predicted records, outputs, cost, and its report. Execution information is held in `module_contracts`, `parameter_templates`, and `output_policies`; these contain implementation objects and are excluded from the serialized planning report. Initial records must retain their original identity in `runtime.origin` so the core can acquire selected inputs and replan. The executor invokes the selected solver's output validation before and after publication; it does not assume metadata goal syntax.
+A Plan carries named steps, initial and predicted records, outputs, cost, and its report. Execution information is held in `module_contracts` and `parameter_templates`; these contain implementation objects and are excluded from the serialized planning report. Initial records must retain their original identity in `runtime.origin` so the core can acquire selected inputs and replan. The executor invokes the selected solver's output validation after execution and any explicitly enabled result saving; it does not assume metadata goal syntax.
 
 The `available` command reports feasibility of the request's declared goal under `requested`; there is no catalog of product-preset plugins to enumerate.

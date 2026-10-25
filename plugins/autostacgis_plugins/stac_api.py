@@ -35,5 +35,5 @@ REQUIRES = ()
 CAPABILITY = "metadata_out"
 IMPLEMENTATION = stac_api
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []

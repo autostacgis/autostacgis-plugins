@@ -20,7 +20,6 @@ class BackwardChainSolver:
         plan = self.planner.plan(records)
         plan.module_contracts = self.planner.modules
         plan.parameter_templates = self.planner.parameter_templates
-        plan.output_policies = self.planner.output_policies
         return plan
 
     def validate_outputs(self, plan, records):
@@ -34,5 +33,5 @@ IMPLEMENTATION = BackwardChainSolver
 REQUIRES = ()
 DEFAULTS = BackwardChainSolver.contract["settings"]
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []

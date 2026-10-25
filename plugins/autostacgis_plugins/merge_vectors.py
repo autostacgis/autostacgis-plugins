@@ -3,6 +3,8 @@
 from autostacgis.data.metadata import finish
 from autostacgis.errors import AutoSTACGISError
 
+from ._result_defaults import result_defaults
+
 
 def merge_vectors(inputs, settings, context):
     from autostacgis.data import Batches
@@ -47,7 +49,7 @@ merge_vectors.contract = {
     },
     "input_requirements": [],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -58,5 +60,8 @@ merge_vectors.contract["argument_requirements"]["vectors"]["data_types"] = ["bat
 CAPABILITY = "process"
 IMPLEMENTATION = merge_vectors
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []
+
+
+result_defaults(merge_vectors, suffix="merge_vectors")

@@ -8,6 +8,8 @@ from autostacgis.data import Block, TransformRaster, physical_raster
 from autostacgis.data.metadata import finish
 from autostacgis.errors import AutoSTACGISError
 
+from ._result_defaults import result_defaults
+
 
 def coefficients(parameters):
     from Py6S import AeroProfile, AtmosCorr, AtmosProfile, Geometry, SixS, Wavelength
@@ -247,7 +249,7 @@ atmospheric_correction.contract = {
             "inputs": {"image": "image", "atmosphere": "atmosphere"},
         }
     ],
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -275,5 +277,8 @@ atmospheric_correction.contract["argument_requirements"]["elevation"]["data_type
 CAPABILITY = "process"
 IMPLEMENTATION = atmospheric_correction
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = ["Py6S>=1.9,<2"]
+
+
+result_defaults(atmospheric_correction, suffix="atmospheric_correction")

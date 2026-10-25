@@ -24,5 +24,5 @@ REQUIRES = ("cog-metadata",)
 CAPABILITY = "encode"
 IMPLEMENTATION = cog
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []

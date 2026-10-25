@@ -18,7 +18,7 @@ def application(tmp_path, *processes):
         registry.register(name, "process", process, requires=getattr(process, "requires", ()))
     names = [name for name, _ in processes] + ["metadata-value", "executor", "storage", "events"]
     return Application(
-        {"version": "1.0.0", "plugins": [{"use": name} for name in names]},
+        {"version": "0.0.1", "plugins": [{"use": name} for name in names]},
         registry=registry,
         base_dir=tmp_path,
     )
@@ -183,7 +183,7 @@ def test_jsonata_coverage_goal_can_synthesize_an_aggregation_of_adjacent_images(
     )
 
 
-def test_existing_count_coverage_publication_and_path_goal_parameters_remain_available(tmp_path):
+def test_count_coverage_and_path_goal_parameters_remain_available(tmp_path):
     app = application(tmp_path)
     record = rectangle("full", [0, 0, 2, 2])
     record.item["properties"]["footprint"] = deepcopy(record.item["geometry"])

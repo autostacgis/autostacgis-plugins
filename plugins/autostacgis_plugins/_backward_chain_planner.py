@@ -28,6 +28,7 @@ def inventory(records):
             record.key = digest([original.key, asset, original.item])[:24]
             record.runtime.update(
                 selected_asset=asset,
+                source_asset=original.runtime.get("source_asset", asset),
                 origin=original.key,
                 lineage=[record.key],
                 source_id=original.runtime.get("source_id", original.item["id"]),
@@ -201,6 +202,9 @@ class Planner:
                 }
                 if anchor:
                     runtime["source_id"] = anchor.runtime.get("source_id", anchor.item["id"])
+                    runtime["source_asset"] = anchor.runtime.get(
+                        "source_asset", anchor.runtime.get("selected_asset", "data")
+                    )
                 outputs.setdefault(port, []).append(Record(item, policy["kind"], key, runtime=runtime))
         return outputs
 
@@ -607,7 +611,7 @@ class Planner:
                 inputs = dict(zip(ports, combination, strict=True))
                 input_keys = {port: [r.key for r in group] for port, group in inputs.items()}
                 step_key = digest(
-                    [name, contract.get("version", "1.0.0"), input_keys, contract.get("settings", {})]
+                    [name, contract.get("version", "0.0.1"), input_keys, contract.get("settings", {})]
                 )[:24]
                 if step_key not in self.evaluated:
                     self.bindings += 1
@@ -738,17 +742,6 @@ class Planner:
         if not solutions:
             raise NoPlan("No dataflow satisfies the requested requirements with the selected plugins")
         cost, outputs, closure, constraints = min(solutions, key=lambda s: s[0])
-        self.output_policies = {c["name"]: c.get("publish", {}) for c in constraints}
-        for name, keys in outputs.items():
-            for key in keys:
-                record = self.objects[key]
-                types = record.runtime.get("data_types")
-                if types is None and record.payload is not None:
-                    from autostacgis.artifacts import artifact
-
-                    types = [artifact(record.payload).type]
-                if types is not None:
-                    self.app.validate_publication(types, self.output_policies[name])
         cost = sum(self.steps[k].cost for k in closure)
         self.modules = self.app.modules(self.request)
         if self.request.get("steps"):

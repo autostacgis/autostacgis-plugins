@@ -3,6 +3,8 @@
 import numpy as np
 from autostacgis.data.metadata import finish
 
+from ._result_defaults import result_defaults
+
 
 def statistics(inputs, settings, context):
     """Stable per-band streaming moments, respecting validity and finite values."""
@@ -71,7 +73,7 @@ statistics.contract = {
     "argument_requirements": {"image": {"kind": "raster", "cardinality": "one", "require": {"all": []}}},
     "input_requirements": [],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -82,5 +84,8 @@ statistics.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = statistics
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []
+
+
+result_defaults(statistics, suffix="statistics")

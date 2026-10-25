@@ -58,7 +58,11 @@ def build(ref):
         assert isinstance(declarations["REQUIRES"], (list, tuple)), f"{path}: literal REQUIRES required"
         fragment = declarations.get("DEFAULT_CONFIG", {})
         assert isinstance(fragment, dict) and set(fragment) <= CAPABILITIES, f"{path}: invalid DEFAULT_CONFIG"
-        requirements = list(dict.fromkeys([*declarations["REQUIRES"], *(name for group in fragment.values() for name in group)]))
+        requirements = list(
+            dict.fromkeys(
+                [*declarations["REQUIRES"], *(name for group in fragment.values() for name in group)]
+            )
+        )
         rows.append(
             {
                 "id": declarations["ID"],
@@ -112,7 +116,11 @@ if __name__ == "__main__":
             previous = subprocess.run(
                 ["git", "show", f"{args.check_base}:{path}"], cwd=ROOT, capture_output=True, text=True
             )
-            if previous.returncode or previous.stdout == (ROOT / path).read_text():
+            if (
+                row["version"] == "0.0.1"
+                or previous.returncode
+                or previous.stdout == (ROOT / path).read_text()
+            ):
                 continue
             for node in ast.parse(previous.stdout).body:
                 if isinstance(node, ast.Assign) and any(

@@ -5,6 +5,8 @@ from autostacgis.data import Batches, physical_raster
 from autostacgis.data.metadata import finish
 from autostacgis.errors import AutoSTACGISError
 
+from ._result_defaults import result_defaults
+
 
 def sample_dem(inputs, settings, context):
     import pyarrow as pa
@@ -102,7 +104,7 @@ sample_dem.contract = {
         }
     },
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -114,5 +116,8 @@ sample_dem.contract["outputs"]["result"]["data_types"] = ["batches"]
 CAPABILITY = "process"
 IMPLEMENTATION = sample_dem
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []
+
+
+result_defaults(sample_dem, suffix="sample_dem")

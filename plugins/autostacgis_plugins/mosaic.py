@@ -4,6 +4,8 @@ from autostacgis.data import FileRaster, physical_raster
 from autostacgis.data.metadata import finish, resampling_history
 from autostacgis.errors import AutoSTACGISError
 
+from ._result_defaults import result_defaults
+
 
 def mosaic(inputs, settings, context):
     from osgeo import gdal
@@ -102,7 +104,7 @@ mosaic.contract = {
         }
     ],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -145,7 +147,7 @@ def predict_mosaic(inputs, settings, index, item):
                 for k in keys
             }
 
-        elif key not in ("data_state:resampled", "data_state:mosaic"):
+        elif key not in ("data_state:resampled", "data_state:mosaic", "data_state:filename_suffixes"):
             destination[key] = (
                 deepcopy(values[0]) if all(v is not MISSING and v == values[0] for v in values) else None
             )
@@ -173,5 +175,8 @@ mosaic.contract["argument_requirements"]["images"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = mosaic
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = ["GDAL>=3.11,<4"]
+
+
+result_defaults(mosaic, suffix="mosaic")

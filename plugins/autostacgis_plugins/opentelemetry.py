@@ -37,5 +37,5 @@ REQUIRES = ("events",)
 CAPABILITY = "services"
 IMPLEMENTATION = OpenTelemetry
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = ["opentelemetry-sdk>=1,<2"]

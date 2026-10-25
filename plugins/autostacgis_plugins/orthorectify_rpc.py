@@ -4,6 +4,8 @@ from autostacgis.data import FileRaster
 from autostacgis.data.metadata import finish, resampling_history
 from autostacgis.errors import AutoSTACGISError
 
+from ._result_defaults import result_defaults
+
 
 def orthorectify_rpc(inputs, settings, context):
     from osgeo import gdal
@@ -94,7 +96,7 @@ orthorectify_rpc.contract = {
     },
     "input_requirements": [],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -122,5 +124,8 @@ orthorectify_rpc.contract["argument_requirements"]["dem"]["data_types"] = ["rast
 CAPABILITY = "process"
 IMPLEMENTATION = orthorectify_rpc
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = ["GDAL>=3.11,<4"]
+
+
+result_defaults(orthorectify_rpc, suffix="orthorectify_rpc")

@@ -51,5 +51,5 @@ StacSource.data_in = "stac-source-download"
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = StacSource
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []

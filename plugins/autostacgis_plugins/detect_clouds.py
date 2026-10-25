@@ -10,6 +10,8 @@ from autostacgis.data.raster import Raster
 from autostacgis.errors import AutoSTACGISError
 from autostacgis.semantics import descriptor_facts
 
+from ._result_defaults import result_defaults
+
 
 class CloudRaster(Raster):
     def __init__(self, source, indices, tile_size, halo, options, memory_bytes):
@@ -208,7 +210,7 @@ detect_clouds.contract = {
     },
     "input_requirements": [],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -219,5 +221,8 @@ detect_clouds.contract["argument_requirements"]["image"]["data_types"] = ["raste
 CAPABILITY = "process"
 IMPLEMENTATION = detect_clouds
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = ["omnicloudmask>=1,<2"]
+
+
+result_defaults(detect_clouds, suffix="detect_clouds")

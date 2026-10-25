@@ -248,5 +248,5 @@ DEFAULTS = {
 CAPABILITY = "checkpoint"
 IMPLEMENTATION = FileCheckpoint
 
-VERSION = "1.1.1"
+VERSION = "0.0.1"
 DEPENDENCIES = []

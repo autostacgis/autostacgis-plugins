@@ -30,5 +30,5 @@ DEFAULTS = {"search_glob": "data/*.tif"}
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = LocalStac
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []

@@ -8,6 +8,7 @@ from autostacgis.data.metadata import finish
 from autostacgis.data.raster import Raster
 from autostacgis.errors import AutoSTACGISError
 
+from ._result_defaults import result_defaults
 from .apply_mask import _mask
 
 
@@ -120,7 +121,7 @@ mask_by_polygons.contract = {
         {"plugin": "source-member", "observes": [], "inputs": {"member": "image", "collection": "mask"}},
     ],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -132,5 +133,8 @@ mask_by_polygons.contract["argument_requirements"]["mask"]["data_types"] = ["bat
 CAPABILITY = "process"
 IMPLEMENTATION = mask_by_polygons
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []
+
+
+result_defaults(mask_by_polygons, suffix="mask_by_polygons")

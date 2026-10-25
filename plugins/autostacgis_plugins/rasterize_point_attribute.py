@@ -6,6 +6,8 @@ from autostacgis.data.metadata import finish
 from autostacgis.errors import AutoSTACGISError
 from autostacgis.semantics import descriptor_facts
 
+from ._result_defaults import result_defaults
+
 
 def rasterize_point_attribute(inputs, settings, context):
     from affine import Affine
@@ -140,7 +142,7 @@ rasterize_point_attribute.contract = {
     },
     "input_requirements": [],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -151,5 +153,8 @@ rasterize_point_attribute.contract["argument_requirements"]["points"]["data_type
 CAPABILITY = "process"
 IMPLEMENTATION = rasterize_point_attribute
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = ["laspy[lazrs]>=2,<3"]
+
+
+result_defaults(rasterize_point_attribute, suffix="rasterize_point_attribute")

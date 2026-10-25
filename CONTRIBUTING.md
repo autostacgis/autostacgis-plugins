@@ -8,13 +8,13 @@ Plugins are single Python modules in `plugins/autostacgis_plugins/`. Their publi
 4. Run `python scripts/build_manifest.py`. Add the generated `plugins.json`. Add the module's entry point to `pyproject.toml` for inclusion in the complete distribution. Run the repository tests.
 5. Open a PR describing its capability, dependencies, inputs, outputs, and version. Maintainers review and merge it. Enable GitHub Pages with **GitHub Actions** as the source once for this repository.
 
-On merge, Actions publishes `https://autostacgis.github.io/autostacgis-plugins/plugins.json`. Each source URL is pinned to the merged commit and includes its SHA-256 checksum. Clients discover the catalog online and request installation on their connected backend. Bump `VERSION` whenever a module changes (patch for fixes, minor for compatible additions, major for breaking contracts). Old installed versions remain in the local version store; installing a newer version changes the active index. The bundled Python distribution has its own version independent of individual plugins.
+On merge, Actions publishes `https://autostacgis.github.io/autostacgis-plugins/plugins.json`. Each source URL is pinned to the merged commit and includes its SHA-256 checksum. Clients discover the catalog online and request installation on their connected backend. Keep `VERSION = "0.0.1"` during prerelease development. Old installed versions remain in the local version store; installing a newer version changes the active index. The bundled Python distribution has its own version independent of individual plugins.
 
 Example declarations:
 
 ```python
 ID = "my-check"
-VERSION = "1.0.0"
+VERSION = "0.0.1"
 CAPABILITY = "checks"
 REQUIRES = []
 DEPENDENCIES = []
@@ -32,3 +32,11 @@ Native dependencies remain environment prerequisites where no compatible Python 
 Begin the Python file with a descriptive module docstring; it is required by the registry validator and installer and displayed by both GUIs and `autostacgis plugins list`. A separate `DESCRIPTION` variable is unnecessary. Document parameter types, descriptions, and defaults in `IMPLEMENTATION.settings_schema` or the contract's `settings_schema`. Simple function annotations can supplement a missing explicit schema; complex types are not guessed.
 
 `DEFAULTS` is the parameter object for this plugin. Optional literal `DEFAULT_CONFIG` provides capability-grouped defaults for supporting plugins, for example `{"sequence": {"gather-all": {}}}`. Referenced names are added to `REQUIRES` automatically. User settings override the fragment. Selecting a helper does not call it: name the check/sequence in the actual processing contract as well. Every plugin remains one capability; solver and trigger selections are exclusive.
+
+## Prerelease version policy
+
+All maintained AutostacGIS packages and plugin modules remain at `0.0.1` until the maintainers explicitly change the version policy. Do not bump versions in development PRs. Manifests pin source commits and checksums, so each build still identifies its exact code. Third-party library and STAC specification versions are independent.
+
+## Saving function results
+
+Processing plugins declare optional saving defaults on each entry in `IMPLEMENTATION.contract["outputs"]`. The standard plugins use `_result_defaults.result_defaults` to declare `save: false`, asset `filename_suffixes`, an optional encoder, and a filesystem path expressed in JSONata. These are exposed as `process.<plugin>.outputs.<result>` in workflow JSON and the GUI editor. Call the helper after defining all output contracts. A caller can override every naming and saving field, choose another destination plugin, or set `encode: null` for already encoded bytes/streams/paths. Saving is never a goal.

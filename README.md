@@ -44,3 +44,5 @@ Product goals are declarative configuration. The generic `metadata-value` goal a
 Plugin publication and file installation: [CONTRIBUTING.md](CONTRIBUTING.md). The versioned online catalog is published by `.github/workflows/registry.yml`.
 
 Each published module declares a semantic `VERSION` and optional `DEPENDENCIES` (PEP 508 Python library requirements). `REQUIRES` continues to name other plugins. The package version and each plugin version are independent.
+
+The maintained package and plugin versions remain `0.0.1` throughout prerelease development. Each process result exposes optional saving and naming defaults under `process.<plugin>.outputs.<port>`. Standard defaults append asset-specific filename tokens and leave `save` off. Enable saving to use the plugin’s path or override its encoder, destination and filename. See the [core result-saving guide](https://github.com/autostacgis/autostacgis-python/blob/main/docs/data-flow.md#saving-named-results).

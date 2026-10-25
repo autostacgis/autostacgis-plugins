@@ -3,6 +3,8 @@
 from autostacgis.data import vectors
 from autostacgis.data.metadata import finish
 
+from ._result_defaults import result_defaults
+
 
 def clean_footprints(inputs, settings, context):
     import inspect
@@ -67,7 +69,7 @@ clean_footprints.contract = {
     },
     "input_requirements": [],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -116,8 +118,11 @@ clean_footprints.contract["argument_requirements"]["vector"]["data_types"] = ["b
 CAPABILITY = "process"
 IMPLEMENTATION = clean_footprints
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = [
     "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d",
     "geopandas>=1,<2",
 ]
+
+
+result_defaults(clean_footprints, suffix="clean_footprints")

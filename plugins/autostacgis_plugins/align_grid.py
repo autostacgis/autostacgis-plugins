@@ -6,6 +6,8 @@ from autostacgis.data import WarpedRaster
 from autostacgis.data.metadata import finish, resampling_history
 from autostacgis.errors import AutoSTACGISError
 
+from ._result_defaults import result_defaults
+
 
 def align_grid(inputs, settings, context):
     from affine import Affine
@@ -88,7 +90,7 @@ align_grid.contract = {
     },
     "input_requirements": [],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -115,5 +117,8 @@ align_grid.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = align_grid
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []
+
+
+result_defaults(align_grid, suffix="align_grid")

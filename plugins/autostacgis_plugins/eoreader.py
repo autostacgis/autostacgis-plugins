@@ -142,7 +142,7 @@ REQUIRES = ()
 CAPABILITY = "metadata_in"
 IMPLEMENTATION = EoreaderSource
 
-VERSION = "1.1.1"
+VERSION = "0.0.1"
 DEPENDENCIES = [
     "eoreader @ git+https://github.com/autostacgis/eoreader.git@d73407d5128fee4058dffbd9d05b2ea96e803221"
 ]

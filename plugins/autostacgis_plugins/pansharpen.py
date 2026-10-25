@@ -7,6 +7,8 @@ from autostacgis.data import Block, TransformRaster, WarpedRaster, physical_rast
 from autostacgis.data.metadata import finish, resampling_history
 from autostacgis.errors import AutoSTACGISError
 
+from ._result_defaults import result_defaults
+
 
 def _brovey(blocks, window, settings):
     multispectral, pan = blocks
@@ -168,7 +170,7 @@ pansharpen.contract = {
         },
     ],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -185,5 +187,8 @@ pansharpen.contract["argument_requirements"]["panchromatic"]["data_types"] = ["r
 CAPABILITY = "process"
 IMPLEMENTATION = pansharpen
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []
+
+
+result_defaults(pansharpen, suffix="pansharpen")

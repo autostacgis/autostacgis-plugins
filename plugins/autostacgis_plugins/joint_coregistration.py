@@ -14,6 +14,7 @@ from autostacgis.data.metadata import finish
 from autostacgis.data.writers import vrt_paths
 from autostacgis.errors import AutoSTACGISError
 
+from ._result_defaults import result_defaults
 from .common_crs import require_common_crs
 from .register_to_reference import append_registration, identity
 
@@ -260,7 +261,7 @@ joint_coregistration.contract = {
             "inputs": {"images": "images"},
         }
     ],
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 joint_coregistration.contract["argument_requirements"]["images"]["sequence"]["settings"] = {
@@ -304,5 +305,8 @@ joint_coregistration.contract["argument_requirements"]["images"]["data_types"] =
 CAPABILITY = "process"
 IMPLEMENTATION = joint_coregistration
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = ["opencv-python-headless>=4.10,<5"]
+
+
+result_defaults(joint_coregistration, suffix="joint_coregistration")

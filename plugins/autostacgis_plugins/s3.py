@@ -56,5 +56,5 @@ REQUIRES = ()
 CAPABILITY = "data_out"
 IMPLEMENTATION = s3
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = ["boto3>=1.35,<2"]

@@ -9,6 +9,8 @@ from autostacgis.data.metadata import finish
 from autostacgis.errors import AutoSTACGISError
 from autostacgis.semantics import descriptor_facts
 
+from ._result_defaults import result_defaults
+
 
 def _math(blocks, window, settings):
     import numexpr
@@ -108,7 +110,7 @@ band_math.contract = {
     "argument_requirements": {"image": {"kind": "raster", "cardinality": "one", "require": {"all": []}}},
     "input_requirements": [],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -119,5 +121,8 @@ band_math.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = band_math
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []
+
+
+result_defaults(band_math, suffix="band_math")

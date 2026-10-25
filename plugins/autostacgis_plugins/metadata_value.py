@@ -22,7 +22,7 @@ def _parameters(value, parameters):
 def metadata_value(settings, records, context):
     specification = {
         field: deepcopy(settings[field])
-        for field in ("name", "kind", "select", "count", "coverage", "publish")
+        for field in ("name", "kind", "select", "count", "coverage")
         if field in settings
     }
     if "jsonata" in settings:
@@ -79,7 +79,7 @@ metadata_value.contract = {
                 "description": "Initial source selection, including JSONata and AOI predicates.",
             },
             "for_each": {"type": "boolean", "default": False},
-            **{field: deepcopy(_output["properties"][field]) for field in ("count", "coverage", "publish")},
+            **{field: deepcopy(_output["properties"][field]) for field in ("count", "coverage")},
         },
         "required": ["value"],
         "oneOf": [
@@ -102,7 +102,7 @@ CAPABILITY = "goal"
 IMPLEMENTATION = metadata_value
 REQUIRES = ("backward_chain",)
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []
 
 DEFAULT_CONFIG = {"solver": {"backward_chain": {}}}

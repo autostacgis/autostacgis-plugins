@@ -6,6 +6,8 @@ import numpy as np
 from autostacgis.data import Block, TransformRaster, WarpedRaster
 from autostacgis.data.metadata import finish
 
+from ._result_defaults import result_defaults
+
 
 def _mask(blocks, window, settings):
     image, mask = blocks
@@ -93,7 +95,7 @@ apply_mask.contract = {
     },
     "input_requirements": [{"relation": "same_sources", "ports": ["image", "mask"]}],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -105,5 +107,8 @@ apply_mask.contract["argument_requirements"]["mask"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = apply_mask
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []
+
+
+result_defaults(apply_mask, suffix="apply_mask")

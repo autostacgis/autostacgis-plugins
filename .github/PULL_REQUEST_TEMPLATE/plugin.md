@@ -10,4 +10,4 @@ Validation and example:
 
 - [ ] One explicit capability; unique ID; semantic VERSION
 - [ ] Generated plugins.json and distribution entry point updated
-- [ ] Version bumped for changes to an existing module
+- [ ] Version remains 0.0.1 during prerelease development

@@ -59,13 +59,13 @@ def boolean_registry(*names):
 
 
 def test_generic_metadata_goal_loads_its_solver_and_runs(tmp_path):
-    app = Application({"version": "1.0.0", "plugins": [{"use": "metadata-value"}]}, base_dir=tmp_path)
+    app = Application({"version": "0.0.1", "plugins": [{"use": "metadata-value"}]}, base_dir=tmp_path)
     request = {"goal": {"plugin": "metadata-value", "settings": {"path": "properties.ready", "value": True}}}
     # Execution services are ordinary named dependencies, independently selected.
     app = Application(
         {
             "catalog": {
-                "version": "1.0.0",
+                "version": "0.0.1",
                 "plugins": [{"use": name} for name in ("metadata-value", "executor", "storage", "events")],
             },
             "request": request,
@@ -81,7 +81,7 @@ def test_generic_metadata_goal_loads_its_solver_and_runs(tmp_path):
 
 
 def test_metadata_goal_requires_all_declared_parameters_and_rejects_unknown_ones():
-    app = Application({"version": "1.0.0", "plugins": [{"use": "metadata-value"}]})
+    app = Application({"version": "0.0.1", "plugins": [{"use": "metadata-value"}]})
     for settings in ({"path": "properties.ready"}, {"path": "properties.ready", "value": True, "typo": 1}):
         with pytest.raises(AutoSTACGISError, match="metadata-value"):
             app.plan({"goal": {"plugin": "metadata-value", "settings": settings}}, [scene()])
@@ -92,7 +92,7 @@ def test_metadata_goal_requires_all_declared_parameters_and_rejects_unknown_ones
 )
 def test_solver_parameters_use_the_installed_contract(settings):
     with pytest.raises(AutoSTACGISError, match="backward_chain"):
-        Application({"version": "1.0.0", "plugins": [{"use": "backward_chain", "settings": settings}]})
+        Application({"version": "0.0.1", "plugins": [{"use": "backward_chain", "settings": settings}]})
     app = Application()
     with pytest.raises(AutoSTACGISError, match="backward_chain"):
         app.plan(
@@ -103,7 +103,7 @@ def test_solver_parameters_use_the_installed_contract(settings):
 def test_solver_contract_and_effective_parameters_are_explicit():
     app = Application(
         {
-            "version": "1.0.0",
+            "version": "0.0.1",
             "plugins": [{"use": "backward_chain", "settings": {"timeout": 45}}],
             "solver": {"plugin": "backward_chain", "settings": {"max_steps": 8}},
         }
@@ -118,7 +118,7 @@ def test_solver_contract_and_effective_parameters_are_explicit():
 def test_two_selected_solvers_are_rejected_even_with_a_selector():
     registry = boolean_registry("one", "two")
     for selector in (None, {"plugin": "one"}):
-        catalog = {"version": "1.0.0", "plugins": [{"use": "one"}, {"use": "two"}]}
+        catalog = {"version": "0.0.1", "plugins": [{"use": "one"}, {"use": "two"}]}
         if selector:
             catalog["solver"] = selector
         with pytest.raises(AutoSTACGISError, match="Exactly one solver"):
@@ -127,7 +127,7 @@ def test_two_selected_solvers_are_rejected_even_with_a_selector():
 
 def test_unused_registered_solver_is_not_selected():
     registry = boolean_registry("one", "two")
-    app = Application({"version": "1.0.0", "plugins": [{"use": "one"}]}, registry=registry)
+    app = Application({"version": "0.0.1", "plugins": [{"use": "one"}]}, registry=registry)
     assert app.solver_name == "one"
     assert "two" not in app.plugins
     assert "backward_chain" not in app.plugins
@@ -140,7 +140,7 @@ def test_custom_solver_owns_goal_syntax_and_live_output_validation(tmp_path):
     registry = boolean_registry("boolean")
     app = Application(
         {
-            "version": "1.0.0",
+            "version": "0.0.1",
             "plugins": [{"use": name} for name in ("boolean", "executor", "storage", "events")],
         },
         registry=registry,
@@ -171,7 +171,7 @@ def test_goal_dependency_uses_the_same_named_requirement_as_other_plugins():
     with pytest.raises(AutoSTACGISError, match="name its solver in REQUIRES"):
         registry.register("bad-goal", "goal", goal)
     registry.register("boolean-goal", "goal", goal, requires=("boolean",))
-    app = Application({"version": "1.0.0", "plugins": [{"use": "boolean-goal"}]}, registry=registry)
+    app = Application({"version": "0.0.1", "plugins": [{"use": "boolean-goal"}]}, registry=registry)
     assert app.solver_name == "boolean"
     assert app.plan({"goal": {"plugin": "boolean-goal", "settings": {"accept": True}}}, [scene()]).steps == []
 
@@ -180,7 +180,7 @@ def test_solver_goal_mismatch_and_missing_dependency_fail_before_search():
     registry = boolean_registry("boolean")
     with pytest.raises(AutoSTACGISError, match="Exactly one solver"):
         Application(
-            {"version": "1.0.0", "plugins": [{"use": "boolean"}, {"use": "metadata-value"}]},
+            {"version": "0.0.1", "plugins": [{"use": "boolean"}, {"use": "metadata-value"}]},
             registry=registry,
         )
     from autostacgis_plugins.metadata_value import metadata_value
@@ -189,7 +189,7 @@ def test_solver_goal_mismatch_and_missing_dependency_fail_before_search():
     definition = registry.definition("unavailable-goal")
     with pytest.raises(AutoSTACGISError, match="unavailable: backward_chain"):
         Application(
-            {"version": "1.0.0", "plugins": [registry.definition("boolean"), definition]}, registry=registry
+            {"version": "0.0.1", "plugins": [registry.definition("boolean"), definition]}, registry=registry
         )
 
 
@@ -200,7 +200,7 @@ def test_goal_adapter_output_is_checked_against_its_solver_contract():
     invalid.contract = {"solver": "backward_chain", "settings_schema": EMPTY_SETTINGS}
     registry = Registry(builtins=False)
     registry.register("invalid", "goal", invalid, requires=("backward_chain",))
-    app = Application({"version": "1.0.0", "plugins": [{"use": "invalid"}]}, registry=registry)
+    app = Application({"version": "0.0.1", "plugins": [{"use": "invalid"}]}, registry=registry)
     with pytest.raises(AutoSTACGISError, match="backward_chain goal"):
         app.plan({"goal": {"plugin": "invalid"}}, [scene()])
 
@@ -210,7 +210,7 @@ def test_catalog_cannot_replace_an_installed_solver_contract():
     definition = registry.definition("backward_chain")
     definition["capabilities"]["solver"]["contract"]["settings_schema"]["additionalProperties"] = True
     with pytest.raises(AutoSTACGISError, match="cannot be overridden"):
-        Application({"version": "1.0.0", "plugins": [definition]}, registry=registry)
+        Application({"version": "0.0.1", "plugins": [definition]}, registry=registry)
 
 
 def test_duplicate_names_and_entry_point_aliases_are_rejected(monkeypatch):
@@ -221,7 +221,7 @@ def test_duplicate_names_and_entry_point_aliases_are_rejected(monkeypatch):
     import autostacgis.registry as registry_module
 
     provider = SimpleNamespace(
-        ID="canonical", VERSION="1.0.0", CAPABILITY="checks", IMPLEMENTATION=lambda: None, REQUIRES=()
+        ID="canonical", VERSION="0.0.1", CAPABILITY="checks", IMPLEMENTATION=lambda: None, REQUIRES=()
     )
     monkeypatch.setattr(
         registry_module,
@@ -275,7 +275,7 @@ def test_solver_registration_requires_explicit_valid_parameter_contracts(contrac
     ],
 )
 def test_invalid_goal_parameter_shapes_fail_as_configuration_errors(goal):
-    app = Application({"version": "1.0.0", "plugins": [{"use": "metadata-value"}]})
+    app = Application({"version": "0.0.1", "plugins": [{"use": "metadata-value"}]})
     with pytest.raises(AutoSTACGISError):
         app.plan({"goal": goal}, [scene()])
 
@@ -288,7 +288,7 @@ def test_default_providers_load_their_named_dependencies():
     registry = Registry(builtins=False)
     registry.register("transfer", "data_transfer", Transfer, requires=("storage",))
     app = Application(
-        {"version": "1.0.0", "plugins": [], "defaults": {"data_transfer": {"plugin": "transfer"}}},
+        {"version": "0.0.1", "plugins": [], "defaults": {"data_transfer": {"plugin": "transfer"}}},
         registry=registry,
     )
     assert {"transfer", "storage", "backward_chain"} <= set(app.plugins)

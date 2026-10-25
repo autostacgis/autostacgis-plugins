@@ -44,5 +44,5 @@ REQUIRES = ("same-fields",)
 CAPABILITY = "checks"
 IMPLEMENTATION = compatible_optical
 
-VERSION = "1.1.1"
+VERSION = "0.0.1"
 DEPENDENCIES = []

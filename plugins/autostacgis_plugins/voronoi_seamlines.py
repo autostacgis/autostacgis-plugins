@@ -8,6 +8,8 @@ from autostacgis.data.writers import vrt_paths
 from autostacgis.errors import AutoSTACGISError
 from autostacgis.semantics import descriptor_facts
 
+from ._result_defaults import result_defaults
+
 
 def voronoi_seamlines(inputs, settings, context):
     import geopandas as gpd
@@ -150,7 +152,7 @@ voronoi_seamlines.contract = {
     },
     "input_requirements": [],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -161,9 +163,12 @@ voronoi_seamlines.contract["argument_requirements"]["footprints"]["data_types"] 
 CAPABILITY = "process"
 IMPLEMENTATION = voronoi_seamlines
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = [
     "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d",
     "geopandas>=1,<2",
     "GDAL>=3.11,<4",
 ]
+
+
+result_defaults(voronoi_seamlines, suffix="voronoi_seamlines")

@@ -4,6 +4,8 @@ from autostacgis.data import physical_raster
 from autostacgis.data.metadata import finish, resampling_history
 from autostacgis.errors import AutoSTACGISError
 
+from ._result_defaults import result_defaults
+
 
 def identity(record):
     asset = record.item["assets"][record.runtime.get("selected_asset", "data")]
@@ -258,7 +260,7 @@ register_to_reference.contract = {
     },
     "input_requirements": [{"relation": "distinct", "ports": ["image", "reference"]}],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -290,5 +292,8 @@ register_to_reference.contract["argument_requirements"]["reference"]["data_types
 CAPABILITY = "process"
 IMPLEMENTATION = register_to_reference
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = ["coregix>=0.3,<0.4"]
+
+
+result_defaults(register_to_reference, suffix="register_to_reference")

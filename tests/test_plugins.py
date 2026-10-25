@@ -41,7 +41,7 @@ def test_all_previous_capabilities_have_a_registered_replacement():
     for row in inventory["after"]:
         provider = providers[row["id"]]
         assert provider.CAPABILITY == row["capability"]
-        assert provider.VERSION in ("1.1.0", "1.1.1")
+        assert provider.VERSION == "0.0.1"
         assert provider.__doc__ and provider.__doc__.strip()
         assert callable(provider.IMPLEMENTATION)
         assert not hasattr(provider, "IMPLEMENTATIONS")
@@ -72,7 +72,7 @@ def test_expanded_catalog_rejects_zero_or_multiple_capabilities(capabilities):
     with pytest.raises(AutoSTACGISError):
         validate(plugin, "plugin")
     with pytest.raises(AutoSTACGISError):
-        Application({"version": "1.0.0", "plugins": [plugin]})
+        Application({"version": "0.0.1", "plugins": [plugin]})
 
 
 def test_legacy_module_declarations_are_rejected():
@@ -91,7 +91,7 @@ def test_legacy_module_declarations_are_rejected():
     ],
 )
 def test_split_roles_load_independently(name, capability):
-    app = Application({"version": "1.0.0", "plugins": [{"use": name}]})
+    app = Application({"version": "0.0.1", "plugins": [{"use": name}]})
     assert set(app.plugins[name]["capabilities"]) == {capability}
     assert "mosaic" not in app.plugins
     assert "geotiff" not in app.plugins
@@ -99,7 +99,7 @@ def test_split_roles_load_independently(name, capability):
 
 @pytest.mark.parametrize("name", ["eodag", "dem", "atmosphere", "stac-source"])
 def test_discovery_loads_a_separate_declared_acquisition_plugin(name):
-    app = Application({"version": "1.0.0", "plugins": [{"use": name}]})
+    app = Application({"version": "0.0.1", "plugins": [{"use": name}]})
     assert set(app.plugins[name]["capabilities"]) == {"metadata_in"}
     assert set(app.plugins[name + "-download"]["capabilities"]) == {"data_in"}
     assert app.sources[name].data_in == name + "-download"
@@ -148,7 +148,7 @@ def test_eodag_discovery_hands_each_product_its_original_download_session(tmp_pa
     monkeypatch.setitem(sys.modules, "eodag.autostacgis", SimpleNamespace(describe_product=describe))
     app = Application(
         {
-            "version": "1.0.0",
+            "version": "0.0.1",
             "plugins": [
                 {"use": "eodag"},
                 {"use": "eodag-download", "settings": {"download_options": {"extract": False}}},

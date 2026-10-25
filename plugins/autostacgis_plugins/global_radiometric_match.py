@@ -9,6 +9,8 @@ from autostacgis.data.metadata import finish
 from autostacgis.data.writers import vrt_paths
 from autostacgis.errors import AutoSTACGISError
 
+from ._result_defaults import result_defaults
+
 
 def global_radiometric_match(inputs, settings, context):
     from spectralmatch import global_regression
@@ -105,7 +107,7 @@ global_radiometric_match.contract = {
             "inputs": {"images": "images"},
         }
     ],
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 global_radiometric_match.contract["argument_requirements"]["images"]["sequence"]["settings"] = {
@@ -149,7 +151,10 @@ global_radiometric_match.contract["argument_requirements"]["images"]["data_types
 CAPABILITY = "process"
 IMPLEMENTATION = global_radiometric_match
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = [
     "spectralmatch @ git+https://github.com/spectralmatch/spectralmatch.git@6c73cb2fe8a8d975e3233bb907e1a1caa4414b3d"
 ]
+
+
+result_defaults(global_radiometric_match, suffix="global_radiometric_match")

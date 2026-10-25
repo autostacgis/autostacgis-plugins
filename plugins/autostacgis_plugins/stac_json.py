@@ -62,5 +62,5 @@ DEFAULTS = {"directory": "output/stac"}
 CAPABILITY = "metadata_out"
 IMPLEMENTATION = json_writer
 
-VERSION = "1.1.1"
+VERSION = "0.0.1"
 DEPENDENCIES = []

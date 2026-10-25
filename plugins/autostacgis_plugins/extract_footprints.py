@@ -5,6 +5,8 @@ from autostacgis.data import vectors
 from autostacgis.data.metadata import finish
 from autostacgis.semantics import descriptor_facts
 
+from ._result_defaults import result_defaults
+
 
 def extract_footprints(inputs, settings, context):
     from affine import Affine
@@ -160,7 +162,7 @@ extract_footprints.contract = {
         }
     ],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 extract_footprints.contract["argument_requirements"]["images"]["sequence"]["settings"] = {
@@ -175,5 +177,8 @@ extract_footprints.contract["argument_requirements"]["images"]["data_types"] = [
 CAPABILITY = "process"
 IMPLEMENTATION = extract_footprints
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []
+
+
+result_defaults(extract_footprints, suffix="extract_footprints")

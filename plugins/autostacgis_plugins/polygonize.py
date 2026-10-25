@@ -5,6 +5,8 @@ from autostacgis.data import vectors
 from autostacgis.data.metadata import finish
 from autostacgis.semantics import descriptor_facts
 
+from ._result_defaults import result_defaults
+
 
 def polygonize(inputs, settings, context):
     from affine import Affine
@@ -82,7 +84,7 @@ polygonize.contract = {
     "argument_requirements": {"image": {"kind": "raster", "cardinality": "one", "require": {"all": []}}},
     "input_requirements": [],
     "cost": 1,
-    "version": "1.0.0",
+    "version": "0.0.1",
 }
 
 
@@ -93,5 +95,8 @@ polygonize.contract["argument_requirements"]["image"]["data_types"] = ["raster"]
 CAPABILITY = "process"
 IMPLEMENTATION = polygonize
 
-VERSION = "1.1.0"
+VERSION = "0.0.1"
 DEPENDENCIES = []
+
+
+result_defaults(polygonize, suffix="polygonize")
