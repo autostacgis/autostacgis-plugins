@@ -1,7 +1,7 @@
+solver:
+  backward_chain: {}
 goal:
-  output:
-    require:
-      all:
-      - assets.$asset.data_state:mosaic: true
-      - {}
+  metadata-value:
     kind: raster
+    jsonata: ((asset.`data_state:mosaic` = true) and true)
+    value: true

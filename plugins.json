@@ -241,7 +241,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/cli.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/cli.py",
-        "sha256": "7cc059149f83bbdc87042b8b998e45841131e5fcb06b7ead277ea0c534c9ea0b"
+        "sha256": "aafefe6e6b3af0171fd0cfb287a21984a27486b8997323590cf496e1b081c919"
       }
     },
     {
@@ -601,7 +601,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/filesystem.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/filesystem.py",
-        "sha256": "09e79b8d5951c9cd3a22e90fefd6b99564a94b5c112f20e1c5ec212a54c578d4"
+        "sha256": "81d0bccf0b4e184b245fe3a4daad6957c47fd5021c02e02e3d90bd49b9fa5c1b"
       }
     },
     {
@@ -962,7 +962,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/now.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/now.py",
-        "sha256": "8f40d0623390a24f9df326e851f41c936101cf5c82e508212b241ea9701b50b1"
+        "sha256": "29d2b0a21c42049bbc6f8ec7e6a1ae9c4dd0998f1fefe945e4e08bf177489aae"
       }
     },
     {
@@ -1209,7 +1209,7 @@
         "ref": "main",
         "path": "plugins/autostacgis_plugins/slurm.py",
         "url": "https://raw.githubusercontent.com/autostacgis/autostacgis-plugins/main/plugins/autostacgis_plugins/slurm.py",
-        "sha256": "6260a87c01dd71946c68e76af47dc5ddb0d6c216cc44be129981c20a23626d76"
+        "sha256": "3069cc6871b0733ff6f76d5cd0c7d9bab1771690f4d849f22043efce47fbecfe"
       }
     },
     {

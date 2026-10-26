@@ -1,24 +1,15 @@
+solver:
+  backward_chain: {}
 goal:
-  output:
+  metadata-value:
     kind: raster
     select:
-      assets.$asset.data_state:spectral_sampling: multispectral
-    require:
-      all:
-      - assets.$asset.cf:standard_name: surface_bidirectional_reflectance
-        assets.$asset.unit: '1'
-        assets.$asset.data_state:orthorectified: true
-        assets.$asset.data_state:pansharpened: true
-        assets.$asset.data_state:relative_radiometric_normalization: true
-        assets.$asset.data_state:local_radiometric_adjustment: true
-        assets.$asset.data_state:masked.cloud: true
-        assets.$asset.data_state:masked.cloud_shadow: true
-        assets.$asset.data_state:masked.mosaic_seamline: true
-        assets.$asset.data_state:mosaic: true
-      - path: assets.$asset.data_state:registration
-        entry:
-          kind: reference
-      - path: assets.$asset.data_state:registration
-        entry:
-          kind: joint
-      - {}
+      require:
+        assets.$asset.data_state:spectral_sampling: multispectral
+    jsonata: ((asset.`cf:standard_name` = "surface_bidirectional_reflectance" and asset.`unit` = "1" and
+      asset.`data_state:orthorectified` = true and asset.`data_state:pansharpened` = true and asset.`data_state:relative_radiometric_normalization`
+      = true and asset.`data_state:local_radiometric_adjustment` = true and asset.`data_state:masked`.`cloud`
+      = true and asset.`data_state:masked`.`cloud_shadow` = true and asset.`data_state:masked`.`mosaic_seamline`
+      = true and asset.`data_state:mosaic` = true) and $count(asset.`data_state:registration`[`kind` =
+      "reference"]) > 0 and $count(asset.`data_state:registration`[`kind` = "joint"]) > 0 and true)
+    value: true

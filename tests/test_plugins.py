@@ -11,6 +11,7 @@ from autostacgis import Application, Registry
 from autostacgis.config import validate
 from autostacgis.errors import AutoSTACGISError
 from autostacgis_plugins import modules
+from workflow_helpers import configured
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -70,7 +71,7 @@ def test_registration_rejects_missing_unknown_and_plural_capabilities(capability
 def test_expanded_catalog_rejects_zero_or_multiple_capabilities(capabilities):
     plugin = {"id": "invalid", "capabilities": capabilities}
     with pytest.raises(AutoSTACGISError):
-        validate(plugin, "plugin")
+        validate(plugin, "config")
     with pytest.raises(AutoSTACGISError):
         Application({"version": "0.0.1", "plugins": [plugin]})
 
@@ -91,7 +92,13 @@ def test_legacy_module_declarations_are_rejected():
     ],
 )
 def test_split_roles_load_independently(name, capability):
-    app = Application({"version": "0.0.1", "plugins": [{"use": name}]})
+    document = {
+        "solver": {"backward_chain": {}},
+        "goal": {"metadata-value": {"jsonata": "true", "value": True}},
+    }
+    if capability not in ("goal", "solver"):
+        document[capability] = {name: {}}
+    app = Application(document)
     assert set(app.plugins[name]["capabilities"]) == {capability}
     assert "mosaic" not in app.plugins
     assert "geotiff" not in app.plugins
@@ -99,7 +106,13 @@ def test_split_roles_load_independently(name, capability):
 
 @pytest.mark.parametrize("name", ["eodag", "dem", "atmosphere", "stac-source"])
 def test_discovery_loads_a_separate_declared_acquisition_plugin(name):
-    app = Application({"version": "0.0.1", "plugins": [{"use": name}]})
+    app = Application(
+        {
+            "solver": {"backward_chain": {}},
+            "goal": {"metadata-value": {"jsonata": "true", "value": True}},
+            "metadata_in": {name: {}},
+        }
+    )
     assert set(app.plugins[name]["capabilities"]) == {"metadata_in"}
     assert set(app.plugins[name + "-download"]["capabilities"]) == {"data_in"}
     assert app.sources[name].data_in == name + "-download"
@@ -148,17 +161,18 @@ def test_eodag_discovery_hands_each_product_its_original_download_session(tmp_pa
     monkeypatch.setitem(sys.modules, "eodag.autostacgis", SimpleNamespace(describe_product=describe))
     app = Application(
         {
-            "version": "0.0.1",
-            "plugins": [
-                {"use": "eodag"},
-                {"use": "eodag-download", "settings": {"download_options": {"extract": False}}},
-            ],
+            "solver": {"backward_chain": {}},
+            "goal": {"metadata-value": {"jsonata": "true", "value": True}},
+            "metadata_in": {"eodag": {}},
+            "data_in": {"eodag-download": {"download_options": {"extract": False}}},
+            "metadata_structure": {"strict": False},
         },
         base_dir=tmp_path,
     )
     request = {"sources": ["eodag"], "goal": {"output": {}}}
-    first = app.discover(request)[0]
-    second = app.discover(request)[0]
+    app = configured(app, request)
+    first = app.discover()[0]
+    second = app.discover()[0]
     assert calls == []
     assert first.runtime["data_in"] == second.runtime["data_in"] == "eodag-download"
     acquirer = app.scope("eodag").acquirer("eodag-download")

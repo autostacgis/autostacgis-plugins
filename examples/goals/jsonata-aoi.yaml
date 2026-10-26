@@ -1,6 +1,7 @@
+solver:
+  backward_chain: {}
 goal:
-  plugin: metadata-value
-  settings:
+  metadata-value:
     jsonata: $lookup(asset, "cf:standard_name")
     value: surface_bidirectional_reflectance
     observes:

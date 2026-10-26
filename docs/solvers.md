@@ -1,75 +1,59 @@
 # Solver and goal contracts
 
-A catalog selects exactly one solver plugin. Installed and registered solvers may coexist, but selecting two, including through goal dependencies, is an error. If no solver is selected, AutoSTACGIS loads `backward_chain`. A request may override the active solver's settings; it cannot switch to another solver.
+A workflow selects exactly one solver under `solver`. Goal plugins name their required solver. Registered solvers may coexist; selecting two, including through goal dependencies, is an error. All settings come from the single workflow.
 
 ```yaml
-catalog:
-  version: 0.0.1
-  plugins:
-    - use: metadata-value
-    - use: atmospheric_correction
-  solver:
-    plugin: backward_chain
-    settings:
-      max_steps: 64
-      max_states: 100000
-      max_bindings: 100000
-      timeout: 120
-request:
-  solver:
-    plugin: backward_chain
-    settings:
-      timeout: 30
-  goal:
-    plugin: metadata-value
-    settings:
-      path: assets.$asset.cf:standard_name
-      value: surface_bidirectional_reflectance
-      kind: raster
-      for_each: true
-      select:
-        assets.$asset.data_state:spectral_sampling: multispectral
-```
-
-The same request can directly declare metadata constraints:
-
-```yaml
+solver:
+  backward_chain:
+    max_steps: 64
+    max_states: 100000
+    max_bindings: 100000
+    timeout: 30
 goal:
-  for_each:
+  metadata-value:
+    path: assets.$asset.cf:standard_name
+    value: surface_bidirectional_reflectance
     kind: raster
+    for_each: true
     select:
-      assets.$asset.data_state:spectral_sampling: multispectral
-    require:
-      assets.$asset.cf:standard_name: surface_bidirectional_reflectance
-      assets.$asset.unit: '1'
+      require:
+        assets.$asset.data_state:spectral_sampling: multispectral
+process:
+  atmospheric_correction: {}
 ```
 
-`backward_chain` constructs workflows backward from required outputs, memoizes subproblems, and regresses metadata predicates through declared processing effects. Metadata goals are inputs to this algorithm. It supports `output`, `for_each`, `all_of`, and `any_of`, including named outputs, source selection, counts, metadata predicates and spatial coverage. This syntax is declared in its `goal_schema`. The general configuration schema accepts a goal object; the selected solver validates its dialect. Other goal adapters can target this solver, and other solvers can declare their own goal dialects.
+`backward_chain` constructs workflows backward from required outputs, memoizes subproblems, and regresses metadata predicates through declared processing effects. Metadata goals are inputs to this algorithm. It supports `output`, `for_each`, `all_of`, and `any_of`, including named outputs, source selection, counts, metadata predicates and spatial coverage. This syntax is declared in its `goal_schema`. The workflow selects goal adapters and their parameters; returned goals are validated against the selected solver dialect. Other goal adapters can target this solver, and other solvers can declare their own goal dialects.
 
 ## JSONata metadata values and areas of interest
 
 `metadata-value` requires `value` and exactly one of `path` or `jsonata`. JSONata can compute a string, number, boolean, array, or object to compare with `value`. Expressions receive `item` (the STAC Item), `asset` (the bound asset), `asset_key`, `kind`, and JSON constants in `parameters`. Missing or null results remain unknown and cannot satisfy a goal. Boolean and numeric values are distinct.
 
-This [request fragment](../examples/goals/jsonata-aoi.yaml) selects images intersecting an AOI and requests surface reflectance for every selected image:
+This [workflow fragment](../examples/goals/jsonata-aoi.yaml) selects images intersecting an AOI and requests surface reflectance for every selected image:
 
 ```yaml
+solver:
+  backward_chain: {}
 goal:
-  plugin: metadata-value
-  settings:
-    jsonata: '$lookup(asset, "cf:standard_name")'
+  metadata-value:
+    jsonata: $lookup(asset, "cf:standard_name")
     value: surface_bidirectional_reflectance
-    observes: [assets.$asset.cf:standard_name]
+    observes:
+    - assets.$asset.cf:standard_name
     kind: raster
     for_each: true
     parameters:
-      aoi: [-156.5, 20.5, -156.0, 21.0]
+      aoi:
+      - -156.5
+      - 20.5
+      - -156.0
+      - 21.0
     select:
       kind: raster
       require:
-        jsonata: '$intersects(item.bbox, parameters.aoi)'
+        jsonata: $intersects(item.bbox, parameters.aoi)
 ```
 
-Select `metadata-value` and the necessary processing plugins in the catalog. `parameters` is shared with selection expressions; a selector's own parameters override matching names. `observes`, when supplied, must list every metadata path read by the goal expression. Omitting it conservatively considers all metadata when finding producers.
+Select `metadata-value` and the necessary processing plugins in the workflow. `parameters` is shared with selection expressions; a selector's own parameters override matching names. `observes`, when supplied, must list every metadata path read by the goal expression. Omitting it conservatively considers all metadata when finding producers.
 
 Spatial expressions accept GeoJSON geometries or Features and STAC bounding boxes:
 
@@ -89,7 +73,7 @@ Direct `path` equality remains available. Optional settings are `name`, `kind`, 
 
 ## Explicit contracts
 
-Every solver implementation declares a JSON `contract` with `settings_schema`, optional default `settings`, and `goal_schema`. Every goal implementation declares `settings_schema`, optional default `settings`, and the exact solver ID in `solver`. Parameter schemas must explicitly list properties and set `additionalProperties: false`. Catalogs cannot replace installed contracts.
+Every solver implementation declares a JSON `contract` with `settings_schema`, optional default `settings`, and `goal_schema`. Every goal implementation declares `settings_schema`, optional default `settings`, and the exact solver ID in `solver`. Parameter schemas must explicitly list properties and set `additionalProperties: false`. Configuration cannot replace installed contracts.
 
 The full solver contract is [`backward_chain_contract.json`](../plugins/autostacgis_plugins/backward_chain_contract.json). Its search settings are:
 
@@ -100,7 +84,7 @@ The full solver contract is [`backward_chain_contract.json`](../plugins/autostac
 | `max_bindings` | integer | 100000 | At least one |
 | `timeout` | number, seconds | 120 | Greater than zero |
 
-Unknown names and invalid values fail before search. Settings merge in order: implementation defaults, selected plugin settings, catalog solver settings, request solver settings.
+Unknown names and invalid values fail before search. Settings merge in order: implementation defaults, then explicit parameters under `solver.<plugin>`.
 
 The full goal settings schema lives on [`metadata_value.contract`](../plugins/autostacgis_plugins/metadata_value.py). Its expanded output is checked against `backward_chain`'s goal contract before planning. Product presets such as surface reflectance and pansharpening are [configuration examples](../examples/goals).
 

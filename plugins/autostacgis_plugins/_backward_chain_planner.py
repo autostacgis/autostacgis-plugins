@@ -65,7 +65,7 @@ class Planner:
     def __init__(self, app, request, settings=None):
         self.app, self.request = app, request
         self.modules = app.modules(request)
-        self.options = dict(app.solver_settings(request) if settings is None else settings)
+        self.options = dict(app.solver_settings() if settings is None else settings)
         self.deadline = monotonic() + self.options.get("timeout", 120)
         self.bindings = 0
         self.evaluated = {}

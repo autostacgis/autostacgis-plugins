@@ -1,9 +1,11 @@
+solver:
+  backward_chain: {}
 goal:
-  for_each:
+  metadata-value:
     kind: raster
     select:
-      assets.$asset.data_state:spectral_sampling: multispectral
-    require:
-      all:
-      - path: assets.$asset.data_state:relative_radiometric_normalization
-        equals: true
+      require:
+        assets.$asset.data_state:spectral_sampling: multispectral
+    for_each: true
+    jsonata: (asset.`data_state:relative_radiometric_normalization` = true)
+    value: true

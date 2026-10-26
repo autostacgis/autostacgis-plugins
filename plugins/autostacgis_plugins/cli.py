@@ -1,8 +1,8 @@
 """Invoke workflows through an explicitly configured command-line trigger."""
 
 
-def direct(app, settings, request):
-    return app.run(request or settings["request"])
+def direct(app, settings):
+    return app.run()
 
 
 ID = "cli"

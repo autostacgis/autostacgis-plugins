@@ -1,11 +1,11 @@
+solver:
+  backward_chain: {}
 goal:
-  for_each:
+  metadata-value:
     kind: raster
     select:
-      assets.$asset.data_state:spectral_sampling: multispectral
-    require:
-      all:
-      - path: assets.$asset.cf:standard_name
-        equals: surface_bidirectional_reflectance
-      - path: assets.$asset.unit
-        equals: '1'
+      require:
+        assets.$asset.data_state:spectral_sampling: multispectral
+    for_each: true
+    jsonata: (asset.`cf:standard_name` = "surface_bidirectional_reflectance" and asset.`unit` = "1")
+    value: true

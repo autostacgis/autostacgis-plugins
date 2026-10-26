@@ -1,6 +1,7 @@
+solver:
+  backward_chain: {}
 goal:
-  plugin: metadata-value
-  settings:
+  metadata-value:
     jsonata: $covers(item.geometry, parameters.aoi)
     value: true
     observes:

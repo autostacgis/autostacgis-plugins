@@ -3,7 +3,7 @@
 Before: **81 plugins** in `autostacgis-python/autostacgis/plugins`.
 After: **82 plugins**, each with one capability, in `autostacgis-plugins/plugins/autostacgis_plugins`.
 
-The initial split produced 97 registrations. Removing 11 goal presets and seven redundant sequence wrappers, then adding `backward_chain` and `metadata-value`, gives 81 installed registrations before replacing `scheduler` with `apscheduler` and adding `watchdog`, for 82 current registrations. Product goals are configuration, and collection processors depend directly on reusable `gather-all`. The default catalog selects 81 implementations; select `metadata-value` explicitly when using that generic goal adapter. The machine-readable `after_split` list is historical; `after` lists the current catalog.
+The initial split produced 97 registrations. Removing 11 goal presets and seven redundant sequence wrappers, then adding `backward_chain` and `metadata-value`, gives 81 installed registrations before replacing `scheduler` with `apscheduler` and adding `watchdog`, for 82 current registrations. Product goals are configuration, and collection processors depend directly on reusable `gather-all`. This is an inventory of available implementations; workflows select plugins by unique ID within capability sections. The machine-readable `after_split` list is historical; `after` lists the current catalog.
 
 ## Before
 
@@ -180,7 +180,7 @@ The initial split produced 97 registrations. Removing 11 goal presets and seven 
 
 ## Sequence wrappers replaced by gather-all
 
-These removed registrations only forwarded unchanged inputs to `gather-all`. Their processing plugins already declare `gather-all` in `REQUIRES` and in their collection-input contracts. Change explicit catalog selections and request sequence overrides to `gather-all`.
+These removed registrations only forwarded unchanged inputs to `gather-all`. Their processing plugins already declare `gather-all` in `REQUIRES` and in their collection-input contracts. Select `gather-all` in the sequence section and reference it by name in grouping overrides.
 
 | Removed registration | Replacement |
 | --- | --- |
@@ -230,7 +230,7 @@ Distinct grouping plugins remain: `combine`, `explicit-groups`, `filter`, `gathe
 | `weighted_seamlines` | `weighted_seamlines` (process), uses `gather-all` (sequence) |
 | `zarr` | `zarr` (encode), `zarr-metadata` (metadata_out) |
 
-All dependencies use `REQUIRES = ("unique-plugin-id", ...)`. The same names are used in catalog `requires` arrays and `{plugin: name}` references. Missing names, cycles, duplicate IDs, and entry-point aliases that disagree with the module ID are errors. Each goal plugin names its solver in `IMPLEMENTATION.contract["solver"]` and includes that exact name in `REQUIRES`.
+All dependencies use `REQUIRES = ("unique-plugin-id", ...)`. The same names are used throughout workflow capability sections and `{plugin: name}` references. Missing names, cycles, duplicate IDs, and entry-point aliases that disagree with the module ID are errors. Each goal plugin names its solver in `IMPLEMENTATION.contract["solver"]` and includes that exact name in `REQUIRES`.
 
 Encoders load their `*-metadata` writers as dependencies; discovery loads its `*-download` acquirer. Configure acquisition settings on the download registration. Discovery explicitly routes records through `data_in`; EODAG shares its search session through scoped `context.acquirer()` access.
 

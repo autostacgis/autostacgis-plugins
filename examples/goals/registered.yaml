@@ -1,10 +1,11 @@
+solver:
+  backward_chain: {}
 goal:
-  for_each:
+  metadata-value:
     kind: raster
     select:
-      assets.$asset.data_state:spectral_sampling: multispectral
-    require:
-      all:
-      - path: assets.$asset.data_state:registration
-        entry:
-          kind: reference
+      require:
+        assets.$asset.data_state:spectral_sampling: multispectral
+    for_each: true
+    jsonata: ($count(asset.`data_state:registration`[`kind` = "reference"]) > 0)
+    value: true

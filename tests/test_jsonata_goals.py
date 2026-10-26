@@ -10,15 +10,20 @@ from autostacgis.expressions import evaluate
 from autostacgis.goals import selected
 from shapely.geometry import box, mapping
 from test_solvers import scene
+from workflow_helpers import configured
 
 
 def application(tmp_path, *processes):
     registry = Registry(builtins=False)
     for name, process in processes:
         registry.register(name, "process", process, requires=getattr(process, "requires", ()))
-    names = [name for name, _ in processes] + ["metadata-value", "executor", "storage", "events"]
     return Application(
-        {"version": "0.0.1", "plugins": [{"use": name} for name in names]},
+        {
+            "solver": {"backward_chain": {}},
+            "goal": {"metadata-value": {"jsonata": "true", "value": True}},
+            "process": {name: {} for name, _ in processes},
+            "metadata_structure": {"strict": False},
+        },
         registry=registry,
         base_dir=tmp_path,
     )
@@ -53,7 +58,7 @@ def rectangle(name, extent):
 def test_jsonata_can_solve_for_scalar_array_and_object_values(tmp_path, expression, expected):
     app = application(tmp_path)
     assert app.solver_name == "backward_chain"
-    assert app.plan(request(expression, expected), [scene()]).steps == []
+    assert configured(app, request(expression, expected)).plan(inputs=[scene()]).steps == []
 
 
 def test_unknown_values_and_boolean_number_mismatches_cannot_satisfy_goals(tmp_path):
@@ -65,7 +70,7 @@ def test_unknown_values_and_boolean_number_mismatches_cannot_satisfy_goals(tmp_p
         ("[1]", [True]),
     ]:
         with pytest.raises(NoPlan):
-            app.plan(request(expression, expected), [scene()])
+            configured(app, request(expression, expected)).plan(inputs=[scene()])
 
 
 def test_jsonata_goal_is_regressed_through_multiple_processing_steps_and_executed(tmp_path):
@@ -94,10 +99,10 @@ def test_jsonata_goal_is_regressed_through_multiple_processing_steps_and_execute
     goal = request(
         "$sum([item.properties.a, item.properties.b])", 2, observes=["properties.a", "properties.b"]
     )
-    plan = app.plan(goal, [image])
+    plan = configured(app, goal).plan(inputs=[image])
     assert {step.module for step in plan.steps} == {"set-a", "set-b"}
     assert plan.report["engine"] == "backward_chain"
-    with app.run(goal, [image]) as result:
+    with configured(app, goal).run(inputs=[image]) as result:
         assert result.records[0].item["properties"]["a"] == result.records[0].item["properties"]["b"] == 1
 
 
@@ -119,9 +124,9 @@ def test_aoi_gathers_only_intersecting_images_from_the_selected_metadata_field(t
         select={"jsonata": f"$intersects(item.{field}, parameters.aoi)"},
         for_each=True,
     )
-    plan = app.plan(goal, images)
+    plan = configured(app, goal).plan(inputs=images)
     assert len(plan.outputs) == 2
-    with app.run(goal, images) as result:
+    with configured(app, goal).run(inputs=images) as result:
         assert {record.item["id"] for record in result} == {"west", "east"}
 
 
@@ -172,7 +177,7 @@ def test_jsonata_coverage_goal_can_synthesize_an_aggregation_of_adjacent_images(
         parameters={"aoi": [0, 0, 2, 1]},
         observes=["geometry"],
     )
-    plan = app.plan(goal, images)
+    plan = configured(app, goal).plan(inputs=images)
     assert [step.module for step in plan.steps] == ["aggregate"]
     result = plan.predicted[plan.outputs["result"][0]]
     assert (
@@ -199,11 +204,11 @@ def test_count_coverage_and_path_goal_parameters_remain_available(tmp_path):
                 },
             }
         }
-        assert app.plan(goal, [record]).steps == []
+        assert configured(app, goal).plan(inputs=[record]).steps == []
     with pytest.raises(AutoSTACGISError):
-        app.plan(request("true", True, for_each=True, count=2), [record])
+        configured(app, request("true", True, for_each=True, count=2)).plan(inputs=[record])
     with pytest.raises(AutoSTACGISError):
-        app.plan(request("true", True, path="properties.ready"), [record])
+        configured(app, request("true", True, path="properties.ready")).plan(inputs=[record])
 
 
 def test_spatial_functions_handle_missing_invalid_antimeridian_and_3d_bbox_metadata():

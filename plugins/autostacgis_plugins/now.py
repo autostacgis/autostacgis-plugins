@@ -1,8 +1,8 @@
 """Run the workflow immediately in the current application."""
 
 
-def direct(app, settings, request):
-    return app.run(request or app.request())
+def direct(app, settings):
+    return app.run()
 
 
 ID = "now"

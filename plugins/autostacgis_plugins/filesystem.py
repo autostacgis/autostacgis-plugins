@@ -15,8 +15,6 @@ def filesystem(value, settings, context):
     destination = settings.get(
         "path", str(Path(settings.get("directory", "output/data")) / uuid4().hex / ("data" + suffix))
     )
-    if destination.startswith("path:"):
-        destination = destination[5:]
     from autostacgis.io import is_local, local
 
     if not is_local(destination):
